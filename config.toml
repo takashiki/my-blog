@@ -82,3 +82,16 @@ paginate     = 10
     name       = "Blog"
 
     url        = "/posts"
+
+
+  [[params.social]]
+
+    name = "email"
+
+    url  = "mailto:857995137@qq.com"
+
+  [[params.social]]
+
+    name = "github"
+
+    url  = "https://github.com/takashiki"
