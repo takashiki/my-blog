@@ -1,3 +1,84 @@
-baseURL = "http://example.org/"
+baseurl      = "http://qxzzf.host"
+
+title        = "天心流水的博客"
+
 languageCode = "en-us"
-title = "My New Hugo Site"
+
+theme        = "hello-friend-ng"
+
+paginate     = 10
+
+
+
+[params]
+
+  dateform        = "Jan 2, 2006"
+
+  dateformShort   = "Jan 2"
+
+  dateformNum     = "2006-01-02"
+
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+
+
+  homeSubtitle = "A simple and beautiful blog"
+
+
+  disableReadOtherPosts = false
+
+
+  enableSharingButtons = true
+
+
+
+  description = "My new homepage or blog"
+
+  keywords = "homepage, blog"
+
+  images = [""]
+
+
+  defaultTheme = "dark"
+
+
+[taxonomies]
+
+    category = "blog"
+
+    tag      = "tags"
+
+    series   = "series"
+
+
+
+[languages]
+
+  [languages.en]
+
+    title = "天心流水的博客"
+
+    subtitle = "A simple theme for Hugo"
+
+    keywords = ""
+
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+    readOtherPosts = "阅读更多"
+
+
+
+    [languages.en.params.logo]
+
+      logoText = "首页"
+
+      logoHomeLink = "/"
+
+
+  [[menu.main]]
+
+    identifier = "blog"
+
+    name       = "Blog"
+
+    url        = "/posts"
