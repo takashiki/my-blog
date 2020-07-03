@@ -1,4 +1,4 @@
-baseurl      = "http://qxzzf.host"
+baseurl      = "https://qxzzf.com"
 
 title        = "天心流水的博客"
 
@@ -22,7 +22,7 @@ paginate     = 10
 
 
 
-  homeSubtitle = "A simple and beautiful blog"
+  homeSubtitle = "日々私たちが過ごしている日常は、実は、奇跡の連続なのかもしれない"
 
 
   disableReadOtherPosts = false
@@ -32,7 +32,7 @@ paginate     = 10
 
 
 
-  description = "My new homepage or blog"
+  description = "天心流水的个人博客"
 
   keywords = "homepage, blog"
 
