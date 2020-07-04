@@ -32,11 +32,11 @@ def procPost(path, files):
     filename = os.path.basename(path)
     title = os.path.splitext(filename)[0]
     timestamp = os.path.getmtime(path)
-    date = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timestamp))
+    date = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(timestamp))
     text = '''+++
-title="%s"
-draft=false
-date="%s"
+title = "%s"
+draft = false
+date = "%s"
 ''' % (title, date)
     
     f = open(path)
@@ -47,11 +47,11 @@ date="%s"
     if (ms is not None):
         meta = ms.group()
         ts = getMetas('tags', meta)
-        text += 'tags=[' + ','.join(map(lambda x: '"' + x + '"', ts)) + ']\n'
+        text += 'tags = [' + ','.join(map(lambda x: '"' + x + '"', ts)) + ']\n'
         ss = getMetas('series', meta)
-        text += 'series=[' + ','.join(map(lambda x: '"' + x + '"', ss)) + ']\n'
+        text += 'series = [' + ','.join(map(lambda x: '"' + x + '"', ss)) + ']\n'
         cs = getMetas('categories', meta)
-        text += 'categories=[' + ','.join(map(lambda x: '"' + x + '"', cs)) + ']\n'
+        text += 'categories = [' + ','.join(map(lambda x: '"' + x + '"', cs)) + ']\n'
         content = content.replace(ms.group(), '')
 
     text += '+++\n\n' + content
