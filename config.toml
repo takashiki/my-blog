@@ -1,97 +1,54 @@
 baseurl      = "https://qxzzf.com"
-
 title        = "天心流水的博客"
-
 languageCode = "en-us"
-
 theme        = "hello-friend-ng"
-
 paginate     = 10
 
-
-
 [params]
-
   dateform        = "Jan 2, 2006"
-
   dateformShort   = "Jan 2"
-
   dateformNum     = "2006-01-02"
-
   dateformNumTime = "2006-01-02 15:04 -0700"
-
-
 
   homeSubtitle = "日々私たちが過ごしている日常は、実は、奇跡の連続なのかもしれない"
 
-
   disableReadOtherPosts = false
-
-
   enableSharingButtons = true
 
-
-
   description = "天心流水的个人博客"
-
   keywords = "homepage, blog"
-
   images = [""]
-
 
   defaultTheme = "dark"
 
-
 [taxonomies]
-
-    category = "blog"
-
-    tag      = "tags"
-
-    series   = "series"
-
-
+  category = "blog"
+  tag      = "tags"
+  series   = "series"
 
 [languages]
 
   [languages.en]
-
     title = "天心流水的博客"
-
     subtitle = "A simple theme for Hugo"
-
     keywords = ""
-
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-
     readOtherPosts = "阅读更多"
 
-
-
     [languages.en.params.logo]
-
       logoText = "首页"
-
       logoHomeLink = "/"
 
 
   [[menu.main]]
-
     identifier = "blog"
-
     name       = "Blog"
-
     url        = "/posts"
 
-
   [[params.social]]
-
     name = "email"
-
     url  = "mailto:857995137@qq.com"
 
   [[params.social]]
-
     name = "github"
-
     url  = "https://github.com/takashiki"
