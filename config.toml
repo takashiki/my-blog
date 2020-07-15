@@ -42,7 +42,7 @@ paginate     = 10
 
   [[menu.main]]
     identifier = "blog"
-    name       = "Blog"
+    name       = "文章"
     url        = "/posts"
 
   [[params.social]]
