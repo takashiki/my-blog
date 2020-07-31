@@ -1,4 +1,5 @@
-<section>
+{{ define "main" }}
+  <section>
     <div>
       <form action="{{ "search" | absURL }}">
         <input id="search-query" name="s"/>
@@ -20,3 +21,4 @@
   <script src="/js/fuse.min.js"></script>
   <script src="/js/jquery.mark.min.js"></script>
   <script src="{{ "js/search.js" | absURL }}"></script>
+{{ end }}
