@@ -126,28 +126,30 @@
 
             <div class="content">
                 
-  <section>
-    <div>
-      <form action="https://qxzzf.com/search">
-        <input id="search-query" name="s"/>
-      </form>
-      <div id="search-results">
-       <h3>搜索结果</h3>
-      </div>
-    </div>
-  </section>
-  <script id="search-result-template" type="text/x-js-template">
-    <div id="summary-${key}">
-      <h4><a href="${link}">${title}</a></h4>
-      <p>${snippet}</p>
-      ${ isset tags }<p>Tags: ${tags}</p>${ end }
-      ${ isset categories }<p>Categories: ${categories}</p>${ end }
-    </div>
-  </script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/fuse.min.js"></script>
-  <script src="/js/jquery.mark.min.js"></script>
-  <script src="https://qxzzf.com/js/search.js"></script>
+    <main class="posts">
+    <section>
+        <div>
+        <form action="https://qxzzf.com/search">
+            <input id="search-query" name="s"/>
+        </form>
+        <div id="search-results">
+        <h3>搜索结果</h3>
+        </div>
+        </div>
+    </section>
+    </main>
+    <script id="search-result-template" type="text/x-js-template">
+        <div id="summary-${key}">
+        <h4><a href="${link}">${title}</a></h4>
+        <p>${snippet}</p>
+        ${ isset tags }<p>Tags: ${tags}</p>${ end }
+        ${ isset categories }<p>Categories: ${categories}</p>${ end }
+        </div>
+    </script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/fuse.min.js"></script>
+    <script src="/js/jquery.mark.min.js"></script>
+    <script src="https://qxzzf.com/js/search.js"></script>
 
             </div>
 
