@@ -12,7 +12,7 @@ netstat -an | grep 3306 如果输出为
 tcp 0 0 127.0.0.1:3306 0.0.0.0:* LISTEN 则说明只监听了本地连接。解决方法：修改/etc/mysql/my.cnf文件。打开文件，找到下面内容：
 # Instead of skip-networking the default is now to listen only on# localhost which is more compatible and is not less secure.bind-address = 127.0.0.1把上面bind-address = 127.0.0.1这一行注释掉或者把127.0.0.1换成合适的IP。 重新启动mysql再用netstat检测是否为：
 tcp 0 0 0.0.0.0:3306 0.0.0.0:* LISTEN 如果这样之后还是telnet不通，那基本就是防火墙的问题了，查看iptables的rules文件里是否包含" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8Amysql%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0/" />
@@ -20,7 +20,7 @@ tcp 0 0 0.0.0.0:3306 0.0.0.0:* LISTEN 如果这样之后还是telnet不通，�
 
     <title>
         
-            linux服务器上mysql无法远程连接的可能原因 :: 天心流水的博客  — A simple theme for Hugo
+            linux服务器上mysql无法远程连接的可能原因 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

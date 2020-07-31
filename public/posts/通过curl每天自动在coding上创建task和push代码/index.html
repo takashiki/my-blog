@@ -10,7 +10,7 @@
 &amp;lt;?php $url = &amp;#39;xxx&amp;#39;; $referer = &amp;#39;xxx&amp;#39;; $cookie = &amp;#39;xxx&amp;#39;; $userAgent = &amp;#39;xxx&amp;#39;; $data = [ &amp;#39;priority&amp;#39; =&amp;gt; 1, &amp;#39;content&amp;#39; =&amp;gt; &amp;#39;xxx&amp;#39;, &amp;#39;owner_id&amp;#39; =&amp;gt; xxx, &amp;#39;deadline&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;description&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
 然后是自动push代码的：
 &amp;lt;?php require &amp;#39;Curl." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E9%80%9A%E8%BF%87curl%E6%AF%8F%E5%A4%A9%E8%87%AA%E5%8A%A8%E5%9C%A8coding%E4%B8%8A%E5%88%9B%E5%BB%BAtask%E5%92%8Cpush%E4%BB%A3%E7%A0%81/" />
@@ -18,7 +18,7 @@
 
     <title>
         
-            通过curl每天自动在coding上创建task和push代码 :: 天心流水的博客  — A simple theme for Hugo
+            通过curl每天自动在coding上创建task和push代码 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

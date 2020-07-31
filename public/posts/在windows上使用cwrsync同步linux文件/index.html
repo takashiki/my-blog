@@ -10,7 +10,7 @@
 cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-edition，免费版的cwRsync已经能满足需求，下载下来的是压缩包，直接解压就可以使用了。
 服务器端安装可以直接使用包管理器安装，就不多说了。安装好后编辑/etc/rsyncd.conf，内容如下：
 #全局配置 uid = root #用户名，也即为执行rsync操作的用户，若该用户没有足够的权限操作需备份的文件夹则备份时会报错 gid = root #用户组名 use chroot = no read only = yes #访问权限控制 #hosts allow=172.16.0.0/255.255.0.0 192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0 #hosts deny=* max connections = 5 pid file = /var/run/rsyncd.pid secrets file = /etc/rsyncd/rsyncd.secrets #lock file = /var/run/rsync.lock #motd file = /etc/rsyncd/rsyncd.motd #log file = /var/log/rsync.log #This will log every file transferred - up to 85,000&#43; per user, per sync transfer logging = yes log format = %t %a %m %f %b syslog facility = local3 timeout = 300 #模块配置 [webapp] path = /data/wwwroot/ #服务器上需要同步的路径，如不存在的话同步时会报错 list=yes ignore errors auth users = rsync #配置在rsyncd." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E5%9C%A8windows%E4%B8%8A%E4%BD%BF%E7%94%A8cwrsync%E5%90%8C%E6%AD%A5linux%E6%96%87%E4%BB%B6/" />
@@ -18,7 +18,7 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 
     <title>
         
-            在Windows上使用cwRsync同步Linux文件 :: 天心流水的博客  — A simple theme for Hugo
+            在Windows上使用cwRsync同步Linux文件 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

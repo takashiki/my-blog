@@ -946,4 +946,9 @@
     <loc>https://qxzzf.com/blog/</loc>
   </url>
   
+  <url>
+    <loc>https://qxzzf.com/search/</loc>
+    <priority>0.1</priority>
+  </url>
+  
 </urlset>

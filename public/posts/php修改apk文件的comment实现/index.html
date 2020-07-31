@@ -9,7 +9,7 @@
 apk文件本身即为zip文件，在PHP中可以使用 ZipArchive 类中的 setArchiveComment 方法方便地设置 apk 的 comment 内容。
 也可以使用 fseek 和 fwrite 来参照上述文章原理实现：
 $comment = &amp;#39;123测试&amp;#39;; $file = fopen(&amp;#39;R:\1.apk&amp;#39;, &amp;#39;r&#43;&amp;#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&amp;#39;s&amp;#39;, mb_strlen($comment, &amp;#39;8bit&amp;#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&amp;gt;open(&amp;#39;R:\1.apk&amp;#39;); var_dump($zip-&amp;gt;getArchiveComment()); //$zip-&amp;gt;setArchiveComment($comment); //var_dump($zip-&amp;gt;getArchiveComment()); $zip-&amp;gt;close(); " />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E4%BF%AE%E6%94%B9apk%E6%96%87%E4%BB%B6%E7%9A%84comment%E5%AE%9E%E7%8E%B0/" />
@@ -17,7 +17,7 @@ $comment = &amp;#39;123测试&amp;#39;; $file = fopen(&amp;#39;R:\1.apk&amp;#39;
 
     <title>
         
-            PHP修改apk文件的comment实现 :: 天心流水的博客  — A simple theme for Hugo
+            PHP修改apk文件的comment实现 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

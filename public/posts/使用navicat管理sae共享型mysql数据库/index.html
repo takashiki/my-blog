@@ -11,7 +11,7 @@ Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更�
 然后对该文件的以下内容进行修改，大约在193行左右：
 $hs = $_POST[&amp;#34;host&amp;#34;]; if( $_POST[&amp;#34;port&amp;#34;] ) $hs .= &amp;#34;:&amp;#34;.$_POST[&amp;#34;port&amp;#34;]; $conn = mysql_connect($hs, $_POST[&amp;#34;login&amp;#34;], $_POST[&amp;#34;password&amp;#34;]); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0) &amp;amp;&amp;amp; ( $_POST[&amp;#34;db&amp;#34;] != &amp;#34;&amp;#34; )) { $res = mysql_select_db( $_POST[&amp;#34;db&amp;#34;], $conn); $errno_c = mysql_errno(); } 修改为：
 $username = &amp;#39;yourusername&amp;#39;; $password = &amp;#39;yourpassword&amp;#39;; if ($_POST[&amp;#34;login&amp;#34;] == $username &amp;amp;&amp;amp; $_POST[&amp;#34;password&amp;#34;] == $password) { $hs = SAE_MYSQL_HOST_M . &amp;#39;:&amp;#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&amp;#34;Authentication failed&amp;#34;); exit(); } 注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8navicat%E7%AE%A1%E7%90%86sae%E5%85%B1%E4%BA%AB%E5%9E%8Bmysql%E6%95%B0%E6%8D%AE%E5%BA%93/" />
@@ -19,7 +19,7 @@ $username = &amp;#39;yourusername&amp;#39;; $password = &amp;#39;yourpassword&am
 
     <title>
         
-            使用Navicat管理Sae共享型Mysql数据库 :: 天心流水的博客  — A simple theme for Hugo
+            使用Navicat管理Sae共享型Mysql数据库 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

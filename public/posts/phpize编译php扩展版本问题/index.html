@@ -9,7 +9,7 @@
 NOTICE: PHP message: PHP Warning: PHP Startup: amqp: Unable to initialize module Module compiled with module API=20121212 PHP compiled with module API=20131226 These options need to match in Unknown on line 0 之前也遇到过类似的问题，原因是ubuntu自带了低版本的php，而我平时使用的php版本则为高版本的。
 遇到这个情况也比较好解决，只要在编译命令里带上高版本phpize目录及php-config文件目录即可，对于我的情况即将命令改为类似以下形式：
 /usr/local/php/bin/phpize &amp;amp;&amp;amp; ./configure --with-amqp --with-php-config=/usr/local/php/bin/php-config &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install 注意编译之前需要删除上一次编译时make生成的文件，可能还要执行phpize -clean命令，否则即使修改了命令行中的路径也不会有效果。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/phpize%E7%BC%96%E8%AF%91php%E6%89%A9%E5%B1%95%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" />
@@ -17,7 +17,7 @@ NOTICE: PHP message: PHP Warning: PHP Startup: amqp: Unable to initialize module
 
     <title>
         
-            phpize编译php扩展版本问题 :: 天心流水的博客  — A simple theme for Hugo
+            phpize编译php扩展版本问题 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

@@ -8,7 +8,7 @@
 <meta name="description" content="前一段时间看见有网友分享的php抓取百度贴吧图片的代码http://www.oschina.net/code/snippet_1023084_19836，这段代码对我现在在写的一个页面帮助很大。 不过这段代码中是用正则匹配出json数据中的图片id的，感觉效率不如直接解析json数据来的高，于是自己修改了一下，分享给大家。 [php]&amp;lt;?php @set_time_limit(10); //贴吧名称 $tbname = &amp;ldquo;mugen&amp;rdquo;; //相册ID $tid = &amp;ldquo;2134897418&amp;rdquo;; //图册页url模版 $galleryurltpl = &amp;ldquo;http://tieba.baidu.com/photo/bw/picture/guide?kw=%s&amp;amp;tid=%s&amp;quot;; //本地的目录 $savepath = &amp;ldquo;R:/images/&amp;quot;; //帖子子文件夹 $filedir = $savepath.$tid; //图片文件 $filenametpl = $filedir.&amp;quot;/%s.jpg&amp;rdquo;; //图册页url $galleryurl = sprintf($galleryurltpl, $tbname, $tid);
 //返回的json数据 $retjson = file_get_contents($galleryurl); $retarray = json_decode($retjson, true); //图片列表 $piclist = $retarray[&amp;lsquo;data&amp;rsquo;][&amp;lsquo;pic_list&amp;rsquo;];
 //目录是否存在 if(!is_dir($filedir)) mkdir($filedir); foreach($piclist as $pic){ $pic_id = $pic[&amp;lsquo;img&amp;rsquo;][&amp;lsquo;original&amp;rsquo;][&amp;lsquo;id&amp;rsquo;]; $url = &amp;ldquo;http://imgsrc.baidu.com/forum/pic/item/&amp;quot;.$pic_id.&amp;quot;.jpg&amp;quot;; $filename = sprintf($filenametpl, $pic_id); //下载图片 $imagebin = file_get_contents($url);	//保存图片 file_put_contents($filename,$imagebin); } ?" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E6%8A%93%E5%8F%96%E7%99%BE%E5%BA%A6%E8%B4%B4%E5%90%A7%E6%8C%87%E5%AE%9A%E7%9B%B8%E5%86%8C%E5%9B%BE%E7%89%87%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%BB%A3%E7%A0%81/" />
@@ -16,7 +16,7 @@
 
     <title>
         
-            抓取百度贴吧指定相册图片到本地的代码 :: 天心流水的博客  — A simple theme for Hugo
+            抓取百度贴吧指定相册图片到本地的代码 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

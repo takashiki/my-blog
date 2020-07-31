@@ -16,7 +16,7 @@
 在此基础上我们可以做一些微小的改良来得到更短的链接，比如把 10 进制的 ID 转换成 16 进制，或者 a-z A-Z 0-9 这些字符组成的 62 进制，此时在数字比较大的时候我们得到的短网址就会类似 xx.xx/Ad3Ef。
 上面一步完成后得到的地址看上去就和目前常见的短网址非常相似了，但这种直接暴露 ID 的方式会产生安全上的问题，别有用心的人发现短网址的规律之后可以很轻易地遍历出整个系统中存储的所有长网址了。这就意味着可能会被人直接拖库。
 文中最初提到的 hashids 则是解决这个问题的一个极佳方案。它提供一种能把任意正整数转换为指定位数字符串的可逆算法，基于 salt 安全性也有保障。并且虽然它名字中含有 hash，但实际生成的字符串不会发生碰撞，当数字过大无法用指定位数字符串表示的时候会自动增加一位。" />
-<meta name="keywords" content=", 架构, 短网址" />
+<meta name="keywords" content="技术,日常,碎碎念, 架构, 短网址" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E7%9F%AD%E7%BD%91%E5%9D%80%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/" />
@@ -24,7 +24,7 @@
 
     <title>
         
-            短网址系统设计思路 :: 天心流水的博客  — A simple theme for Hugo
+            短网址系统设计思路 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

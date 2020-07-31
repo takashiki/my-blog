@@ -9,7 +9,7 @@
 参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&amp;lsquo;360&amp;rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&amp;#39;Y-m-d&amp;#39;, strtotime(&amp;#39;-1 month&amp;#39;, strtotime(&amp;#39;2017-07-31&amp;#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
 PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php-%E5%8F%8D%E7%9B%B4ren%E8%A7%89lei%E7%9A%84%E5%9D%91%E8%AE%B0%E5%BD%95/" />
@@ -17,7 +17,7 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
 
     <title>
         
-            PHP 反直(ren)觉(lei)的坑记录 :: 天心流水的博客  — A simple theme for Hugo
+            PHP 反直(ren)觉(lei)的坑记录 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

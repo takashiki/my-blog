@@ -10,7 +10,7 @@
 参考文档：https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997
 具体步骤和命令如下：
 # 创建一个空文件，具体大小的话对于小内存机器建议为内存的两倍 (例子中 1K * 4M = 4 GiB). sudo mkdir -v /var/cache/swap cd /var/cache/swap sudo dd if=/dev/zero of=swapfile bs=1K count=4M sudo chmod 600 swapfile # 将新建的文件转换为 swap 文件. sudo mkswap swapfile # 开启 swap. sudo swapon swapfile # 通过 swapon 或者 top 命令进行验证: swapon -s # 或者 top -bn1 | grep -i swap # 会显示类似信息: KiB Swap: 4194300 total, 4194300 free # 禁用 swap 时可以使用 sudo swapoff swapfile." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/ubuntu-%E6%B7%BB%E5%8A%A0-swap-%E5%88%86%E5%8C%BA/" />
@@ -18,7 +18,7 @@
 
     <title>
         
-            Ubuntu 添加 swap 分区 :: 天心流水的博客  — A simple theme for Hugo
+            Ubuntu 添加 swap 分区 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

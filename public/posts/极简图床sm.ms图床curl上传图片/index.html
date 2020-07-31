@@ -8,7 +8,7 @@
 <meta name="description" content="极简图床是一个基于七牛的图床程序，使用方便、界面简洁美观，美中不足就是没有开放api，目前代码也没有开源。为了方便的在程序中上传图片至极简图床，我写了一段代码用curl来模拟上传图片，供大家参考：
 &amp;lt;?php $data = base64_encode(file_get_contents(&amp;#39;test.jpg&amp;#39;)); $ch = curl_init(&amp;#39;http://yotuku.cn/upload?name=&amp;#39;); curl_setopt($ch, CURLOPT_CUSTOMREQUEST, &amp;#34;POST&amp;#34;); curl_setopt($ch, CURLOPT_POSTFIELDS, $data); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_HTTPHEADER, array( &amp;#39;Content-Type: text/plain&amp;#39;, &amp;#39;Content-Length: &amp;#39; . strlen($data)) ); $result = curl_exec($ch); echo $result; sm.ms是vps.to、shadowsocks.com等站的站长，拥有t.tt、s.how等神域名的人建的一个图床，支持全站https，下面是curl上传图片至该站的代码：
 &amp;lt;?php $url = &amp;#39;https://sm.ms/index.php?act=upload&amp;#39;; $image = curl_file_create(realpath(&amp;#39;test.jpg&amp;#39;), &amp;#39;image/jpg&amp;#39;, &amp;#39;test.jpg&amp;#39;); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_POST, true); curl_setopt($ch, CURLOPT_POSTFIELDS, [&amp;#39;smfile&amp;#39; =&amp;gt; $image]); $data = curl_exec($ch); curl_close($ch); echo $data; " />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E6%9E%81%E7%AE%80%E5%9B%BE%E5%BA%8Asm.ms%E5%9B%BE%E5%BA%8Acurl%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" />
@@ -16,7 +16,7 @@
 
     <title>
         
-            极简图床、sm.ms图床curl上传图片 :: 天心流水的博客  — A simple theme for Hugo
+            极简图床、sm.ms图床curl上传图片 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

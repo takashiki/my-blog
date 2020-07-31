@@ -13,7 +13,7 @@ cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync �
 gs-server /set-admin=&amp;#34;gs-userid:gs-password:system-userid&amp;#34; gs-server 然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
 [program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&amp;#39;/root&amp;#39; 重启supervisor并查看任务运行状态：
 service supervisor restart supervisorctl status 之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8goodsync%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%8F%8C%E5%90%91%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5/" />
@@ -21,7 +21,7 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 
     <title>
         
-            使用GoodSync实现文件双向实时同步 :: 天心流水的博客  — A simple theme for Hugo
+            使用GoodSync实现文件双向实时同步 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

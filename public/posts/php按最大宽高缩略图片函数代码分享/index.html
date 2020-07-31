@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="很简单的按照最大宽高来缩略图片的代码，方便新手和懒得自己写的人。 [php]function thumb($imagefile, $maxwidth, $maxheight) { $dim = getimagesize($imagefile); $width = $dim[0];	//原图宽度 $height = $dim[1];	//原图高度 $original = imagecreatefromjpeg($imagefile);
 $thcrown = $maxwidth/$maxheight;	//缩略图最大宽度与最大高度比$crown = $width/$height;	//原图宽高比if($crown/$thcrown &amp;gt;= 1){$thumbWidth = $maxwidth;$thumbHeight = $maxwidth/$crown;} else {$thumbHeight = $maxheight;$thumbWidth = $maxheight*$crown;}$thumb = imagecreatetruecolor($thumbWidth, $thumbHeight);imagecopyresampled($thumb, $original, 0, 0, 0, 0, $thumbWidth, $thumbHeight, $width, $height);return $thumb; }[/php]" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E6%8C%89%E6%9C%80%E5%A4%A7%E5%AE%BD%E9%AB%98%E7%BC%A9%E7%95%A5%E5%9B%BE%E7%89%87%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/" />
@@ -15,7 +15,7 @@ $thcrown = $maxwidth/$maxheight;	//缩略图最大宽度与最大高度比$crow
 
     <title>
         
-            PHP按最大宽高缩略图片函数代码分享 :: 天心流水的博客  — A simple theme for Hugo
+            PHP按最大宽高缩略图片函数代码分享 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

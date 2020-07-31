@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="最近的一个项目在实现前后端分离时，由于调用域名与接口域名可能不相同，所以使用了jsonp格式进行返回，但是在开发环境上开了debug的情况下遇到500错误时竟然没有任何错误显示，也即response body是空的，这让我很困扰。
 通过查看 Yii 写的文件日志发现，这是 Yii 在默认的 ErrorHandler 中没有对 jsonp 格式返回进行特殊处理造成的，于是便在 github 上提了一个 issue。从回复来看，一年前就有人修改了jsonp的formatter的实现，不过由于会破坏兼容性，所以一直没正式接收。话说原本的jsonp实现方式实在是太坑了，和其他几种Formatter的实现不一致，使用起来很不方便，希望Yii官方早点改掉吧。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/yii2-%E4%BD%BF%E7%94%A8jsonp%E6%A0%BC%E5%BC%8Fresponse%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/" />
@@ -15,7 +15,7 @@
 
     <title>
         
-            Yii2 使用jsonp格式response时遇到的一个坑 :: 天心流水的博客  — A simple theme for Hugo
+            Yii2 使用jsonp格式response时遇到的一个坑 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

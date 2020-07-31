@@ -10,7 +10,7 @@
 Git@OSC的push钩子的详细说明参见HOOK钩子，钩子会post过去的数据格式如下
 {password: &amp;quot;password&amp;quot;,push_data: {before: &amp;quot;fc85635faaf34c6f5104874bce9856c03be9b311&amp;quot;,after: &amp;quot;40dea1b0efb0a3d3f71e8c302d642fe3588c254c&amp;quot;,ref: &amp;quot;refs/heads/master&amp;quot;,user_id: 用户id,user_name: &amp;quot;用户名&amp;quot;,repository: {name: &amp;quot;Test&amp;quot;,url: &amp;quot;git@git.oschina.net:takashiki/Test.git&amp;quot;,description: &amp;quot;描述&amp;quot;,homepage: &amp;quot;http://git.oschina.net/takashiki/Test&amp;quot;},commits: [{id: &amp;quot;40dea1b0efb0a3d3f71e8c302d642fe3588c254c&amp;quot;,message: &amp;quot;test&amp;quot;,timestamp: &amp;quot;2015-07-21T16:38:58&#43;08:00&amp;quot;,url: &amp;quot;http://git.oschina.net/takashiki/Test/commit/40dea1b0efb0a3d3f71e8c302d642fe3588c254c&amp;quot;,author: {name: &amp;quot;username&amp;quot;,email: &amp;quot;username@xxx.com&amp;quot;}}],total_commits_count: 1}}每次push时，钩子都会访问我们设定的地址，这样只要我们写一个自动pull代码的脚本就可以实现自动发布了。
 &amp;lt;?php header(&amp;#34;Content-type: text/html; charset=utf-8&amp;#34;); if (! isset($_REQUEST[&amp;#39;hook&amp;#39;])) die (&amp;#39;非法请求&amp;#39;); $config = require(&amp;#39;config.php&amp;#39;); //hook内容详见http://git.oschina.net/oschina/git-osc/wikis/HOOK%E9%92%A9%E5%AD%90 $hook = json_decode($_REQUEST[&amp;#34;hook&amp;#34;], true); //$hook = json_decode(file_get_contents(&amp;#39;request." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E9%80%9A%E8%BF%87gitosc%E7%9A%84push%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" />
@@ -18,7 +18,7 @@ Git@OSC的push钩子的详细说明参见HOOK钩子，钩子会post过去的数�
 
     <title>
         
-            通过git@osc的push钩子实现自动部署 :: 天心流水的博客  — A simple theme for Hugo
+            通过git@osc的push钩子实现自动部署 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

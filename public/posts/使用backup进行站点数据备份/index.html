@@ -12,7 +12,7 @@ yum install ruby ruby-devel 然后安装backup和其扩展backup2qiniu：
 gem install backup gem install backup2qiniu 安装完成后创建配置文件：
 backup generate:config backup generate:model --trigger=backup2qiniu 修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
 require &amp;#39;rubygems&amp;#39; gem &amp;#39;backup2qiniu&amp;#39; require &amp;#39;backup2qiniu&amp;#39; Backup::Model.new(:backup2qiniu, &amp;#39;backup vps data to qiniu&amp;#39;) do database MySQL do |db| db.name = &amp;#39;xxx&amp;#39; db.username = &amp;#39;root&amp;#39; db.password = &amp;#39;xxx&amp;#39; db.host = &amp;#39;localhost&amp;#39; db.port = 3306 db.socket = &amp;#39;/tmp/mysql.sock&amp;#39; end archive :web do |archive| archive.use_sudo archive.root &amp;#39;/data&amp;#39; archive." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8backup%E8%BF%9B%E8%A1%8C%E7%AB%99%E7%82%B9%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" />
@@ -20,7 +20,7 @@ require &amp;#39;rubygems&amp;#39; gem &amp;#39;backup2qiniu&amp;#39; require &a
 
     <title>
         
-            使用Backup进行站点数据备份 :: 天心流水的博客  — A simple theme for Hugo
+            使用Backup进行站点数据备份 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

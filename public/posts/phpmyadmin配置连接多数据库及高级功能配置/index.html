@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="配置多数据库连接很简单，将phpmyadmin的config.inc.php中原本的服务器连接部分的内容修改为：
 $cfg[&amp;#39;AllowArbitraryServer&amp;#39;] = true; $db_servers = array( 1 =&amp;gt; array( &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;localhost&amp;#39;, &amp;#39;user&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;123456&amp;#39;, &amp;#39;port&amp;#39; =&amp;gt; &amp;#39;3306&amp;#39;, ), 2 =&amp;gt; array( &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;192.168.65.168&amp;#39;, &amp;#39;user&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;123456&amp;#39;, &amp;#39;port&amp;#39; =&amp;gt; &amp;#39;3306&amp;#39;, ), ); for ($i = 1; $i &amp;lt;= count($db_servers); $i&#43;&#43;) { $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;auth_type&amp;#39;] = &amp;#39;cookie&amp;#39;; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;user&amp;#39;] = $db_servers[$i][&amp;#39;user&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;password&amp;#39;] = $db_servers[$i][&amp;#39;password&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;host&amp;#39;] = $db_servers[$i][&amp;#39;host&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;port&amp;#39;] = $db_servers[$i][&amp;#39;port&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;connect_type&amp;#39;] = &amp;#39;tcp&amp;#39;; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;compress&amp;#39;] = false; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;AllowNoPassword&amp;#39;] = false; } 这样就可以在登录时选择服务器了。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/phpmyadmin%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5%E5%A4%9A%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%8A%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE/" />
@@ -15,7 +15,7 @@ $cfg[&amp;#39;AllowArbitraryServer&amp;#39;] = true; $db_servers = array( 1 =&am
 
     <title>
         
-            phpmyadmin配置连接多数据库及高级功能配置 :: 天心流水的博客  — A simple theme for Hugo
+            phpmyadmin配置连接多数据库及高级功能配置 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

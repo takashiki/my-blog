@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="PHP 5.4 数组短标签 $arr = array(1, 2, 3); $arr = [1, 2, 3]; 函数返回值数组访问解析 function get_arr() { return [ &amp;#39;a&amp;#39; =&amp;gt; 1, &amp;#39;b&amp;#39; =&amp;gt; 2, ]; } echo get_arr()[&amp;#39;a&amp;#39;]; 在实例化时访问类成员 $query = new Query(); $news = $query-&amp;gt;from(&amp;#39;news&amp;#39;)-&amp;gt;all(); $news = (new Query())-&amp;gt;from(&amp;#39;news&amp;#39;)-&amp;gt;all(); traits 场景：soft delete等
 trait SoftDeleteTrait { public function delete() { $this-&amp;gt;status = Status::DELETED; return $this-&amp;gt;save(); } } class News extends \yii\db\ActiveRecord { use SoftDeleteTrait; } $news = News::findOne($condition); $news-&amp;gt;delete(); 内置的http服务器 php -S localhost:8000 实例：https://github." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E6%96%B0%E7%89%B9%E6%80%A7%E5%86%85%E9%83%A8%E5%88%86%E4%BA%AB%E5%A4%A7%E7%BA%B2/" />
@@ -15,7 +15,7 @@ trait SoftDeleteTrait { public function delete() { $this-&amp;gt;status = Status
 
     <title>
         
-            PHP新特性内部分享大纲 :: 天心流水的博客  — A simple theme for Hugo
+            PHP新特性内部分享大纲 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

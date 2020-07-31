@@ -15,7 +15,7 @@ Unix 体系架构 首先说到 IO，就不得不先说一说 Unix 的体系架�
 简单的来说，同步是指在代码中包含 IO 操作的时候，代码是顺序执行的，IO 操作完成后，代码才会继续往下执行，而异步则是指发起 IO 操作后代码会继续往下执行，等到 IO 操作完成后，内核通过发送信号通知或者执行回调函数的方式让程序继续执行。异步需要多线程、多 CPU 或者 非阻塞 IO 的支持。
 阻塞和非阻塞 阻塞是指 I/O 操作需要彻底完成后才返回到用户空间，在此之前调用线程或进程会被操作系统挂起。 非阻塞是指 I/O 操作被调用后立即返回给用户一个状态值，无需等到 I/O 操作彻底完成，而不会挂起调用线程或进程。 阻塞（Blocking）和非阻塞（Non-blocking）的概念描述的是进程或线程调用内核 I/O 操作的结果。
 虽然乍一看阻塞非阻塞和同步异步有点相似，但是实际上这两组概念是完全不同的，它们之间也并没有什么必然联系。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E4%BB%8E-io-%E5%88%B0%E5%8D%8F%E7%A8%8B/" />
@@ -23,7 +23,7 @@ Unix 体系架构 首先说到 IO，就不得不先说一说 Unix 的体系架�
 
     <title>
         
-            从 IO 到协程 :: 天心流水的博客  — A simple theme for Hugo
+            从 IO 到协程 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

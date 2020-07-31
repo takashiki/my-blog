@@ -8,7 +8,7 @@
 <meta name="description" content="PHP官方的手册里也记载了该问题及其解决方法：http://php.net/manual/zh/function.pcntl-fork.php#70721。
 产生该问题的原因就是子进程会关闭父进程的数据库连接，所以需要在子进程中重新进行数据库连接，官方文档里给出的示例代码如下：
 // Create the MySQL connection $db = mysql_connect($server, $username, $password); $pid = pcntl_fork(); if ( $pid == -1 ) { // Fork failed exit(1); } else if ( $pid ) { // We are the parent // Can no longer use $db because it will be closed by the child // Instead, make a new MySQL connection for ourselves to work with $db = mysql_connect($server, $username, $password, true); } else { // We are the child // Do something with the inherited connection here // It will get closed upon exit exit(0); 如果是使用框架的话，也需要进行类似的操作，比如说Yii1中可以这么写，参考链接http://www." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E4%B8%AD%E4%BD%BF%E7%94%A8pcntl%E6%89%A9%E5%B1%95%E6%97%B6mysql%E8%BF%9E%E6%8E%A5%E5%85%B3%E9%97%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
@@ -16,7 +16,7 @@
 
     <title>
         
-            PHP中使用pcntl扩展时Mysql连接关闭的解决方案 :: 天心流水的博客  — A simple theme for Hugo
+            PHP中使用pcntl扩展时Mysql连接关闭的解决方案 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

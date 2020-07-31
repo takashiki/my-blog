@@ -10,7 +10,7 @@ SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1 �
 CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1); 有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
 CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`); 这样删除重复字段就很容易了：
 DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/mysql%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95/" />
@@ -18,7 +18,7 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
 
     <title>
         
-            MySQL大数据量表中删除重复记录 :: 天心流水的博客  — A simple theme for Hugo
+            MySQL大数据量表中删除重复记录 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

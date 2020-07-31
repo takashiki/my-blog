@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]//$count为总条目数，$page为当前页码，$page_size为每页显示条目数function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
 $init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页码$page=(empty($page)||$page&amp;lt;0)?1:$page;//获取当前页url$url = $_SERVER[&#39;REQUEST_URI&#39;];//去掉url中原先的page参数以便加入新的page参数$parsedurl=parse_url($url);$url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;;if($url_query != &#39;&#39;){$url_query = preg_replace(&amp;quot;/(^|&amp;amp;)page=$page/&amp;quot;,&#39;&#39;,$url_query);$url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url);if($url_query != &#39;&#39;){$url .= &#39;&amp;amp;&#39;;}} else {$url .= &#39;?&#39;;}//分页功能代码$page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数$pageoffset = ($page_len-1)/2; //页码个数左右偏移量$navs=&#39;&#39;;if($pages != 0){if($page!=1){$navs.=&amp;quot;&amp;lt;a href=\&amp;quot;&amp;quot;.$url.&amp;quot;page=1\&amp;quot;&amp;gt;首页&amp;lt;/a&amp;gt; &amp;quot;;	//第一页$navs.=&amp;quot;&amp;lt;a href=\&amp;quot;&amp;quot;." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E5%88%86%E9%A1%B5%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/" />
@@ -15,7 +15,7 @@ $init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页�
 
     <title>
         
-            PHP分页函数代码分享 :: 天心流水的博客  — A simple theme for Hugo
+            PHP分页函数代码分享 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

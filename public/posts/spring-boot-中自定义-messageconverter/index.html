@@ -11,7 +11,7 @@
 后来参考了一篇文章，看了下 RequestMappingHandlerAdapter 类的源码，大概知道了 Spring MVC 消息格式自动转化的原理，然后顺着这个思路找了下自定义 MessageConverter 的方法。
 最终的实现方案就是写一个 WebConfiguration 类，在 extendMessageConverters 方法中把其他 converter 都清掉，只留一个 json 的 converter，虽然也不算很优雅。示例代码如下：
 package com.demo; import org.springframework.context.annotation.Configuration; import org.springframework.http.converter.HttpMessageConverter; import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; import org.springframework.web.servlet.config.annotation.WebMvcConfigurer; import java.util.List; /** * @author zhangzhoufei */ @Configuration public class WebConfiguration implements WebMvcConfigurer { @Override public void extendMessageConverters(List&amp;lt;HttpMessageConverter&amp;lt;?" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/spring-boot-%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89-messageconverter/" />
@@ -19,7 +19,7 @@ package com.demo; import org.springframework.context.annotation.Configuration; i
 
     <title>
         
-            Spring Boot 中自定义 MessageConverter :: 天心流水的博客  — A simple theme for Hugo
+            Spring Boot 中自定义 MessageConverter :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

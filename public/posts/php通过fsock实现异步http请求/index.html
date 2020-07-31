@@ -8,7 +8,7 @@
 <meta name="description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
 function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&amp;#39;host&amp;#39;], isset($parts[&amp;#39;port&amp;#39;]) ? $parts[&amp;#39;port&amp;#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&amp;#39;path&amp;#39;] . (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;&amp;#39; : &amp;#34;?{$parts[&amp;#39;query&amp;#39;]}&amp;#34;); $location .= ($type == &amp;#39;GET&amp;#39; &amp;amp;&amp;amp; !empty($query)) ? (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;?&amp;#39; : &amp;#39;&amp;amp;&amp;#39;).$query : &amp;#39;&amp;#39;; $out = &amp;#34;{$type} {$location} HTTP/1.1\r\n&amp;#34;; $out .= &amp;#34;Host: {$parts[&amp;#39;host&amp;#39;]}\r\n&amp;#34;; $out .= &amp;#34;Connection: Close\r\n\r\n&amp;#34;; $out ." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E9%80%9A%E8%BF%87fsock%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5http%E8%AF%B7%E6%B1%82/" />
@@ -16,7 +16,7 @@ function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { 
 
     <title>
         
-            PHP通过fsock实现异步HTTP请求 :: 天心流水的博客  — A simple theme for Hugo
+            PHP通过fsock实现异步HTTP请求 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

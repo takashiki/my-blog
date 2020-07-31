@@ -4,6 +4,15 @@ languageCode = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[author]
+  name = "天心流水"
+
+[blackfriday]
+  hrefTargetBlank = true
+
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
@@ -30,8 +39,8 @@ paginate     = 10
 
   [languages.en]
     title = "天心流水的博客"
-    subtitle = "A simple theme for Hugo"
-    keywords = ""
+    subtitle = "每天进步一点点"
+    keywords = "技术,日常,碎碎念"
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "阅读更多"
 
@@ -39,11 +48,15 @@ paginate     = 10
       logoText = "首页"
       logoHomeLink = "/"
 
-
+[menu]
   [[menu.main]]
     identifier = "blog"
     name       = "文章"
-    url        = "/posts"
+    url        = "/posts/"
+  [[menu.main]]
+    identifier = "search"
+    name       = "搜索"
+    url        = "/search"
 
   [[params.social]]
     name = "email"

@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
 /** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &amp;#34;rb&amp;#34; ) ) return FALSE; $FILE = unpack( &amp;#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&amp;#34;, fread( $f1, 14 ) ); if ( $FILE[&amp;#39;file_type&amp;#39;] != 19778 ) return FALSE; $BMP = unpack( &amp;#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&amp;#39; ." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E6%96%B0%E6%89%8B%E5%AD%A6web%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0%E5%8D%81%E4%BA%8Cbmp%E8%BD%ACgd%E5%87%BD%E6%95%B0/" />
@@ -15,7 +15,7 @@
 
     <title>
         
-            新手学web开发杂记（十二）——bmp转GD函数 :: 天心流水的博客  — A simple theme for Hugo
+            新手学web开发杂记（十二）——bmp转GD函数 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

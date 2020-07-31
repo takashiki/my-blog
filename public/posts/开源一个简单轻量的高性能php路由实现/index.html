@@ -10,7 +10,7 @@ Git@OSC:http://git.oschina.net/takashiki/cdo
 使用很简单，不过只支持 pathinfo 模式，贴一段示例代码：
 $do = new \Mis\Cdo(); $do-&amp;gt;get(&amp;#39;/&amp;#39;, function () { echo &amp;#39;hello world&amp;#39;; }); $do-&amp;gt;post(&amp;#39;/&amp;#39;, function () { $name = isset($_POST[&amp;#39;name&amp;#39;]) ? $_POST[&amp;#39;name&amp;#39;] : &amp;#39;world&amp;#39;; echo &amp;#34;hello {$name}&amp;#34;; }); $do-&amp;gt;any(&amp;#39;/(\d&#43;)&amp;#39;, function ($id) { echo $id; }); /** * When using named subpattern, order of parameters is not matter. * eg. /book/2 */ $do-&amp;gt;any(&amp;#39;/(?P&amp;lt;type&amp;gt;\w&#43;)/(?P&amp;lt;page&amp;gt;\d&#43;)&amp;#39;, function ($page, $type) { echo $type.&amp;#39;&amp;lt;br&amp;gt;&amp;#39;.$page; }); $do-&amp;gt;run(); 或者：
 use Mis\Cdo; Cdo::get(&amp;#39;/&amp;#39;, function () { echo &amp;#39;hello world&amp;#39;; }); Cdo::run(); 写这个项目的初衷是前断时间在写一个小项目时发现现在绝大多数 PHP 的路由都不足够轻量，在只有各位数的路由时 QPS 也只能达到不使用路由时的一半左右，于是便自己写了一个。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E5%BC%80%E6%BA%90%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E8%BD%BB%E9%87%8F%E7%9A%84%E9%AB%98%E6%80%A7%E8%83%BDphp%E8%B7%AF%E7%94%B1%E5%AE%9E%E7%8E%B0/" />
@@ -18,7 +18,7 @@ use Mis\Cdo; Cdo::get(&amp;#39;/&amp;#39;, function () { echo &amp;#39;hello wor
 
     <title>
         
-            开源一个简单轻量的高性能PHP路由实现 :: 天心流水的博客  — A simple theme for Hugo
+            开源一个简单轻量的高性能PHP路由实现 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

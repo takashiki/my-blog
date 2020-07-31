@@ -7,7 +7,7 @@
 <meta name="author" content="">
 <meta name="description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&amp;lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic;	//原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width;	//原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
 function __construct($file){$this-&amp;gt;orpic = $file;$infos = getimagesize($file);$this-&amp;gt;width = $infos[0];$this-&amp;gt;height = $infos[1];$this-&amp;gt;type = $infos[2];}//根据用户所指定最大宽高来计算缩略图尺寸function cal_size($maxwidth, $maxheight){//缩略图最大宽度与最大高度比$thcrown = $maxwidth/$maxheight; //原图宽高比$crown = $this-&amp;gt;width/$this-&amp;gt;height; if($crown/$thcrown &amp;gt;= 1){$this-&amp;gt;thwidth = $maxwidth;$this-&amp;gt;thheight = $maxwidth/$crown;} else {$this-&amp;gt;thheight = $maxheight;$this-&amp;gt;thwidth = $maxheight*$crown;}}function init(){switch($this-&amp;gt;type){case 1:	//GIF$this-&amp;gt;tempic = imagecreatefromgif($this-&amp;gt;orpic);break;case 2:	//JPG$this-&amp;gt;tempic = imagecreatefromjpeg($this-&amp;gt;orpic);break;case 3:	//PNG$this-&amp;gt;tempic = imagecreatefrompng($this-&amp;gt;orpic);break;default:echo &#39;暂不支持该图片格式&#39;;}}function resize($maxwidth, $maxheight){//初始化图像$this-&amp;gt;init();//计算出缩略图尺寸$this-&amp;gt;cal_size($maxwidth, $maxheight);$this-&amp;gt;thpic = imagecreatetruecolor($this-&amp;gt;thwidth, $this-&amp;gt;thheight);imagecopyresampled($this-&amp;gt;thpic, $this-&amp;gt;tempic, 0, 0, 0 ,0, $this-&amp;gt;thwidth, $this-&amp;gt;thheight, $this-&amp;gt;width, $this-&amp;gt;height);}function save($filename, $type){switch($type){case &#39;jpg&#39;:case &#39;jpeg&#39;:imagejpeg($this-&amp;gt;thpic, $filename);break;case &#39;png&#39;:imagepng($$this-&amp;gt;thpic, $filename);break;case &#39;gif&#39;:imagegif($$this-&amp;gt;thpic, $filename);break;default:echo &#39;暂不支持您所选择的格式&#39;;}} } ?" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/php%E6%8C%89%E6%9C%80%E5%A4%A7%E5%AE%BD%E9%AB%98%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E5%9B%BE%E7%89%87%E7%B1%BB/" />
@@ -15,7 +15,7 @@ function __construct($file){$this-&amp;gt;orpic = $file;$infos = getimagesize(
 
     <title>
         
-            PHP按最大宽高等比例缩放图片类 :: 天心流水的博客  — A simple theme for Hugo
+            PHP按最大宽高等比例缩放图片类 :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

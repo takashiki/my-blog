@@ -12,7 +12,7 @@
  docker pull 的时候必须指定镜像版本号（也就是 .，见https://hub.docker.com/r/jetbrains/upsource/tags/），不然找不到 在跑容器之前，记得把映射的那几个目录按照教程上 chown 一下 配置 base url 时可以先按照能检测通过的配，后面可以通过修改 conf/internal/bundle.properties 来修改 如果提示某个目录不为空，无法下一步的话，可以进目录看看有没有隐藏文件，如果有就全删了  不出意外的话应该就能正常跑起来了。
 使用 nginx 配置反代 由于 Upsource 使用了 websocket，所以常规的反代配置可能有问题，直接参考官方文档就 ok 了，见 https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration。
 server { listen 2222; server_name localhost; location / { proxy_set_header X-Forwarded-Host $http_host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_http_version 1." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8-docker-%E9%83%A8%E7%BD%B2-upsource-/" />
@@ -20,7 +20,7 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
 
     <title>
         
-            使用 Docker 部署 Upsource  :: 天心流水的博客  — A simple theme for Hugo
+            使用 Docker 部署 Upsource  :: 天心流水的博客  — 每天进步一点点
         
     </title>
 

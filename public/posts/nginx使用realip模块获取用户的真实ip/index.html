@@ -9,7 +9,7 @@
 首先需要确认安装nginx的时候加上了realip模块：
  ./configure --with-http_realip_modulenginx配置示例：
  server {listen 80;server_name www.test.com;index index.php index.html index.html;root /data/site/www.test.com;access_log /data/wwwlogs/test.access.log main;set_real_ip_from 192.168.50.0/24;set_real_ip_from 61.22.22.22;set_real_ip_from 121.207.33.33;set_real_ip_from 127.0.0.1;real_ip_header X-Forwarded-For;real_ip_recursive on;fastcgi_pass unix:/var/run/phpfpm.sock;fastcgi_index index.php;include fastcgi.conf;}我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://qxzzf.com/posts/nginx%E4%BD%BF%E7%94%A8realip%E6%A8%A1%E5%9D%97%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9A%84%E7%9C%9F%E5%AE%9Eip/" />
@@ -17,7 +17,7 @@
 
     <title>
         
-            nginx使用realip模块获取用户的真实ip :: 天心流水的博客  — A simple theme for Hugo
+            nginx使用realip模块获取用户的真实ip :: 天心流水的博客  — 每天进步一点点
         
     </title>
 
