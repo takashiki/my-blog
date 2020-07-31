@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
 /** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &amp;#34;rb&amp;#34; ) ) return FALSE; $FILE = unpack( &amp;#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&amp;#34;, fread( $f1, 14 ) ); if ( $FILE[&amp;#39;file_type&amp;#39;] != 19778 ) return FALSE; $BMP = unpack( &amp;#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&amp;#39; ." />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -425,6 +425,8 @@ function imagecreatefrombmp( $filename ) {
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

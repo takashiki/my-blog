@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="Docker 现在是越来越火了，它的出现让很多开发和运维的痛点得到了解决：
  大多数公司配备的开发机是 Windows，在 Windows 上配置开发和本地测试环境是非常无解的，常规虚拟机使用十分麻烦并且无法协作，Win10 的 WSL 目前看来只能当作玩具。 多台开发机或者多人的开发团队的开发环境的同步问题，Vagrant 在一定程度上可以解决开发环境的问题，不过在团队协作方面还是 Docker 这种轻量级的方案更灵活快速，更重要的是 Vagrant 目前来看并不适合用于生产环境，而 Docker 则都能 hold 住，真的是一次配置，到处运行。 开发完成项目进行上线后出现因环境不同而产生的问题，此时可能运维会背锅，不过其实在传统的模式下要想保障开发生产环境的一致需要开发和运维的密切配合，但由于处在两个体系下，往往难以避免地会出现问题，所以之前 DevOps 也很火。而有了 Docker 之后这个问题就很容易解决了，开发交付的时候给出的就是容器，运维只要负责把容器上线就行了，不用关心具体环境。 安装各种应用时配置十分繁琐，编译安装时可能还需要解决依赖问题，第一次安装一个大型应用可能整个一套搞下来一天就过去了，甚至对主机造成一些不可逆的影响。现在大多数常见应用都提供官方 Docker 镜像了，只要 pull 下来改改环境变量，立马就能跑起来，节省了大量时间，也不用担心搞坏主机。  每个人对环境的需求可能都或多或少有些区别，如果简单使用的话推荐 laradock，可以说是 Docker 化的 homestead，对 Docker 有一定了解之后就可以根据自己的需求自己构建一套环境。
 最后开源我自己常用的一套开发环境，后面准备把搭建博客的环境也改成用这套环境来搭建：https://github.com/takashiki/docker-env。
@@ -24,7 +24,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -121,7 +121,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -343,6 +343,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

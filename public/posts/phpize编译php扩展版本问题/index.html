@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="今天在编译php的amqp扩展时遇到一个问题，就是加载扩展时php-fpm报出如下错误：
 NOTICE: PHP message: PHP Warning: PHP Startup: amqp: Unable to initialize module Module compiled with module API=20121212 PHP compiled with module API=20131226 These options need to match in Unknown on line 0 之前也遇到过类似的问题，原因是ubuntu自带了低版本的php，而我平时使用的php版本则为高版本的。
 遇到这个情况也比较好解决，只要在编译命令里带上高版本phpize目录及php-config文件目录即可，对于我的情况即将命令改为类似以下形式：
@@ -23,7 +23,7 @@ NOTICE: PHP message: PHP Warning: PHP Startup: amqp: Unable to initialize module
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -117,7 +117,7 @@ NOTICE: PHP message: PHP Warning: PHP Startup: amqp: Unable to initialize module
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -339,6 +339,8 @@ These options need to match
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

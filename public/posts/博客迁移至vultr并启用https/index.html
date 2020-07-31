@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="SAE现在开始对应用和共享型MyQL收费了，如果应用数比较多，使用SAE的性价比就很低了，于是便重新开始把自己的站点迁移到vps上。之前也试用了很多家的vps，详见http://blog.skyx.in/category/VPS/，最终还是决定使用Vultr东京节点，原因主要有几个，一个是vultr最低价套餐的内存较大一些，一个是vultr东京通过微林中转速度不错（cn3、cn4、hk1的节点都可以），一个是vultr现在有免费的快照，备份方便。
 站点的迁移本身没什么好说的，为了方便部署，我自己写了一个简单的基于git@osc的webhook的部署脚本。
 迁移至vps后终于可以开启https了，我用的是let&amp;rsquo;s encrypt的免费证书，使用的脚本为https://github.com/Neilpang/le，这个脚本十分傻瓜化，可以非常简单地完成证书的申请和更新。
@@ -25,7 +25,7 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -125,7 +125,7 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -342,6 +342,8 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

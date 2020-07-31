@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="最近公司在用 walle ，感觉很不理解为什么一个用 yii2 开发的部署系统对 yii2 这么不友好，每次新项目上线都得配好久，新手得两天左右，总结下来坑如下：
 1.各种文件需要新版发布时保持原样，就得 cp 来 cp 去，尤其使用 yii2-advanced 的人应该深有体会
 2.由于使用了软链，所以开了 opcache 的话新版上线需要 reload php-fpm ，或者其他方式重置 opcache ，原因是 opcache 解析的文件路径是 realpath
@@ -25,7 +25,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -125,7 +125,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -342,6 +342,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="Upsource 是 Jetbrains 推出的一款用于 Code Review 的基于 Web 的系统，功能十分强大，最重要的是和 IDE 全家桶无缝集成，可以直接在 IDE 里进行 Code Review。
 在选择 Upsource 之前我也调研了 Gerrit 和 Phabricator，觉得不太适合当前的团队。这两个工具更适用于强制 Code Review 并且把其作为 CI 的一环的团队使用，这自然是有好处，不过稍微有些繁琐。这两者的具体区别可以参考 https://stackoverflow.com/questions/10545480/gerrit-phabricator-review。
 使用 Docker 部署 使用 Docker 部署 Upsource 可以参考官方的文档 https://www.jetbrains.com/upsource/download/#section=docker。
@@ -26,7 +26,7 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -129,7 +129,7 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -375,6 +375,8 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

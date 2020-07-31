@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="&amp;lt;?php $elemCount = 1000; $repeatCount = 1000000; $vArr = range(1, $elemCount); $kArr = array_flip($vArr); $start = microtime(true); for ($i = 0; $i &amp;lt; $repeatCount; $i&#43;&#43;) { in_array($i, $vArr); } $inArrTime = microtime(true) - $start; echo &amp;#34;in_array:{$inArrTime}&amp;lt;br&amp;gt;&amp;#34;; $start = microtime(true); for ($i = 0; $i &amp;lt; $repeatCount; $i&#43;&#43;) { array_key_exists($i, $kArr); } $keyTime = microtime(true) - $start; echo &amp;#34;array_key_exists:{$keyTime}&amp;lt;br&amp;gt;&amp;#34;; $start = microtime(true); for ($i = 0; $i &amp;lt; $repeatCount; $i&#43;&#43;) { isset($kArr[$i]); } $issetTime = microtime(true) - $start; echo &amp;#34;isset:{$issetTime}&amp;lt;br&amp;gt;&amp;#34;; 测试结果：" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
@@ -20,7 +20,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -105,7 +105,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -347,6 +347,8 @@ isset:0.022069931030273
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

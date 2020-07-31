@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="2018.02.04 更新：
 这周折腾了半天准备用 WSL (Windows Subsystem for Linux) 搭个开发环境，结果发现这个玩意儿虽然出来一段时间了，但是坑还是真的多。
 首先是没有支持 TCP_INFO socket option，参考 php-fpm启动提示Protocol not available (92)该怎么解决呢？，这导致了 php-fpm 监听端口时，日志里会一直打印错误，但是能用，很神奇，而如果 listen 的是 socket 的话，则功能不正常，一直超时。
@@ -32,7 +32,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -153,7 +153,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -388,6 +388,8 @@ PasswordAuthentication yes
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

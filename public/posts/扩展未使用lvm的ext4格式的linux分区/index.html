@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="自用的虚拟机上磁盘空间不够了，在VMWare的配置里给虚拟机的硬盘又加了20G，但是原来的磁盘没有使用 LVM，又是 ext4 格式的分区。如果使用了 Logical Volume Manager（逻辑卷管理）的话，扩展起来就比较方便了，ext3 格式的话就可以直接用 parted 来扩展分区。
 查看磁盘分区信息：
 # 查看分区大小、是否使用了LVM fdisk -l # 查看分区格式 df -hT 对于未使用 LVM 的 ext4 格式的分区，我们只能先把这个分区删除，然后再创建新的分区，分区的删除操作并不会影响磁盘上的数据，操作完成后也不会造成数据的损失。
@@ -23,7 +23,7 @@ fdisk /dev/sda # 使用d命令删除分区 # 使用n命令创建分区，还是�
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -117,7 +117,7 @@ fdisk /dev/sda # 使用d命令删除分区 # 使用n命令创建分区，还是�
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -346,6 +346,8 @@ resize2fs /dev/sda1
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

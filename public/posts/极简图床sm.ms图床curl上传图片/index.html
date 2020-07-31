@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="极简图床是一个基于七牛的图床程序，使用方便、界面简洁美观，美中不足就是没有开放api，目前代码也没有开源。为了方便的在程序中上传图片至极简图床，我写了一段代码用curl来模拟上传图片，供大家参考：
 &amp;lt;?php $data = base64_encode(file_get_contents(&amp;#39;test.jpg&amp;#39;)); $ch = curl_init(&amp;#39;http://yotuku.cn/upload?name=&amp;#39;); curl_setopt($ch, CURLOPT_CUSTOMREQUEST, &amp;#34;POST&amp;#34;); curl_setopt($ch, CURLOPT_POSTFIELDS, $data); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_HTTPHEADER, array( &amp;#39;Content-Type: text/plain&amp;#39;, &amp;#39;Content-Length: &amp;#39; . strlen($data)) ); $result = curl_exec($ch); echo $result; sm.ms是vps.to、shadowsocks.com等站的站长，拥有t.tt、s.how等神域名的人建的一个图床，支持全站https，下面是curl上传图片至该站的代码：
 &amp;lt;?php $url = &amp;#39;https://sm.ms/index.php?act=upload&amp;#39;; $image = curl_file_create(realpath(&amp;#39;test.jpg&amp;#39;), &amp;#39;image/jpg&amp;#39;, &amp;#39;test.jpg&amp;#39;); $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_POST, true); curl_setopt($ch, CURLOPT_POSTFIELDS, [&amp;#39;smfile&amp;#39; =&amp;gt; $image]); $data = curl_exec($ch); curl_close($ch); echo $data; " />
@@ -22,7 +22,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -113,7 +113,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -353,6 +353,8 @@ $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

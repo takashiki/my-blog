@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="前一段时间看见有网友分享的php抓取百度贴吧图片的代码http://www.oschina.net/code/snippet_1023084_19836，这段代码对我现在在写的一个页面帮助很大。 不过这段代码中是用正则匹配出json数据中的图片id的，感觉效率不如直接解析json数据来的高，于是自己修改了一下，分享给大家。 [php]&amp;lt;?php @set_time_limit(10); //贴吧名称 $tbname = &amp;ldquo;mugen&amp;rdquo;; //相册ID $tid = &amp;ldquo;2134897418&amp;rdquo;; //图册页url模版 $galleryurltpl = &amp;ldquo;http://tieba.baidu.com/photo/bw/picture/guide?kw=%s&amp;amp;tid=%s&amp;quot;; //本地的目录 $savepath = &amp;ldquo;R:/images/&amp;quot;; //帖子子文件夹 $filedir = $savepath.$tid; //图片文件 $filenametpl = $filedir.&amp;quot;/%s.jpg&amp;rdquo;; //图册页url $galleryurl = sprintf($galleryurltpl, $tbname, $tid);
 //返回的json数据 $retjson = file_get_contents($galleryurl); $retarray = json_decode($retjson, true); //图片列表 $piclist = $retarray[&amp;lsquo;data&amp;rsquo;][&amp;lsquo;pic_list&amp;rsquo;];
 //目录是否存在 if(!is_dir($filedir)) mkdir($filedir); foreach($piclist as $pic){ $pic_id = $pic[&amp;lsquo;img&amp;rsquo;][&amp;lsquo;original&amp;rsquo;][&amp;lsquo;id&amp;rsquo;]; $url = &amp;ldquo;http://imgsrc.baidu.com/forum/pic/item/&amp;quot;.$pic_id.&amp;quot;.jpg&amp;quot;; $filename = sprintf($filenametpl, $pic_id); //下载图片 $imagebin = file_get_contents($url);	//保存图片 file_put_contents($filename,$imagebin); } ?" />
@@ -22,7 +22,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -113,7 +113,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -360,6 +360,8 @@ file_put_contents($filename,$imagebin);
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

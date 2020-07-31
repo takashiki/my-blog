@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="最近感觉vps上系统盘的剩余空间不多了，想要把一些站点数据迁移到数据盘上，而且原来编译安装的mysql占用的冗余空间太多，想要改成直接apt安装的，结果出现了一些问题，想来还是应该先做单机主从然后切换的。
 一.操作前先备份（重要） 二.完全卸载之前的mysql安装 apt remove --purge mysql*apt autoremoveapt autocleanrm -rf /etc/mysql /var/lib/mysql如果数据需要保留的话就不删数据目录，这一步很重要的就是需要确认做完后服务器上还有没有mysql相关的任何文件，最好直接 find / -name &#39;&#39;找一下所有的my.cnf、mysql，包含配置文件的需要全部删除才行。
 三.重新安装mysql apt install mysql-server四.修改数据目录，步骤如下： 原先参考的国内的一些资料都失败了，原因就是最关键的修改 apparmor 配置没做。
@@ -30,7 +30,7 @@ http://stackoverflow.com/questions/1795176/how-to-change-mysql-data-directory" /
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -145,7 +145,7 @@ http://stackoverflow.com/questions/1795176/how-to-change-mysql-data-directory" /
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -377,6 +377,8 @@ rm -rf /etc/mysql /var/lib/mysql
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

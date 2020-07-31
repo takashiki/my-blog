@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="以下操作在 Ubuntu 16.04 下进行，其他系统可能略有不同：
 安装kafka  配置防火墙，开启9092端口，编辑 \etc\iptables.up.rules 文件，添加一行：  -A INPUT -p tcp -m state --state NEW -m tcp --dport 9092 -j ACCEPT 保存后执行：
 iptables-apply /etc/iptables.up.rules  Ubuntu 16.04 自带 JDK，其他系统如果未安装则需要安装。
@@ -26,7 +26,7 @@ nohup /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zoo
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -129,7 +129,7 @@ nohup /usr/local/kafka/bin/zookeeper-server-start.sh /usr/local/kafka/config/zoo
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -417,6 +417,8 @@ sudo make install
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

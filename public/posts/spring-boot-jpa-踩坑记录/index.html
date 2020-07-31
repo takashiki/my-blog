@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="与 lombok 配合使用的问题 如果 Entity 直接使用 @Data 注解的话，如果 Entity 之间存在关联关系，则会产生 StackOverflow 的问题。
 产生这个问题的原因是 lombok 默认自动生成的 toString() 方法和 hashCode 方法会产生循环依赖。
 解决方案就是只用 @Getter、@Setter 注解，然后自己重写 toString() 和 hashCode 方法。或者使用 @EqualsAndHashCode 注解时，在依赖的被维护端字段加上 @EqualsAndHashCode.Exclude 注解，也就是凡是关系注解里有 mappedBy 的都要加上 @EqualsAndHashCode.Exclude。
@@ -26,7 +26,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -129,7 +129,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -364,6 +364,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

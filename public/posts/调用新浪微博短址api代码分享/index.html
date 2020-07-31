@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&amp;lt;?php $backurl=&amp;rdquo;&amp;quot;; if (isset($_GET[&amp;lsquo;type&amp;rsquo;])){ $type=$_GET[&amp;lsquo;type&amp;rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=shorturl(urlencode($_GET[&amp;lsquo;url&amp;rsquo;])); //注意必须经过urlencode } else{ $backurl=&amp;quot;error0&amp;rdquo;; } break; case 2: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=expandurl($_GET[&amp;lsquo;url&amp;rsquo;]); } else{ $backurl=&amp;quot;error1&amp;rdquo;; } break; default: $backurl=&amp;quot;error2&amp;rdquo;; } } echo $backurl;
 function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&amp;rsquo;; //请替换成你的APPID $apiUrl=&#39;https://api.weibo.com/2/short_url/shorten.json?source=&amp;rsquo;.$apiKey.&#39;&amp;amp;url_long=&amp;rsquo;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&amp;lsquo;Content-type:application/json&amp;rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&amp;gt;urls[0]-&amp;gt;url_short; }" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@ function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&amp;rsquo;; //请替�
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@ function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&rsquo;; //请替换�
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -393,6 +393,8 @@ return $json-&gt;urls[0]-&gt;url_long;
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

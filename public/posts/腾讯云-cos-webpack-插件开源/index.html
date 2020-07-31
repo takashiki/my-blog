@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="今天想把一个老的 Yii2 项目改成比较时髦的前后端分离的开发模式，于是试用了 webpack，感觉还不错。
 项目线上我是想直接把编译后的文件传到带 cdn 的对象存储上，因为服务器用的是腾讯云的 cvm，所以对象存储就顺便选择了 cos。
 Github 上搜了下没有现成的 webpack 插件，不过有几个现成的七牛的，比较了一下发现 https://github.com/lyfeyaj/qn-webpack 这个项目的代码最简洁清晰，于是就在这个项目的基础上自己改出了一个 cos 的 webpack 插件并开源了出来：https://github.com/takashiki/cos-webpack。
@@ -27,7 +27,7 @@ npm 发布包的步骤参考：手把手教你用npm发布一个包。
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -133,7 +133,7 @@ npm 发布包的步骤参考：手把手教你用npm发布一个包。
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -391,6 +391,8 @@ npm 发布包的步骤参考：手把手教你用npm发布一个包。
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

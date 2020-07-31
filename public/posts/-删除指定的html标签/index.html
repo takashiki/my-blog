@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content=" php函数strip_tags可设置保留的标签，但不能去除指定的标签，所以仿strip_tags的调用方式写了这个简单的函数。 前两个参数的使用方法与strip_tags相同，$clear参数可指定是否去除标签内的内容。
 function _strip_tags($str, $tags, $clear = false) {//去除指定html标签，$clear设为true时同时清除标签内容 $tagsArr = explode(&amp;#39;&amp;lt;&amp;#39;, $tags); unset($tagsArr[0]); foreach ($tagsArr as $tag) { $tag = trim($tag, &amp;#39;&amp;gt;&amp;#39;); if($clear) { $p[] = &amp;#34;/&amp;lt;&amp;#34;.$tag.&amp;#34;.*&amp;lt;\/&amp;#34;.$tag.&amp;#34;&amp;gt;/i&amp;#34;; } else { $p[] = &amp;#34;/(&amp;lt;(?:\/&amp;#34;.$tag.&amp;#34;|&amp;#34;.$tag.&amp;#34;)[^&amp;gt;]*&amp;gt;)/i&amp;#34;; } } $return_str = preg_replace($p,&amp;#34;&amp;#34;,$str); return $return_str; } " />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@ function _strip_tags($str, $tags, $clear = false) {//去除指定html标签，$c
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@ function _strip_tags($str, $tags, $clear = false) {//去除指定html标签，$c
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -336,6 +336,8 @@ function _strip_tags($str, $tags, $clear = false) {//去除指定html标签，$c
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

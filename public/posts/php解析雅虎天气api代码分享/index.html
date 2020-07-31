@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="雅虎天气API地址： http://weather.yahooapis.com/forecastrss 有两个可选参数w和u，其中w参数是基于WOEID的城市代码，可以在网上根据城市英文名查到，u参数是设置返回数据中的摄氏和华氏（c为摄氏，f为华氏）。 实际请求地址如：http://weather.yahooapis.com/forecastrss?w=15015432&amp;amp;u=c 返回数据为xml格式，含有命名空间，无法使用simpleXML处理，这次分享的代码就是使用XMLReader和DOMDocument来处理该数据（获取返回数据中的天气状况代码、温度及湿度值）。 首先是使用XMLReader时的代码： [php]$url = &amp;lsquo;http://weather.yahooapis.com/forecastrss?w=15015432&amp;amp;u=c&#39;; $reader = new XMLReader(); $reader-&amp;gt;open($url,&amp;lsquo;utf-8&amp;rsquo;); while($reader-&amp;gt;read()){ if($reader-&amp;gt;name == &amp;lsquo;yweather:condition&amp;rsquo;){ $code = $reader-&amp;gt;getAttribute(&amp;lsquo;code&amp;rsquo;);	//获取天气代码 $temp = $reader-&amp;gt;getAttribute(&amp;lsquo;temp&amp;rsquo;);	//获取温度 } if($reader-&amp;gt;name == &amp;lsquo;yweather:atmosphere&amp;rsquo;){ $humi = $reader-&amp;gt;getAttribute(&amp;lsquo;humidity&amp;rsquo;);	//获取湿度 } }[/php]
  然后是使用DOMDocument处理的代码： [php]$url = &amp;lsquo;http://weather.yahooapis.com/forecastrss?w=15015432&amp;amp;u=c&#39;; $yweather = &amp;ldquo;http://xml.weather.yahoo.com/ns/rss/1.0&amp;quot;;	//命名空间 $res = new DOMDocument(); $res-&amp;gt;load($url);
 $node = $res-&amp;gt;getElementsByTagNameNS($yweather, &amp;lsquo;atmosphere&amp;rsquo;); $humi = $node-&amp;gt;item(0)-&amp;gt;attributes-&amp;gt;item(0)-&amp;gt;nodeValue;	//获取湿度 $node = $res-&amp;gt;getElementsByTagNameNS($yweather, &amp;lsquo;condition&amp;rsquo;); $code = $node-&amp;gt;item(0)-&amp;gt;attributes-&amp;gt;item(1)-&amp;gt;nodeValue;	//获取天气代码 $temp = $node-&amp;gt;item(0)-&amp;gt;attributes-&amp;gt;item(2)-&amp;gt;nodeValue;	//获取温度[/php] 最后我们要将数字格式的天气代码转换成相应的中文： [php]function code2char($code){ switch($code){ case 0: return &amp;lsquo;龙卷风&amp;rsquo;; case 1: return &amp;lsquo;热带风暴&amp;rsquo;; case 2: return &amp;lsquo;暴风&amp;rsquo;; case 3: return &amp;lsquo;大雷雨&amp;rsquo;; case 4: return &amp;lsquo;雷阵雨&amp;rsquo;; case 5: return &amp;lsquo;雨夹雪&amp;rsquo;; case 6: return &amp;lsquo;雨夹雹&amp;rsquo;; case 7: return &amp;lsquo;雪夹雹&amp;rsquo;; case 8: return &amp;lsquo;冻雾雨&amp;rsquo;; case 9: return &amp;lsquo;细雨&amp;rsquo;; case 10: return &amp;lsquo;冻雨&amp;rsquo;; case 11: return &amp;lsquo;阵雨&amp;rsquo;; case 12: return &amp;lsquo;阵雨&amp;rsquo;; case 13: return &amp;lsquo;阵雪&amp;rsquo;; case 14: return &amp;lsquo;小阵雪&amp;rsquo;; case 15: return &amp;lsquo;高吹雪&amp;rsquo;; case 16: return &amp;lsquo;雪&amp;rsquo;; case 17: return &amp;lsquo;冰雹&amp;rsquo;; case 18: return &amp;lsquo;雨淞&amp;rsquo;; case 19: return &amp;lsquo;粉尘&amp;rsquo;; case 20: return &amp;lsquo;雾&amp;rsquo;; case 21: return &amp;lsquo;薄雾&amp;rsquo;; case 22: return &amp;lsquo;烟雾&amp;rsquo;; case 23: return &amp;lsquo;大风&amp;rsquo;; case 24: return &amp;lsquo;风&amp;rsquo;; case 25: return &amp;lsquo;冷&amp;rsquo;; case 26: return &amp;lsquo;阴&amp;rsquo;; case 27: return &amp;lsquo;多云&amp;rsquo;; case 28: return &amp;lsquo;多云&amp;rsquo;; case 29: return &amp;lsquo;局部多云&amp;rsquo;; case 30: return &amp;lsquo;局部多云&amp;rsquo;; case 31: return &amp;lsquo;晴&amp;rsquo;; case 32: return &amp;lsquo;晴&amp;rsquo;; case 33: return &amp;lsquo;转晴&amp;rsquo;; case 34: return &amp;lsquo;转晴&amp;rsquo;; case 35: return &amp;lsquo;雨夹冰雹&amp;rsquo;; case 36: return &amp;lsquo;热&amp;rsquo;; case 37: return &amp;lsquo;局部雷雨&amp;rsquo;; case 38: return &amp;lsquo;偶有雷雨&amp;rsquo;; case 39: return &amp;lsquo;偶有雷雨&amp;rsquo;; case 40: return &amp;lsquo;偶有阵雨&amp;rsquo;; case 41: return &amp;lsquo;大雪&amp;rsquo;; case 42: return &amp;lsquo;零星阵雪&amp;rsquo;; case 43: return &amp;lsquo;大雪&amp;rsquo;; case 44: return &amp;lsquo;局部多云&amp;rsquo;; case 45: return &amp;lsquo;雷阵雨&amp;rsquo;; case 46: return &amp;lsquo;阵雪&amp;rsquo;; case 47: return &amp;lsquo;局部雷阵雨&amp;rsquo;; default: return &amp;lsquo;水深火热&amp;rsquo;; }[/php]" />
@@ -22,7 +22,7 @@ $node = $res-&amp;gt;getElementsByTagNameNS($yweather, &amp;lsquo;atmosphere&amp
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -113,7 +113,7 @@ $node = $res-&gt;getElementsByTagNameNS($yweather, &lsquo;atmosphere&rsquo;); $h
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -453,6 +453,8 @@ return &lsquo;水深火热&rsquo;;
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

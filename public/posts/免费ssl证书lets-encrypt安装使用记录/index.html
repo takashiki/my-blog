@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="目前我包括博客在内的几个小站都在sae上，由于sae上的限制还是比较多的，所以有迁移到vps上的计划。
 今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。
 首先申请Let’s Encrypt的证书我是用了https://www.v2ex.com/t/241819这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。
@@ -30,7 +30,7 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -145,7 +145,7 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -387,6 +387,8 @@ DOMAINS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DNS:
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

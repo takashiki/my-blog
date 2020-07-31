@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="一直想要自己搭一个短网址服务，奈何github上找过几圈，都没有找到十分符合心意的，于是就趁周末自己写了一个。
 Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，http://www.zhihu.com/question/29270034，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。
 该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。
@@ -26,7 +26,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -129,7 +129,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -349,6 +349,8 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

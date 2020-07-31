@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="$map = [ &amp;#39;360&amp;#39; =&amp;gt; &amp;#39;360&amp;#39;, &amp;#39;baidu&amp;#39; =&amp;gt; &amp;#39;baidu&amp;#39;, &amp;#39;google&amp;#39; =&amp;gt; &amp;#39;google&amp;#39;, ]; $url = &amp;#39;https://www.google.com&amp;#39;; foreach ($map as $key =&amp;gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } } 期望输出: google 实际输出: 360
 参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&amp;lsquo;360&amp;rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&amp;#39;Y-m-d&amp;#39;, strtotime(&amp;#39;-1 month&amp;#39;, strtotime(&amp;#39;2017-07-31&amp;#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
@@ -23,7 +23,7 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -117,7 +117,7 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -390,6 +390,8 @@ var_dump($test); // false
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

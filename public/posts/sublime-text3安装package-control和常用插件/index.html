@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="Sublime Text3 是文本编辑器中比较优秀的一款，安装第三方插件比较推荐使用包管理器 Package Control，使用快捷键Ctrl &#43; ``或点击View &amp;gt; Show Console`可以打开命令行，然后在命令行输入如下命令即可安装：
 import urllib.request,os,hashlib; h = &amp;#39;2915d1851351e5ee549c20394736b442&amp;#39; &#43; &amp;#39;8bc59f460fa1548d1514676163dafc88&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; &#43; pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).write(by) 安装完成后重启Sublime，使用快捷键Ctrl &#43; Shift &#43; P呼出快捷面板，然后输入install package后回车，此时搜索你需要的插件后回车即可安装。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@ import urllib.request,os,hashlib; h = &amp;#39;2915d1851351e5ee549c20394736b442&
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@ import urllib.request,os,hashlib; h = &#39;2915d1851351e5ee549c20394736b442&#39;
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -323,6 +323,8 @@ import urllib.request,os,hashlib; h = &#39;2915d1851351e5ee549c20394736b442&#39;
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

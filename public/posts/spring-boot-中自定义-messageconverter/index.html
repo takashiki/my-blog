@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="背景 Spring MVC 自带比较强大的消息格式转化能力，它内部默认支持将接口返回值根据请求 header 中的 Accept 字段的值将结果转化为 纯文本、xml、json 等格式。
 但是现在 web 开发和前端交互的过程中基本只会用到 json 格式，在默认配置下，浏览器直接访问接口时，由于浏览器请求 header 中会默认加上 Accept: text/html,application/xhtml&#43;xml,application/xml，所以接口会返回 xml 格式的数据，导致我们的前端同学十分反感。
 解决方案 一开始我们找到的解决方案都是只能在每个接口的 RequestMapping 注解里加上 produces 指定返回的格式，或者自定义一个 JsonRequestMapping 注解，这些都无法全局生效，不是特别方便和优雅。
@@ -25,7 +25,7 @@ package com.demo; import org.springframework.context.annotation.Configuration; i
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -125,7 +125,7 @@ package com.demo; import org.springframework.context.annotation.Configuration; i
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -374,6 +374,8 @@ package com.demo; import org.springframework.context.annotation.Configuration; i
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

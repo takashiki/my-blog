@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="coding.net上貌似本身没有自动备份数据库的功能，于是就想自己写一个来每天自动备份数据库到vps上。以下为具体代码：
 &amp;lt;?php $url = &amp;#39;xxx&amp;#39;; $referer = &amp;#39;xxx&amp;#39;; $filename = &amp;#39;xxx.sql&amp;#39;; $cookie = &amp;#39;xxx&amp;#39;; $userAgent = &amp;#39;xxx&amp;#39;; $fp = fopen($filename, &amp;#39;w&amp;#39;); $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_FILE, $fp); curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); curl_exec($ch); curl_close($ch); fclose($fp); 其中url为点击服务管理中的msyql控制台里的备份数据按钮跳转到的链接，referer为控制台链接，filename可自定义，cookie和ua使用chrome浏览器的调试窗口就能获取到，具体就不多说了。
 在vps上设置一个crontab定时跑这个脚本就可以自动备份coding上的数据库了。" />
@@ -22,7 +22,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -113,7 +113,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -346,6 +346,8 @@ $ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

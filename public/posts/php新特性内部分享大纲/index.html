@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="PHP 5.4 数组短标签 $arr = array(1, 2, 3); $arr = [1, 2, 3]; 函数返回值数组访问解析 function get_arr() { return [ &amp;#39;a&amp;#39; =&amp;gt; 1, &amp;#39;b&amp;#39; =&amp;gt; 2, ]; } echo get_arr()[&amp;#39;a&amp;#39;]; 在实例化时访问类成员 $query = new Query(); $news = $query-&amp;gt;from(&amp;#39;news&amp;#39;)-&amp;gt;all(); $news = (new Query())-&amp;gt;from(&amp;#39;news&amp;#39;)-&amp;gt;all(); traits 场景：soft delete等
 trait SoftDeleteTrait { public function delete() { $this-&amp;gt;status = Status::DELETED; return $this-&amp;gt;save(); } } class News extends \yii\db\ActiveRecord { use SoftDeleteTrait; } $news = News::findOne($condition); $news-&amp;gt;delete(); 内置的http服务器 php -S localhost:8000 实例：https://github." />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@ trait SoftDeleteTrait { public function delete() { $this-&amp;gt;status = Status
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@ trait SoftDeleteTrait { public function delete() { $this-&gt;status = Status::DE
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -788,6 +788,8 @@ php7cc /path/to/my/directory/
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="目前已经写了两个调用API完成的程序，一个是调用新浪短链接API生成新浪微博短址的程序，一个是调用雅虎天气API获取天气后调用新浪微博API发布该天气状况的程序。 我觉得新浪微博的API设计得还是相对比较合理的，使用起来比腾讯微博API要方便不少，比如根据所调用的API的类型决定参数个数，减少了冗余参数。总的来说，新浪微博API还是比较适合新手学习使用的。 在开发第一个新浪短链的程序时，发现新浪短链API不支持https和ftp类型的地址，而腾讯微博短链API则支持，这一点比较遗憾。另外需要注意的是调用该API采用get方式，传入的网址必须经过urlencode()e函数处理才行，不然可能会出错。 调用微博API发微博等功能在新浪提供的SDK中都包含了，大家可以根据sdk里的demo自己写代码或者直接调用。 使用新浪微博API必须在新浪微博开放平台上创建应用，推荐创建网站应用或网站接入。创建成功后会得到APPID和APPKEY，在调用API时需要用到。在调用一些需要授权的API接口时，需要授权后得到acess_token，token过期时间根据应用级别不同而不同。获取token时需注意应用设置里的应用回调页面的地址必须和demo里config.php中的WB_CALLBACK_URL相同，否则会授权失败。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
@@ -20,7 +20,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -105,7 +105,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -321,6 +321,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

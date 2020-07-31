@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="目前公司由于历史原因，之前很多主体项目都是使用 Yii1.1 开发的，Yii1.1 在使用上还是有很多不便，为了使用 Yii2 的一些新特性，我决定在一个规模比较小的项目上尝试 Yii1.1 和 Yii2 共存并逐渐使用 Yii2 替代原有 Yii1.1 代码进行项目升级的方案。
 主要的参考文档在 google 上搜了下就只有官方文档的一节 Using Yii 2 with Yii 1 。
 最主要的是创建一个自定义的 Yii 类文件，这个类继承自 Yii2 的 BaseYii 类，而类里面需要手工把 Yii1.1 的 YiiBase 类中的代码复制过来，这样这个类就同时拥有 Yii1.1 和 Yii2 的属性和方法了。 然后最下面三行是为了能在项目中使用 Yii2 的自动加载机制和依赖注入容器，一定不能写错。
@@ -23,7 +23,7 @@ $yii2path = &amp;#39;/path/to/yii2&amp;#39;; require($yii2path . &amp;#39;/BaseY
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -117,7 +117,7 @@ $yii2path = &#39;/path/to/yii2&#39;; require($yii2path . &#39;/BaseYii.php&#39;)
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -363,6 +363,8 @@ Yii::createWebApplication($yii1Config)-&gt;run();
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

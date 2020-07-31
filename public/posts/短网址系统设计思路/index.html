@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="差不多 5 年前逛 github 的时候偶然发现了 hashids 这个东西，当时就觉得 hashids 很适合用在短网址系统上，于是花了一天时间撸了个简单的短网址系统出来。
 当时是纯粹为了练手，项目写完放 github 上，然后就在 v2ex 上发了个贴，最初稍微维护了一下后来也就没有再管。前几天上 github 发现，这个几年没维护的项目靠自然流量也有 200 star 了，看来短网址这个东西的需求仍然很旺盛。
 现在回过头来看当时的实现方案还是比较粗糙的，个人项目玩玩可以，用在商业生产环境就不太够了。不过目前倒也没有自建短网址的需求，不会再像当时一样自己再撸一套，但短网址系统的设计思路和一些坑倒是可以整理一下。
@@ -30,7 +30,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -148,7 +148,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -431,6 +431,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

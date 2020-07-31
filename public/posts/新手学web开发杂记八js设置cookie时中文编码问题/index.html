@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content=" 最近写的一个页面中我使用了js来设置登录后的用户名cookie，但是PHP获取该cookie时，发现其值中的中文字符被编码成了\u开头的unicode编码，该编码在PHP中可以使用如下语句转换成utf8编码： [js]preg_replace(&amp;quot;#\\u([0-9a-f]{4})#ie&amp;rdquo;, &amp;ldquo;iconv(&amp;lsquo;UCS-2BE&amp;rsquo;, &amp;lsquo;UTF-8&amp;rsquo;, pack(&amp;lsquo;H4&amp;rsquo;, &amp;lsquo;\1&amp;rsquo;))&amp;rdquo;, $unicode_string)；[/js] 我在同一个domain的另一个页面中登录时是采用php设置cookie的，php设置的cookie中的中文是utf8编码的。在PHP获取cookie时使用上面的语句处理一下就可以解决不同页面设置的cookie在另外的页面工作不正常的问题。 还有另外一个办法可以解决该问题，也很简单，即JS端使用encodeURI() 函数可把字符串作为 URI 进行编码，PHP端使用urldecode函数进行解码。 " />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
@@ -20,7 +20,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -105,7 +105,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -323,6 +323,8 @@
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

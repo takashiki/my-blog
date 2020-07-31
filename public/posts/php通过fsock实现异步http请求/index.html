@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
 function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&amp;#39;host&amp;#39;], isset($parts[&amp;#39;port&amp;#39;]) ? $parts[&amp;#39;port&amp;#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&amp;#39;path&amp;#39;] . (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;&amp;#39; : &amp;#34;?{$parts[&amp;#39;query&amp;#39;]}&amp;#34;); $location .= ($type == &amp;#39;GET&amp;#39; &amp;amp;&amp;amp; !empty($query)) ? (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;?&amp;#39; : &amp;#39;&amp;amp;&amp;#39;).$query : &amp;#39;&amp;#39;; $out = &amp;#34;{$type} {$location} HTTP/1.1\r\n&amp;#34;; $out .= &amp;#34;Host: {$parts[&amp;#39;host&amp;#39;]}\r\n&amp;#34;; $out .= &amp;#34;Connection: Close\r\n\r\n&amp;#34;; $out ." />
@@ -22,7 +22,7 @@ function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { 
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -113,7 +113,7 @@ function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query =
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -357,6 +357,8 @@ function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query =
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

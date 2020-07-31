@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。
 首先是创建task：
 &amp;lt;?php $url = &amp;#39;xxx&amp;#39;; $referer = &amp;#39;xxx&amp;#39;; $cookie = &amp;#39;xxx&amp;#39;; $userAgent = &amp;#39;xxx&amp;#39;; $data = [ &amp;#39;priority&amp;#39; =&amp;gt; 1, &amp;#39;content&amp;#39; =&amp;gt; &amp;#39;xxx&amp;#39;, &amp;#39;owner_id&amp;#39; =&amp;gt; xxx, &amp;#39;deadline&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;description&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
@@ -24,7 +24,7 @@
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -121,7 +121,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -420,6 +420,8 @@ $put <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</s
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

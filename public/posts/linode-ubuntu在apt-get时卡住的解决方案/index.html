@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="在使用linode时用apt-get经常会出现卡住的问题，看起来像是因为linode默认使用了ipv6的问题，于是使用以下命令试了一下ipv4会不会卡住：
 apt-get -o Acquire::ForceIPv4=true update 试过后发现果然不会出现卡住的问题了，于是编辑/etc/apt/apt.conf.d/99force-ipv4文件，内容如下：
 Acquire::ForceIPv4 &amp;#34;true&amp;#34;; 这样apt-get就会强制使用ipv4了。
@@ -23,7 +23,7 @@ Acquire::ForceIPv4 &amp;#34;true&amp;#34;; 这样apt-get就会强制使用ipv4�
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -117,7 +117,7 @@ Acquire::ForceIPv4 &#34;true&#34;; 这样apt-get就会强制使用ipv4了。
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -334,6 +334,8 @@ Acquire::ForceIPv4 &#34;true&#34;; 这样apt-get就会强制使用ipv4了。
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

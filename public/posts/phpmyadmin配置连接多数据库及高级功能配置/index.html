@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="配置多数据库连接很简单，将phpmyadmin的config.inc.php中原本的服务器连接部分的内容修改为：
 $cfg[&amp;#39;AllowArbitraryServer&amp;#39;] = true; $db_servers = array( 1 =&amp;gt; array( &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;localhost&amp;#39;, &amp;#39;user&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;123456&amp;#39;, &amp;#39;port&amp;#39; =&amp;gt; &amp;#39;3306&amp;#39;, ), 2 =&amp;gt; array( &amp;#39;host&amp;#39; =&amp;gt; &amp;#39;192.168.65.168&amp;#39;, &amp;#39;user&amp;#39; =&amp;gt; &amp;#39;root&amp;#39;, &amp;#39;password&amp;#39; =&amp;gt; &amp;#39;123456&amp;#39;, &amp;#39;port&amp;#39; =&amp;gt; &amp;#39;3306&amp;#39;, ), ); for ($i = 1; $i &amp;lt;= count($db_servers); $i&#43;&#43;) { $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;auth_type&amp;#39;] = &amp;#39;cookie&amp;#39;; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;user&amp;#39;] = $db_servers[$i][&amp;#39;user&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;password&amp;#39;] = $db_servers[$i][&amp;#39;password&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;host&amp;#39;] = $db_servers[$i][&amp;#39;host&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;port&amp;#39;] = $db_servers[$i][&amp;#39;port&amp;#39;]; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;connect_type&amp;#39;] = &amp;#39;tcp&amp;#39;; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;compress&amp;#39;] = false; $cfg[&amp;#39;Servers&amp;#39;][$i][&amp;#39;AllowNoPassword&amp;#39;] = false; } 这样就可以在登录时选择服务器了。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -21,7 +21,7 @@ $cfg[&amp;#39;AllowArbitraryServer&amp;#39;] = true; $db_servers = array( 1 =&am
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -109,7 +109,7 @@ $cfg[&#39;AllowArbitraryServer&#39;] = true; $db_servers = array( 1 =&gt; array(
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -391,6 +391,8 @@ for ($i = 1; $i <span style="color:#960050;background-color:#1e0010">&lt;</span>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

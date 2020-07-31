@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="现在我平时日常使用的电脑操作系统为Windows，但Windows用于开发会有很多的坑，于是便搞了一个vps在上面进行开发，然而phpStorm的Deployment只能支持自动同步本地文件至远程服务器，而服务器上文件有改动时却无法自动同步至本地，这在经常需要在服务器上进行composer和npm操作的情况下十分不便。
 我最初想要解决这个问题的方法是找phpStorm有没有这方面的插件，然而并没有找到。后来又想将vps上的目录通过Samba或者类似NetDrive这种软件挂载成一个驱动器，这样就能直接用phpStorm打开远程的项目了，然而卡到飞起，已然不是能够使用的状态了，遂打消了这方面的念头，决定使用rsync来实现。
 cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-edition，免费版的cwRsync已经能满足需求，下载下来的是压缩包，直接解压就可以使用了。
@@ -24,7 +24,7 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -121,7 +121,7 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -374,6 +374,8 @@ auth users <span style="color:#f92672">=</span> rsync <span style="color:#75715e
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>

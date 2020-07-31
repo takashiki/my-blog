@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<meta name="author" content="天心流水 ">
 <meta name="description" content="前情：http://blog.skyx.in/archives/233/。
 本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用Cloud9这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。
 上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的GoodSync。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：http://www.goodsync.com/for-linux。
@@ -27,7 +27,7 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 
 
 
-<link href="/flag-icon.min.css" rel="stylesheet"
+<link href="/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -133,7 +133,7 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://qxzzf.com/posts">文章</a></li>
+    <ul class="menu__inner"><li><a href="https://qxzzf.com/search">搜索</a></li><li><a href="https://qxzzf.com/posts/">文章</a></li>
     </ul>
 </nav>
 
@@ -365,6 +365,8 @@ supervisorctl status
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2020</span>
+            
+                <span><a href="https://qxzzf.com">天心流水</a></span>
             
             
                 <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
