@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&amp;lt;?php $backurl=&amp;rdquo;&amp;quot;; if (isset($_GET[&amp;lsquo;type&amp;rsquo;])){ $type=$_GET[&amp;lsquo;type&amp;rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=shorturl(urlencode($_GET[&amp;lsquo;url&amp;rsquo;])); //注意必须经过urlencode } else{ $backurl=&amp;quot;error0&amp;rdquo;; } break; case 2: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=expandurl($_GET[&amp;lsquo;url&amp;rsquo;]); } else{ $backurl=&amp;quot;error1&amp;rdquo;; } break; default: $backurl=&amp;quot;error2&amp;rdquo;; } } echo $backurl;
-function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&amp;rsquo;; //请替换成你的APPID $apiUrl=&#39;https://api.weibo.com/2/short_url/shorten.json?source=&amp;rsquo;.$apiKey.&#39;&amp;amp;url_long=&amp;rsquo;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&amp;lsquo;Content-type:application/json&amp;rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&amp;gt;urls[0]-&amp;gt;url_short; }" />
+<meta name="description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&amp;lt;?php $backurl=&amp;ldquo;&amp;rdquo;; if (isset($_GET[&amp;lsquo;type&amp;rsquo;])){ $type=$_GET[&amp;lsquo;type&amp;rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=shorturl(urlencode($_GET[&amp;lsquo;url&amp;rsquo;])); //注意必须经过urlencode } else{ $backurl=&amp;ldquo;error0&amp;rdquo;; } break; case 2: if (isset($_GET[&amp;lsquo;url&amp;rsquo;])){ $backurl=expandurl($_GET[&amp;lsquo;url&amp;rsquo;]); } else{ $backurl=&amp;ldquo;error1&amp;rdquo;; } break; default: $backurl=&amp;ldquo;error2&amp;rdquo;; } } echo $backurl;
+function shortenSinaUrl($long_url){ $apiKey=&amp;lsquo;xxxxxxxxx&amp;rsquo;; //请替换成你的APPID $apiUrl=&amp;lsquo;https://api.weibo.com/2/short_url/shorten.json?source=&#39;.$apiKey.&#39;&amp;amp;url_long=&#39;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&amp;lsquo;Content-type:application/json&amp;rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&amp;gt;urls[0]-&amp;gt;url_short; }" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -21,7 +21,7 @@ function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&amp;rsquo;; //请替�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,34 +33,38 @@ function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&amp;rsquo;; //请替�
 
 
 
+
 <meta itemprop="name" content="调用新浪微博短址API代码分享">
-<meta itemprop="description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&rdquo;&quot;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&quot;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&quot;error1&rdquo;; } break; default: $backurl=&quot;error2&rdquo;; } } echo $backurl;
-function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&#39;https://api.weibo.com/2/short_url/shorten.json?source=&rsquo;.$apiKey.&#39;&amp;url_long=&rsquo;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }">
+<meta itemprop="description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&ldquo;&rdquo;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&ldquo;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&ldquo;error1&rdquo;; } break; default: $backurl=&ldquo;error2&rdquo;; } } echo $backurl;
+function shortenSinaUrl($long_url){ $apiKey=&lsquo;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&lsquo;https://api.weibo.com/2/short_url/shorten.json?source=&#39;.$apiKey.&#39;&amp;url_long=&#39;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }">
+
+
 <meta itemprop="datePublished" content="2013-04-15T21:10:47&#43;00:00" />
 <meta itemprop="dateModified" content="2013-04-15T21:10:47&#43;00:00" />
 <meta itemprop="wordCount" content="134">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="调用新浪微博短址API代码分享"/>
-<meta name="twitter:description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&rdquo;&quot;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&quot;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&quot;error1&rdquo;; } break; default: $backurl=&quot;error2&rdquo;; } } echo $backurl;
-function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&#39;https://api.weibo.com/2/short_url/shorten.json?source=&rsquo;.$apiKey.&#39;&amp;url_long=&rsquo;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }"/>
+<meta name="twitter:description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&ldquo;&rdquo;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&ldquo;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&ldquo;error1&rdquo;; } break; default: $backurl=&ldquo;error2&rdquo;; } } echo $backurl;
+function shortenSinaUrl($long_url){ $apiKey=&lsquo;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&lsquo;https://api.weibo.com/2/short_url/shorten.json?source=&#39;.$apiKey.&#39;&amp;url_long=&#39;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }"/>
 
 
 
     <meta property="og:title" content="调用新浪微博短址API代码分享" />
-<meta property="og:description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&rdquo;&quot;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&quot;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&quot;error1&rdquo;; } break; default: $backurl=&quot;error2&rdquo;; } } echo $backurl;
-function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&#39;https://api.weibo.com/2/short_url/shorten.json?source=&rsquo;.$apiKey.&#39;&amp;url_long=&rsquo;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }" />
+<meta property="og:description" content="之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。 使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。 PS:本代码参考自Jucelin(http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来 [php]&lt;?php $backurl=&ldquo;&rdquo;; if (isset($_GET[&lsquo;type&rsquo;])){ $type=$_GET[&lsquo;type&rsquo;]; switch (trim($type)) { case 1: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;])); //注意必须经过urlencode } else{ $backurl=&ldquo;error0&rdquo;; } break; case 2: if (isset($_GET[&lsquo;url&rsquo;])){ $backurl=expandurl($_GET[&lsquo;url&rsquo;]); } else{ $backurl=&ldquo;error1&rdquo;; } break; default: $backurl=&ldquo;error2&rdquo;; } } echo $backurl;
+function shortenSinaUrl($long_url){ $apiKey=&lsquo;xxxxxxxxx&rsquo;; //请替换成你的APPID $apiUrl=&lsquo;https://api.weibo.com/2/short_url/shorten.json?source=&#39;.$apiKey.&#39;&amp;url_long=&#39;.$long_url; $curlObj = curl_init(); curl_setopt($curlObj, CURLOPT_URL, $apiUrl); curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1); curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0); curl_setopt($curlObj, CURLOPT_HEADER, 0); curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;)); $response = curl_exec($curlObj); curl_close($curlObj); $json = json_decode($response); return $json-&gt;urls[0]-&gt;url_short; }" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E8%B0%83%E7%94%A8%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E7%9F%AD%E5%9D%80api%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-04-15T21:10:47+00:00" />
-<meta property="article:modified_time" content="2013-04-15T21:10:47+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-04-15T21:10:47&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-15T21:10:47&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -158,75 +162,79 @@ function shortenSinaUrl($long_url){ $apiKey=&#39;xxxxxxxxx&rsquo;; //请替换�
       <div class="post-content">
         <p>  之前的一篇博客里有提到调用新浪微博API转短址，而我发现现在不少人都有使用新浪微博短链接口的需求。这对于老手来说自然是小菜一碟，但是初学者很可能在写该代码时花不少时间，所以我就把自己 写的代码分享出来供大家参考一下。
   使用前请先在新浪微博开放平台上创建应用获取APPID（但根据我的经验，未通过审核的应用的APPID调用时会发生错误，原因是权限不够，不过别担心，去百度上搜一个能用的就行了）。
-  PS:本代码参考自Jucelin(<a href="http://jucelin.com/">http://jucelin.com/</a>)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来
+  PS:本代码参考自Jucelin(<a href="http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来" target="_blank">http://jucelin.com/)共享的旧版API调用代码，由于新版API改了不少地方，旧代码不能使用，所以本人修改后分享出来</a>
 [php]&lt;?php
-$backurl=&rdquo;&quot;;
+$backurl=&ldquo;&rdquo;;
 if (isset($_GET[&lsquo;type&rsquo;])){
-$type=$_GET[&lsquo;type&rsquo;];
-switch (trim($type))
-{
-case 1:
-if (isset($_GET[&lsquo;url&rsquo;])){
-$backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;]));  //注意必须经过urlencode
-}
-else{
-$backurl=&quot;error0&rdquo;;
-}
-break;
-case 2:
-if (isset($_GET[&lsquo;url&rsquo;])){
-$backurl=expandurl($_GET[&lsquo;url&rsquo;]);
-}
-else{
-$backurl=&quot;error1&rdquo;;
-}
-break;
-default:
-$backurl=&quot;error2&rdquo;;
-}
+    $type=$_GET[&lsquo;type&rsquo;];
+    switch (trim($type))
+    {
+    case 1:
+        if (isset($_GET[&lsquo;url&rsquo;])){
+            $backurl=shorturl(urlencode($_GET[&lsquo;url&rsquo;]));  //注意必须经过urlencode
+        }
+        else{
+            $backurl=&ldquo;error0&rdquo;;
+        }
+        break;
+    case 2:
+        if (isset($_GET[&lsquo;url&rsquo;])){
+            $backurl=expandurl($_GET[&lsquo;url&rsquo;]);
+        }
+        else{
+            $backurl=&ldquo;error1&rdquo;;
+        }
+        break;
+    default:
+        $backurl=&ldquo;error2&rdquo;;
+    }
 }
 echo $backurl;</p>
+
 <p>function shortenSinaUrl($long_url){
-$apiKey='xxxxxxxxx&rsquo;;    //请替换成你的APPID
-$apiUrl='https://api.weibo.com/2/short_url/shorten.json?source=&rsquo;.$apiKey.'&amp;url_long=&rsquo;.$long_url;
-$curlObj = curl_init();
-curl_setopt($curlObj, CURLOPT_URL, $apiUrl);
-curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($curlObj, CURLOPT_HEADER, 0);
-curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;));
-$response = curl_exec($curlObj);
-curl_close($curlObj);
-$json = json_decode($response);
-return $json-&gt;urls[0]-&gt;url_short;
+    $apiKey=&lsquo;xxxxxxxxx&rsquo;;    //请替换成你的APPID
+    $apiUrl=&lsquo;<a href="https://api.weibo.com/2/short_url/shorten.json?source='.$apiKey.'&amp;url_long='.$long_url" target="_blank">https://api.weibo.com/2/short_url/shorten.json?source='.$apiKey.'&amp;url_long='.$long_url</a>;
+    $curlObj = curl_init();
+    curl_setopt($curlObj, CURLOPT_URL, $apiUrl);
+    curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($curlObj, CURLOPT_HEADER, 0);
+    curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;));
+    $response = curl_exec($curlObj);
+    curl_close($curlObj);
+    $json = json_decode($response);
+    return $json-&gt;urls[0]-&gt;url_short;
 }</p>
+
 <p>function expandSinaUrl($short_url){
-$apiKey='xxxxxxxxx&rsquo;;    //请替换成你的APPID
-$apiUrl='https://api.weibo.com/2/short_url/expand.json?source=&rsquo;.$apiKey.'&amp;url_short=&rsquo;.$short_url;
-$curlObj = curl_init();
-curl_setopt($curlObj, CURLOPT_URL, $apiUrl);
-curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($curlObj, CURLOPT_HEADER, 0);
-curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;));
-$response = curl_exec($curlObj);
-curl_close($curlObj);
-$json = json_decode($response);
-return $json-&gt;urls[0]-&gt;url_long;
+    $apiKey=&lsquo;xxxxxxxxx&rsquo;;    //请替换成你的APPID
+    $apiUrl=&lsquo;<a href="https://api.weibo.com/2/short_url/expand.json?source='.$apiKey.'&amp;url_short='.$short_url" target="_blank">https://api.weibo.com/2/short_url/expand.json?source='.$apiKey.'&amp;url_short='.$short_url</a>;
+    $curlObj = curl_init();
+    curl_setopt($curlObj, CURLOPT_URL, $apiUrl);
+    curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($curlObj, CURLOPT_HEADER, 0);
+    curl_setopt($curlObj, CURLOPT_HTTPHEADER, array(&lsquo;Content-type:application/json&rsquo;));
+    $response = curl_exec($curlObj);
+    curl_close($curlObj);
+    $json = json_decode($response);
+    return $json-&gt;urls[0]-&gt;url_long;
 }</p>
+
 <p>function shorturl($long_url){
-$apiKey='xxxxxxxxx&rsquo;;    //请替换成你的APPID
-$apiUrl='https://api.weibo.com/2/short_url/shorten.json?source=&rsquo;.$apiKey.'&amp;url_long=&rsquo;.$long_url;
-$response = file_get_contents($apiUrl);
-$json = json_decode($response);
-return $json-&gt;urls[0]-&gt;url_short;
+    $apiKey=&lsquo;xxxxxxxxx&rsquo;;    //请替换成你的APPID
+    $apiUrl=&lsquo;<a href="https://api.weibo.com/2/short_url/shorten.json?source='.$apiKey.'&amp;url_long='.$long_url" target="_blank">https://api.weibo.com/2/short_url/shorten.json?source='.$apiKey.'&amp;url_long='.$long_url</a>;
+    $response = file_get_contents($apiUrl);
+    $json = json_decode($response);
+    return $json-&gt;urls[0]-&gt;url_short;
 }</p>
+
 <p>function expandurl($short_url){
-$apiKey='xxxxxxxxx&rsquo;;    //请替换成你的APPID
-$apiUrl='https://api.weibo.com/2/short_url/expand.json?source=&rsquo;.$apiKey.'&amp;url_short=&rsquo;.$short_url;
-$response = file_get_contents($apiUrl);
-$json = json_decode($response);
-return $json-&gt;urls[0]-&gt;url_long;
+    $apiKey=&lsquo;xxxxxxxxx&rsquo;;    //请替换成你的APPID
+    $apiUrl=&lsquo;<a href="https://api.weibo.com/2/short_url/expand.json?source='.$apiKey.'&amp;url_short='.$short_url" target="_blank">https://api.weibo.com/2/short_url/expand.json?source='.$apiKey.'&amp;url_short='.$short_url</a>;
+    $response = file_get_contents($apiUrl);
+    $json = json_decode($response);
+    return $json-&gt;urls[0]-&gt;url_long;
 }
 ?&gt;[/php]</p>
 
@@ -392,7 +400,7 @@ return $json-&gt;urls[0]-&gt;url_long;
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -418,7 +426,7 @@ return $json-&gt;urls[0]-&gt;url_long;
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

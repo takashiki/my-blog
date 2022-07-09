@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content="$map = [ &amp;#39;360&amp;#39; =&amp;gt; &amp;#39;360&amp;#39;, &amp;#39;baidu&amp;#39; =&amp;gt; &amp;#39;baidu&amp;#39;, &amp;#39;google&amp;#39; =&amp;gt; &amp;#39;google&amp;#39;, ]; $url = &amp;#39;https://www.google.com&amp;#39;; foreach ($map as $key =&amp;gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } } 期望输出: google 实际输出: 360
-参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&amp;lsquo;360&amp;rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&amp;#39;Y-m-d&amp;#39;, strtotime(&amp;#39;-1 month&amp;#39;, strtotime(&amp;#39;2017-07-31&amp;#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
+<meta name="description" content="$map = [ &#39;360&#39; =&amp;gt; &#39;360&#39;, &#39;baidu&#39; =&amp;gt; &#39;baidu&#39;, &#39;google&#39; =&amp;gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&amp;gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } }  期望输出: google 实际输出: 360
+参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&amp;rsquo;360&amp;rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;)));  期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
 PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -23,7 +23,7 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -35,40 +35,44 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
 
 
 
+
 <meta itemprop="name" content="PHP 反直(ren)觉(lei)的坑记录">
-<meta itemprop="description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } } 期望输出: google 实际输出: 360
-参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&lsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
+<meta itemprop="description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } }  期望输出: google 实际输出: 360
+参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&rsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;)));  期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
 PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。">
+
+
 <meta itemprop="datePublished" content="2017-08-03T10:33:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-08-03T10:33:00&#43;00:00" />
 <meta itemprop="wordCount" content="185">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="PHP 反直(ren)觉(lei)的坑记录"/>
-<meta name="twitter:description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } } 期望输出: google 实际输出: 360
-参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&lsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
+<meta name="twitter:description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } }  期望输出: google 实际输出: 360
+参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&rsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;)));  期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
 PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。"/>
 
 
 
     <meta property="og:title" content="PHP 反直(ren)觉(lei)的坑记录" />
-<meta property="og:description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } } 期望输出: google 实际输出: 360
-参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&lsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;))); 期望输出: 2017-06-01 实际输出: 2017-07-01
+<meta property="og:description" content="$map = [ &#39;360&#39; =&gt; &#39;360&#39;, &#39;baidu&#39; =&gt; &#39;baidu&#39;, &#39;google&#39; =&gt; &#39;google&#39;, ]; $url = &#39;https://www.google.com&#39;; foreach ($map as $key =&gt; $value) { if (strpos($url, $key) !== false) { echo $value; break; } }  期望输出: google 实际输出: 360
+参见：http://php.net/manual/en/function.strpos.php 中 needle 参数的解释，&rsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 chr(360) 结果为 h（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。 echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;)));  期望输出: 2017-06-01 实际输出: 2017-07-01
 参见：https://bugs.php.net/bug.php?id=27793。
 PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php-%E5%8F%8D%E7%9B%B4ren%E8%A7%89lei%E7%9A%84%E5%9D%91%E8%AE%B0%E5%BD%95/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2017-08-03T10:33:00+00:00" />
-<meta property="article:modified_time" content="2017-08-03T10:33:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2017-08-03T10:33:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-08-03T10:33:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -164,68 +168,93 @@ PHP 的时间处理有很多类似的坑，主要是有点反直觉，-1 month �
       
 
       <div class="post-content">
-        <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$map = [
-    &#39;360&#39; =&gt; &#39;360&#39;,
-    &#39;baidu&#39; =&gt; &#39;baidu&#39;,
-    &#39;google&#39; =&gt; &#39;google&#39;,
+        
+
+<pre><code class="language-php">$map = [
+    '360' =&gt; '360',
+    'baidu' =&gt; 'baidu',
+    'google' =&gt; 'google',
 ];
 
-$url = &#39;https://www.google.com&#39;;
+$url = 'https://www.google.com';
 foreach ($map as $key =&gt; $value) {
     if (strpos($url, $key) !== false) {
         echo $value;
         break;
     }
 }
-</code></pre></div><p>期望输出: google
+</code></pre>
+
+<p>期望输出: google
 实际输出: 360</p>
-<h2 id="参见httpphpnetmanualenfunctionstrposphphttpphpnetmanualenfunctionstrposphp-中-needle-参数的解释360-在数组中被转换成了整型的-key在-strpos-中使用到时整型的-360-就被当作了-ascii-序数值而-chr360-结果为-hchr-函数入参不在-0255-范围内时会进行取模运算处理">参见：<a href="http://php.net/manual/en/function.strpos.php">http://php.net/manual/en/function.strpos.php</a> 中 needle 参数的解释，&lsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 <code>chr(360)</code> 结果为 <code>h</code>（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">echo date(&#39;Y-m-d&#39;, strtotime(&#39;-1 month&#39;, strtotime(&#39;2017-07-31&#39;)));
-</code></pre></div><p>期望输出: 2017-06-01
+
+<h2 id="参见-http-php-net-manual-en-function-strpos-php-http-php-net-manual-en-function-strpos-php-中-needle-参数的解释-360-在数组中被转换成了整型的-key-在-strpos-中使用到时整型的-360-就被当作了-ascii-序数值-而-chr-360-结果为-h-chr-函数入参不在-0-255-范围内时会进行取模运算处理">参见：<a href="http://php.net/manual/en/function.strpos.php" target="_blank">http://php.net/manual/en/function.strpos.php</a> 中 needle 参数的解释，&rsquo;360&rsquo; 在数组中被转换成了整型的 key，在 strpos 中使用到时整型的 360 就被当作了 ascii 序数值，而 <code>chr(360)</code> 结果为 <code>h</code>（chr 函数入参不在 0~255 范围内时会进行取模运算处理）。</h2>
+
+<pre><code class="language-php">echo date('Y-m-d', strtotime('-1 month', strtotime('2017-07-31')));
+</code></pre>
+
+<p>期望输出: 2017-06-01
 实际输出: 2017-07-01</p>
-<p>参见：<a href="https://bugs.php.net/bug.php?id=27793">https://bugs.php.net/bug.php?id=27793</a>。</p>
+
+<p>参见：<a href="https://bugs.php.net/bug.php?id=27793" target="_blank">https://bugs.php.net/bug.php?id=27793</a>。</p>
+
 <p>PHP 的时间处理有很多类似的坑，主要是有点反直觉，<code>-1 month</code> 是减 30 天，即使使用 Datetime 类也会有类似的问题出现。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-$date1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">DateTime</span><span style="color:#f92672">::</span><span style="color:#a6e22e">createFromFormat</span>(<span style="color:#e6db74">&#39;Y-m-d H:i:s&#39;</span>, <span style="color:#e6db74">&#39;2017-07-31 00:00:00&#39;</span>);
-$date2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">clone</span> $date1;
+<pre><code class="language-php">&lt;?php
 
-$date1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">modify</span>(<span style="color:#e6db74">&#39;-1 month&#39;</span>);
-$date2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">sub</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DateInterval</span>(<span style="color:#e6db74">&#34;P1M&#34;</span>));
+$date1 = DateTime::createFromFormat('Y-m-d H:i:s', '2017-07-31 00:00:00');
+$date2 = clone $date1;
 
-<span style="color:#a6e22e">var_dump</span>($date1<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;Y-m-d&#39;</span>)); <span style="color:#75715e">// 2017-07-01
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">var_dump</span>($date2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;Y-m-d&#39;</span>)); <span style="color:#75715e">// 2017-07-01
-</span></code></pre></div><p>参见：<a href="http://php.net/manual/en/class.datetime.php">http://php.net/manual/en/class.datetime.php</a></p>
-<hr>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$arr = [1, 2, 3]; 
+$date1-&gt;modify('-1 month');
+$date2-&gt;sub(new DateInterval(&quot;P1M&quot;));
 
-foreach ($arr as <span style="color:#960050;background-color:#1e0010">&amp;</span>$a) {}
+var_dump($date1-&gt;format('Y-m-d')); // 2017-07-01
+var_dump($date2-&gt;format('Y-m-d')); // 2017-07-01
+</code></pre>
+
+<p>参见：<a href="http://php.net/manual/en/class.datetime.php" target="_blank">http://php.net/manual/en/class.datetime.php</a></p>
+
+<hr />
+
+<pre><code class="language-php">$arr = [1, 2, 3]; 
+
+foreach ($arr as &amp;$a) {}
 foreach ($arr as $a) {}
 
 var_dump($arr); 
-</code></pre></div><p>这是 php 引用的一个坑，必须引用在循环结束之后必须 unset 一下，否则输出的结果与预期会不一致。</p>
-<p>参考资料：<a href="http://php.net/manual/en/control-structures.foreach.php">http://php.net/manual/en/control-structures.foreach.php</a></p>
-<p>具体案例可见 <a href="https://laravel-china.org/articles/7001/php-ray-foreach-and-references-thunder">https://laravel-china.org/articles/7001/php-ray-foreach-and-references-thunder</a></p>
-<hr>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$x = array(&#39;a&#39;);
+</code></pre>
+
+<p>这是 php 引用的一个坑，必须引用在循环结束之后必须 unset 一下，否则输出的结果与预期会不一致。</p>
+
+<p>参考资料：<a href="http://php.net/manual/en/control-structures.foreach.php" target="_blank">http://php.net/manual/en/control-structures.foreach.php</a></p>
+
+<p>具体案例可见 <a href="https://laravel-china.org/articles/7001/php-ray-foreach-and-references-thunder" target="_blank">https://laravel-china.org/articles/7001/php-ray-foreach-and-references-thunder</a></p>
+
+<hr />
+
+<pre><code class="language-php">$x = array('a');
 $test = in_array(0, $x);
 var_dump($test); // true
 
 $x = array(0);
-$test = in_array(&#39;a&#39;, $x);
+$test = in_array('a', $x);
 var_dump($test); // true
 
-$x = array(&#39;b&#39; =&gt; 0);
-$test = in_array(&#39;a&#39;, $x);
+$x = array('b' =&gt; 0);
+$test = in_array('a', $x);
 var_dump($test); // true
 
-$x = array(&#39;0&#39;);
-$test= in_array(&#39;a&#39;, $x);
+$x = array('0');
+$test= in_array('a', $x);
 var_dump($test); // false
-</code></pre></div><p>可能很多人都不知道，<code>in_array</code> 函数有第三个参数 <code>strict</code>，这个参数默认为 false，不把这个参数设置成 true 就会出现上面的匪夷所思的情况。
+</code></pre>
+
+<p>可能很多人都不知道，<code>in_array</code> 函数有第三个参数 <code>strict</code>，这个参数默认为 false，不把这个参数设置成 true 就会出现上面的匪夷所思的情况。
 但是 <code>strict</code> 为 true 的情况下会对值的类型进行判断，在实际应用场景中如果数据类型没有进行恰当的处理也可能有坑。</p>
+
 <p>之所以前面三个 in_array 的结果都为 true，是因为在 php 中 <code>'a' == 0</code>，除了 in_array，switch case 等也会出现类似情况。</p>
-<p>参考链接：<a href="http://php.net/in_array">http://php.net/in_array</a></p>
+
+<p>参考链接：<a href="http://php.net/in_array" target="_blank">http://php.net/in_array</a></p>
 
       </div>
     </article>
@@ -389,7 +418,7 @@ var_dump($test); // false
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -415,7 +444,7 @@ var_dump($test); // false
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

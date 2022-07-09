@@ -21,7 +21,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,17 +33,20 @@
 
 
 
+
 <meta itemprop="name" content="Yii2 使用jsonp格式response时遇到的一个坑">
 <meta itemprop="description" content="最近的一个项目在实现前后端分离时，由于调用域名与接口域名可能不相同，所以使用了jsonp格式进行返回，但是在开发环境上开了debug的情况下遇到500错误时竟然没有任何错误显示，也即response body是空的，这让我很困扰。
 通过查看 Yii 写的文件日志发现，这是 Yii 在默认的 ErrorHandler 中没有对 jsonp 格式返回进行特殊处理造成的，于是便在 github 上提了一个 issue。从回复来看，一年前就有人修改了jsonp的formatter的实现，不过由于会破坏兼容性，所以一直没正式接收。话说原本的jsonp实现方式实在是太坑了，和其他几种Formatter的实现不一致，使用起来很不方便，希望Yii官方早点改掉吧。">
+
+
 <meta itemprop="datePublished" content="2017-02-20T09:18:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-02-20T09:18:00&#43;00:00" />
 <meta itemprop="wordCount" content="14">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -58,9 +61,10 @@
 通过查看 Yii 写的文件日志发现，这是 Yii 在默认的 ErrorHandler 中没有对 jsonp 格式返回进行特殊处理造成的，于是便在 github 上提了一个 issue。从回复来看，一年前就有人修改了jsonp的formatter的实现，不过由于会破坏兼容性，所以一直没正式接收。话说原本的jsonp实现方式实在是太坑了，和其他几种Formatter的实现不一致，使用起来很不方便，希望Yii官方早点改掉吧。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/yii2-%E4%BD%BF%E7%94%A8jsonp%E6%A0%BC%E5%BC%8Fresponse%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2017-02-20T09:18:00+00:00" />
-<meta property="article:modified_time" content="2017-02-20T09:18:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2017-02-20T09:18:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-02-20T09:18:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -157,7 +161,8 @@
 
       <div class="post-content">
         <p>最近的一个项目在实现前后端分离时，由于调用域名与接口域名可能不相同，所以使用了<code>jsonp</code>格式进行返回，但是在开发环境上开了<code>debug</code>的情况下遇到500错误时竟然没有任何错误显示，也即<code>response body</code>是空的，这让我很困扰。</p>
-<p>通过查看 <code>Yii</code> 写的文件日志发现，这是 <code>Yii</code> 在默认的 <code>ErrorHandler</code> 中没有对 <code>jsonp</code> 格式返回进行特殊处理造成的，于是便在 <code>github</code> 上提了一个 <a href="https://github.com/yiisoft/yii2/issues/13563">issue</a>。从回复来看，一年前就有人修改了<code>jsonp</code>的<code>formatter</code>的实现，不过由于会破坏兼容性，所以一直没正式接收。话说原本的<code>jsonp</code>实现方式实在是太坑了，和其他几种<code>Formatter</code>的实现不一致，使用起来很不方便，希望<code>Yii</code>官方早点改掉吧。</p>
+
+<p>通过查看 <code>Yii</code> 写的文件日志发现，这是 <code>Yii</code> 在默认的 <code>ErrorHandler</code> 中没有对 <code>jsonp</code> 格式返回进行特殊处理造成的，于是便在 <code>github</code> 上提了一个 <a href="https://github.com/yiisoft/yii2/issues/13563" target="_blank">issue</a>。从回复来看，一年前就有人修改了<code>jsonp</code>的<code>formatter</code>的实现，不过由于会破坏兼容性，所以一直没正式接收。话说原本的<code>jsonp</code>实现方式实在是太坑了，和其他几种<code>Formatter</code>的实现不一致，使用起来很不方便，希望<code>Yii</code>官方早点改掉吧。</p>
 
       </div>
     </article>
@@ -321,7 +326,7 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -347,7 +352,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

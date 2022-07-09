@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;amp;tid=13391 该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 " />
+<meta name="description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;amp;tid=13391  该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 " />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -20,7 +20,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -32,31 +32,35 @@
 
 
 
+
 <meta itemprop="name" content="新手学WEB开发杂记（七）——自动发布及回复微博的实现">
-<meta itemprop="description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391 该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 ">
+<meta itemprop="description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391  该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 ">
+
+
 <meta itemprop="datePublished" content="2013-04-25T21:04:51&#43;00:00" />
 <meta itemprop="dateModified" content="2013-04-25T21:04:51&#43;00:00" />
 <meta itemprop="wordCount" content="10">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="新手学WEB开发杂记（七）——自动发布及回复微博的实现"/>
-<meta name="twitter:description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391 该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 "/>
+<meta name="twitter:description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391  该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 "/>
 
 
 
     <meta property="og:title" content="新手学WEB开发杂记（七）——自动发布及回复微博的实现" />
-<meta property="og:description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391 该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 " />
+<meta property="og:description" content=" 之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。 后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391  该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。 需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。 这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E6%96%B0%E6%89%8B%E5%AD%A6web%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0%E4%B8%83%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83%E5%8F%8A%E5%9B%9E%E5%A4%8D%E5%BE%AE%E5%8D%9A%E7%9A%84%E5%AE%9E%E7%8E%B0/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-04-25T21:04:51+00:00" />
-<meta property="article:modified_time" content="2013-04-25T21:04:51+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-04-25T21:04:51&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-25T21:04:51&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -154,10 +158,10 @@
       <div class="post-content">
         <p>    之前一直想写一个自动发博机，可以每隔一段时间自动发布一条微博。但是由于新浪微博API的使用需要access_token，而该token的获取需登录进行授权，而模拟登录的代码一直没想出来怎么写，计划就搁浅了。
  
-    后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391  该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。
+    后来在sae开发者社区提出该问题后，有人说开发者自己的账号对自己创建的应用的授权是没有过期时间限制的，并向我推荐了这篇文章 <a href="http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391 " target="_blank">http://cloudbbs.org/forum.php?mod=viewthread&amp;tid=13391 </a> 该文章详细地讲解了如何从零开始创建一款带有回粉功能的求天气应用，即：用户发微博 城市名@求天气 ，一分钟内@求天气 微博号会自动给用户评论他所查询的城市天气。并且提供了源码的下载，推荐有兴趣创建一个自动发博机的初级开发者看一看。
     需要注意的一点是，该代码中的memcache缓存时间设置为600秒，若你设置的cron大于600秒则需要将缓存时间改大，否则会发生重复评论的问题。
  
-    这是我写的自动发博机微博账号：http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。
+    这是我写的自动发博机微博账号：<a href="http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。" target="_blank">http://weibo.com/u/3270877203 （兵库北小姐，我是香菜厨发自真心）。</a>
  
  </p>
 
@@ -323,7 +327,7 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -349,7 +353,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

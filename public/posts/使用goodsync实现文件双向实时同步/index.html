@@ -9,10 +9,10 @@
 本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用Cloud9这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。
 上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的GoodSync。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：http://www.goodsync.com/for-linux。
 下载并解压后，我们将goodsync的几个可执行文件复制到/usr/bin中方便使用：
-cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync 然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
-gs-server /set-admin=&amp;#34;gs-userid:gs-password:system-userid&amp;#34; gs-server 然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
-[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&amp;#39;/root&amp;#39; 重启supervisor并查看任务运行状态：
-service supervisor restart supervisorctl status 之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。" />
+cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync  然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
+gs-server /set-admin=&amp;quot;gs-userid:gs-password:system-userid&amp;quot; gs-server  然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
+[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39;  重启supervisor并查看任务运行状态：
+service supervisor restart supervisorctl status  之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -27,7 +27,7 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -39,23 +39,26 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 
 
 
+
 <meta itemprop="name" content="使用GoodSync实现文件双向实时同步">
 <meta itemprop="description" content="前情：http://blog.skyx.in/archives/233/。
 本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用Cloud9这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。
 上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的GoodSync。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：http://www.goodsync.com/for-linux。
 下载并解压后，我们将goodsync的几个可执行文件复制到/usr/bin中方便使用：
-cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync 然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
-gs-server /set-admin=&#34;gs-userid:gs-password:system-userid&#34; gs-server 然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
-[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39; 重启supervisor并查看任务运行状态：
-service supervisor restart supervisorctl status 之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。">
+cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync  然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
+gs-server /set-admin=&quot;gs-userid:gs-password:system-userid&quot; gs-server  然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
+[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39;  重启supervisor并查看任务运行状态：
+service supervisor restart supervisorctl status  之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。">
+
+
 <meta itemprop="datePublished" content="2016-03-16T09:16:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-16T09:16:00&#43;00:00" />
 <meta itemprop="wordCount" content="33">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -64,10 +67,10 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用Cloud9这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。
 上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的GoodSync。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：http://www.goodsync.com/for-linux。
 下载并解压后，我们将goodsync的几个可执行文件复制到/usr/bin中方便使用：
-cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync 然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
-gs-server /set-admin=&#34;gs-userid:gs-password:system-userid&#34; gs-server 然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
-[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39; 重启supervisor并查看任务运行状态：
-service supervisor restart supervisorctl status 之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。"/>
+cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync  然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
+gs-server /set-admin=&quot;gs-userid:gs-password:system-userid&quot; gs-server  然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
+[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39;  重启supervisor并查看任务运行状态：
+service supervisor restart supervisorctl status  之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。"/>
 
 
 
@@ -76,15 +79,16 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
 本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用Cloud9这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。
 上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的GoodSync。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：http://www.goodsync.com/for-linux。
 下载并解压后，我们将goodsync的几个可执行文件复制到/usr/bin中方便使用：
-cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync 然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
-gs-server /set-admin=&#34;gs-userid:gs-password:system-userid&#34; gs-server 然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
-[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39; 重启supervisor并查看任务运行状态：
-service supervisor restart supervisorctl status 之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。" />
+cp gs-server /usr/bin/gs-server cp gscp /usr/bin/gscp cp gsync /usr/bin/gsync  然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：
+gs-server /set-admin=&quot;gs-userid:gs-password:system-userid&quot; gs-server  然后使用 supervisor 设置开机启动，编辑/etc/supervisor/conf.d/goodsync.conf内容如下：
+[program:gs-server] command=/usr/bin/gs-server autostart=true autorestart=true user=root environment=HOME=&#39;/root&#39;  重启supervisor并查看任务运行状态：
+service supervisor restart supervisorctl status  之后Windows客户端上的设置参考这篇教程即可，http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8goodsync%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%8F%8C%E5%90%91%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-03-16T09:16:00+00:00" />
-<meta property="article:modified_time" content="2016-03-16T09:16:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-03-16T09:16:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-16T09:16:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -180,27 +184,42 @@ service supervisor restart supervisorctl status 之后Windows客户端上的设�
       
 
       <div class="post-content">
-        <p>前情：<a href="http://blog.skyx.in/archives/233/">http://blog.skyx.in/archives/233/</a>。</p>
-<p>本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用<a href="https://c9.io/">Cloud9</a>这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。</p>
-<p>上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的<a href="http://www.goodsync.com/">GoodSync</a>。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：<a href="http://www.goodsync.com/for-linux">http://www.goodsync.com/for-linux</a>。</p>
+        <p>前情：<a href="http://blog.skyx.in/archives/233/" target="_blank">http://blog.skyx.in/archives/233/</a>。</p>
+
+<p>本来在windows上进行开发使用vagrant会是一种比较好的解决方案，但是vagrant只能在一台客户端机器上，如果有多台开发机并且经常切换，还是使用<a href="https://c9.io/" target="_blank">Cloud9</a>这样的WebIDE或者vps比较方便。不过毕竟WebIDE没有phpStorm这样的IDE强大，所以我最后还是选择了使用vps。虽然phpStorm能自动将本地代码同步到服务器，但却不能将服务器上的文件变化同步回来，这就得借用第三方工具了。</p>
+
+<p>上篇文章中我是使用rsync来实现这个需求的，不过后来发现了更加方便使用的<a href="http://www.goodsync.com/" target="_blank">GoodSync</a>。Window上的安装就不说了，Linux上只需下载可执行文件即可使用，下载地址：<a href="http://www.goodsync.com/for-linux" target="_blank">http://www.goodsync.com/for-linux</a>。</p>
+
 <p>下载并解压后，我们将goodsync的几个可执行文件复制到<code>/usr/bin</code>中方便使用：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cp gs-server /usr/bin/gs-server
+
+<pre><code class="language-shell">cp gs-server /usr/bin/gs-server
 cp gscp /usr/bin/gscp
 cp gsync /usr/bin/gsync
-</code></pre></div><p>然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gs-server /set-admin<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gs-userid:gs-password:system-userid&#34;</span>
+</code></pre>
+
+<p>然后我们执行增加用户的命令，注意替换其中的用户名密码，之后直接执行gs-server就可以启动了：</p>
+
+<pre><code class="language-shell">gs-server /set-admin=&quot;gs-userid:gs-password:system-userid&quot;
 gs-server
-</code></pre></div><p>然后使用 supervisor 设置开机启动，编辑<code>/etc/supervisor/conf.d/goodsync.conf</code>内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>program:gs-server<span style="color:#f92672">]</span>
-command<span style="color:#f92672">=</span>/usr/bin/gs-server
-autostart<span style="color:#f92672">=</span>true
-autorestart<span style="color:#f92672">=</span>true
-user<span style="color:#f92672">=</span>root
-environment<span style="color:#f92672">=</span>HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/root&#39;</span>
-</code></pre></div><p>重启supervisor并查看任务运行状态：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">service supervisor restart
+</code></pre>
+
+<p>然后使用 supervisor 设置开机启动，编辑<code>/etc/supervisor/conf.d/goodsync.conf</code>内容如下：</p>
+
+<pre><code class="language-shell">[program:gs-server]
+command=/usr/bin/gs-server
+autostart=true
+autorestart=true
+user=root
+environment=HOME='/root'
+</code></pre>
+
+<p>重启supervisor并查看任务运行状态：</p>
+
+<pre><code class="language-shell">service supervisor restart
 supervisorctl status
-</code></pre></div><p>之后Windows客户端上的设置参考这篇教程即可，<a href="http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html">http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html</a>。</p>
+</code></pre>
+
+<p>之后Windows客户端上的设置参考这篇教程即可，<a href="http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html" target="_blank">http://jingyan.baidu.com/article/a3761b2bbbef2f1577f9aa43.html</a>。</p>
 
       </div>
     </article>
@@ -364,7 +383,7 @@ supervisorctl status
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -390,7 +409,7 @@ supervisorctl status
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

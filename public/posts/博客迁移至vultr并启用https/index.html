@@ -25,12 +25,13 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -44,14 +45,16 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
 cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站上放上又拍云的图标和链接，就可以享受每月15G流量的免费额度，个人博客足够使用了，使用过程详见http://blog.skyx.in/archives/202/。
 唯一有点遗憾的是原本使用的评论系统畅言因为不支持https不能使用了，多说被收购后半死不活的，而disqus在国内的大环境也并不十分好用，于是换回了typecho的原生评论。
 最终效果参见本博客和https://skyx.in/。">
+
+
 <meta itemprop="datePublished" content="2016-04-02T12:23:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-02T12:23:00&#43;00:00" />
 <meta itemprop="wordCount" content="7">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -74,9 +77,10 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
 最终效果参见本博客和https://skyx.in/。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%87%B3vultr%E5%B9%B6%E5%90%AF%E7%94%A8https/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-04-02T12:23:00+00:00" />
-<meta property="article:modified_time" content="2016-04-02T12:23:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-04-02T12:23:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-04-02T12:23:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -172,12 +176,17 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
       
 
       <div class="post-content">
-        <p>SAE现在开始对应用和共享型MyQL收费了，如果应用数比较多，使用SAE的性价比就很低了，于是便重新开始把自己的站点迁移到vps上。之前也试用了很多家的vps，详见<a href="http://blog.skyx.in/category/VPS/">http://blog.skyx.in/category/VPS/</a>，最终还是决定使用<a href="http://www.vultr.com/?ref=6875759">Vultr</a>东京节点，原因主要有几个，一个是vultr最低价套餐的内存较大一些，一个是vultr东京通过<a href="https://vnet.link/?rc=17569">微林</a>中转速度不错（cn3、cn4、hk1的节点都可以），一个是vultr现在有免费的快照，备份方便。</p>
-<p>站点的迁移本身没什么好说的，为了方便部署，我自己写了一个简单的基于git@osc的webhook的<a href="http://blog.skyx.in/archives/158/">部署脚本</a>。</p>
-<p>迁移至vps后终于可以开启https了，我用的是let&rsquo;s encrypt的免费证书，使用的脚本为<a href="https://github.com/Neilpang/le">https://github.com/Neilpang/le</a>，这个脚本十分傻瓜化，可以非常简单地完成证书的申请和更新。</p>
-<p>cdn我使用的是<a href="https://www.upyun.com/">又拍云</a>，加入<a href="https://www.upyun.com/zh/league.html">又拍云联盟</a>，也即在自己的网站上放上又拍云的图标和链接，就可以享受每月15G流量的免费额度，个人博客足够使用了，使用过程详见<a href="http://blog.skyx.in/archives/202/">http://blog.skyx.in/archives/202/</a>。</p>
+        <p>SAE现在开始对应用和共享型MyQL收费了，如果应用数比较多，使用SAE的性价比就很低了，于是便重新开始把自己的站点迁移到vps上。之前也试用了很多家的vps，详见<a href="http://blog.skyx.in/category/VPS/" target="_blank">http://blog.skyx.in/category/VPS/</a>，最终还是决定使用<a href="http://www.vultr.com/?ref=6875759" target="_blank">Vultr</a>东京节点，原因主要有几个，一个是vultr最低价套餐的内存较大一些，一个是vultr东京通过<a href="https://vnet.link/?rc=17569" target="_blank">微林</a>中转速度不错（cn3、cn4、hk1的节点都可以），一个是vultr现在有免费的快照，备份方便。</p>
+
+<p>站点的迁移本身没什么好说的，为了方便部署，我自己写了一个简单的基于git@osc的webhook的<a href="http://blog.skyx.in/archives/158/" target="_blank">部署脚本</a>。</p>
+
+<p>迁移至vps后终于可以开启https了，我用的是let&rsquo;s encrypt的免费证书，使用的脚本为<a href="https://github.com/Neilpang/le" target="_blank">https://github.com/Neilpang/le</a>，这个脚本十分傻瓜化，可以非常简单地完成证书的申请和更新。</p>
+
+<p>cdn我使用的是<a href="https://www.upyun.com/" target="_blank">又拍云</a>，加入<a href="https://www.upyun.com/zh/league.html" target="_blank">又拍云联盟</a>，也即在自己的网站上放上又拍云的图标和链接，就可以享受每月15G流量的免费额度，个人博客足够使用了，使用过程详见<a href="http://blog.skyx.in/archives/202/" target="_blank">http://blog.skyx.in/archives/202/</a>。</p>
+
 <p>唯一有点遗憾的是原本使用的评论系统畅言因为不支持https不能使用了，多说被收购后半死不活的，而disqus在国内的大环境也并不十分好用，于是换回了typecho的原生评论。</p>
-<p>最终效果参见本博客和<a href="https://skyx.in/">https://skyx.in/</a>。</p>
+
+<p>最终效果参见本博客和<a href="https://skyx.in/" target="_blank">https://skyx.in/</a>。</p>
 
       </div>
     </article>
@@ -341,7 +350,7 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -367,7 +376,7 @@ cdn我使用的是又拍云，加入又拍云联盟，也即在自己的网站�
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

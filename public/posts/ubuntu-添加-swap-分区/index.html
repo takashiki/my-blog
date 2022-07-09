@@ -24,12 +24,13 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -42,14 +43,16 @@
 参考文档：https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997
 具体步骤和命令如下：
 # 创建一个空文件，具体大小的话对于小内存机器建议为内存的两倍 (例子中 1K * 4M = 4 GiB). sudo mkdir -v /var/cache/swap cd /var/cache/swap sudo dd if=/dev/zero of=swapfile bs=1K count=4M sudo chmod 600 swapfile # 将新建的文件转换为 swap 文件. sudo mkswap swapfile # 开启 swap. sudo swapon swapfile # 通过 swapon 或者 top 命令进行验证: swapon -s # 或者 top -bn1 | grep -i swap # 会显示类似信息: KiB Swap: 4194300 total, 4194300 free # 禁用 swap 时可以使用 sudo swapoff swapfile.">
+
+
 <meta itemprop="datePublished" content="2018-05-14T11:19:33&#43;00:00" />
 <meta itemprop="dateModified" content="2018-05-14T11:19:33&#43;00:00" />
 <meta itemprop="wordCount" content="112">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -70,9 +73,10 @@
 # 创建一个空文件，具体大小的话对于小内存机器建议为内存的两倍 (例子中 1K * 4M = 4 GiB). sudo mkdir -v /var/cache/swap cd /var/cache/swap sudo dd if=/dev/zero of=swapfile bs=1K count=4M sudo chmod 600 swapfile # 将新建的文件转换为 swap 文件. sudo mkswap swapfile # 开启 swap. sudo swapon swapfile # 通过 swapon 或者 top 命令进行验证: swapon -s # 或者 top -bn1 | grep -i swap # 会显示类似信息: KiB Swap: 4194300 total, 4194300 free # 禁用 swap 时可以使用 sudo swapoff swapfile." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/ubuntu-%E6%B7%BB%E5%8A%A0-swap-%E5%88%86%E5%8C%BA/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2018-05-14T11:19:33+00:00" />
-<meta property="article:modified_time" content="2018-05-14T11:19:33+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2018-05-14T11:19:33&#43;00:00"/>
+<meta property="article:modified_time" content="2018-05-14T11:19:33&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -169,37 +173,42 @@
 
       <div class="post-content">
         <p>前段时间上车了腾讯云 360 买三年多的学生机的活动，加上降配总共获得 6 年，然而内存降到 1G 后，跑个 mysql 时间长了内存都不够。而且腾讯云的 ubuntu 不知道什么原因 1G 内存实际只有 800+M，更加雪上加霜。</p>
+
 <p>终于前两天服务器由于内存爆了而又没有开 swap 崩了，几乎死机状态，ssh 都连不上，控制台强制重启才恢复正常。为了防止再次出现这种情况，我就给服务器加了个 swap。</p>
-<p>参考文档：<a href="https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997">https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997</a></p>
+
+<p>参考文档：<a href="https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997" target="_blank">https://askubuntu.com/questions/33697/how-do-i-add-a-swap-partition-after-system-installation/796997#796997</a></p>
+
 <p>具体步骤和命令如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建一个空文件，具体大小的话对于小内存机器建议为内存的两倍 (例子中 1K * 4M = 4 GiB).</span>
+
+<pre><code class="language-shell"># 创建一个空文件，具体大小的话对于小内存机器建议为内存的两倍 (例子中 1K * 4M = 4 GiB).
 sudo mkdir -v /var/cache/swap
 cd /var/cache/swap
-sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/zero of<span style="color:#f92672">=</span>swapfile bs<span style="color:#f92672">=</span>1K count<span style="color:#f92672">=</span>4M
-sudo chmod <span style="color:#ae81ff">600</span> swapfile
+sudo dd if=/dev/zero of=swapfile bs=1K count=4M
+sudo chmod 600 swapfile
 
-<span style="color:#75715e"># 将新建的文件转换为 swap 文件.</span>
+# 将新建的文件转换为 swap 文件.
 sudo mkswap swapfile
 
-<span style="color:#75715e"># 开启 swap.</span>
+# 开启 swap.
 
 sudo swapon swapfile
 
-<span style="color:#75715e"># 通过 swapon 或者 top 命令进行验证:</span>
+# 通过 swapon 或者 top 命令进行验证:
 swapon -s
-<span style="color:#75715e"># 或者</span>
+# 或者
 top -bn1 | grep -i swap
-<span style="color:#75715e"># 会显示类似信息: KiB Swap:  4194300 total,  4194300 free</span>
+# 会显示类似信息: KiB Swap:  4194300 total,  4194300 free
 
-<span style="color:#75715e"># 禁用 swap 时可以使用 sudo swapoff swapfile.</span>
+# 禁用 swap 时可以使用 sudo swapoff swapfile.
 
-<span style="color:#75715e"># 将该分区设置成开机加载.</span>
-echo <span style="color:#e6db74">&#34;/var/cache/swap/swapfile none swap sw 0 0&#34;</span> | sudo tee -a /etc/fstab
+# 将该分区设置成开机加载.
+echo &quot;/var/cache/swap/swapfile none swap sw 0 0&quot; | sudo tee -a /etc/fstab
 
-<span style="color:#75715e"># 测试开机加载:</span>
+# 测试开机加载:
 sudo swapoff swapfile
 sudo swapon -va
-</code></pre></div>
+</code></pre>
+
       </div>
     </article>
 
@@ -362,7 +371,7 @@ sudo swapon -va
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -388,7 +397,7 @@ sudo swapon -va
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

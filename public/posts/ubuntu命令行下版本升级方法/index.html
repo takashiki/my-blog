@@ -6,13 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
 <meta name="description" content="ubuntu在命令行下的版本升级，官方比较推荐的方式是使用do-release-upgrade，也即按顺序执行以下命令即可：
-apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade 如果这种方式遇到如下报错：
-Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages 网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
-[Distro] AllowUnauthenticated=yes 然后再执行do-release-upgrade。
+apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade  如果这种方式遇到如下报错：
+Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages  网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
+[Distro] AllowUnauthenticated=yes  然后再执行do-release-upgrade。
 不过我使用该方法后仍然失败，最后只好采用debian的升级方法来进行升级，步骤如下：
 修改/etc/apt/source.list文件，修改其中的版本号，比如14.04修改到15.10即将trusty替换为wily，若使用vim可以批量替换:%s/trusty/wily/g。
 然后依次执行以下命令即可：
-apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如下:lsb_release -a。" />
+apt-get update apt-get upgrade apt-get dist-upgrade  查看ubuntu版本命令如下:lsb_release -a。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -27,7 +27,7 @@ apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -39,52 +39,56 @@ apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如�
 
 
 
+
 <meta itemprop="name" content="ubuntu命令行下版本升级方法">
 <meta itemprop="description" content="ubuntu在命令行下的版本升级，官方比较推荐的方式是使用do-release-upgrade，也即按顺序执行以下命令即可：
-apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade 如果这种方式遇到如下报错：
-Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages 网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
-[Distro] AllowUnauthenticated=yes 然后再执行do-release-upgrade。
+apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade  如果这种方式遇到如下报错：
+Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages  网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
+[Distro] AllowUnauthenticated=yes  然后再执行do-release-upgrade。
 不过我使用该方法后仍然失败，最后只好采用debian的升级方法来进行升级，步骤如下：
 修改/etc/apt/source.list文件，修改其中的版本号，比如14.04修改到15.10即将trusty替换为wily，若使用vim可以批量替换:%s/trusty/wily/g。
 然后依次执行以下命令即可：
-apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如下:lsb_release -a。">
+apt-get update apt-get upgrade apt-get dist-upgrade  查看ubuntu版本命令如下:lsb_release -a。">
+
+
 <meta itemprop="datePublished" content="2016-02-28T19:39:03&#43;00:00" />
 <meta itemprop="dateModified" content="2016-02-28T19:39:03&#43;00:00" />
 <meta itemprop="wordCount" content="59">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="ubuntu命令行下版本升级方法"/>
 <meta name="twitter:description" content="ubuntu在命令行下的版本升级，官方比较推荐的方式是使用do-release-upgrade，也即按顺序执行以下命令即可：
-apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade 如果这种方式遇到如下报错：
-Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages 网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
-[Distro] AllowUnauthenticated=yes 然后再执行do-release-upgrade。
+apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade  如果这种方式遇到如下报错：
+Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages  网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
+[Distro] AllowUnauthenticated=yes  然后再执行do-release-upgrade。
 不过我使用该方法后仍然失败，最后只好采用debian的升级方法来进行升级，步骤如下：
 修改/etc/apt/source.list文件，修改其中的版本号，比如14.04修改到15.10即将trusty替换为wily，若使用vim可以批量替换:%s/trusty/wily/g。
 然后依次执行以下命令即可：
-apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如下:lsb_release -a。"/>
+apt-get update apt-get upgrade apt-get dist-upgrade  查看ubuntu版本命令如下:lsb_release -a。"/>
 
 
 
     <meta property="og:title" content="ubuntu命令行下版本升级方法" />
 <meta property="og:description" content="ubuntu在命令行下的版本升级，官方比较推荐的方式是使用do-release-upgrade，也即按顺序执行以下命令即可：
-apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade 如果这种方式遇到如下报错：
-Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages 网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
-[Distro] AllowUnauthenticated=yes 然后再执行do-release-upgrade。
+apt-get update apt-get upgrade apt-get install update-manager-core do-release-upgrade  如果这种方式遇到如下报错：
+Error authenticating some packages It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages  网上有一种解决办法是创建/etc/update-manager/release-upgrades.d/unauth.cfg文件，内容如下：
+[Distro] AllowUnauthenticated=yes  然后再执行do-release-upgrade。
 不过我使用该方法后仍然失败，最后只好采用debian的升级方法来进行升级，步骤如下：
 修改/etc/apt/source.list文件，修改其中的版本号，比如14.04修改到15.10即将trusty替换为wily，若使用vim可以批量替换:%s/trusty/wily/g。
 然后依次执行以下命令即可：
-apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如下:lsb_release -a。" />
+apt-get update apt-get upgrade apt-get dist-upgrade  查看ubuntu版本命令如下:lsb_release -a。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/ubuntu%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E6%96%B9%E6%B3%95/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-02-28T19:39:03+00:00" />
-<meta property="article:modified_time" content="2016-02-28T19:39:03+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-02-28T19:39:03&#43;00:00"/>
+<meta property="article:modified_time" content="2016-02-28T19:39:03&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -181,25 +185,40 @@ apt-get update apt-get upgrade apt-get dist-upgrade 查看ubuntu版本命令如�
 
       <div class="post-content">
         <p>ubuntu在命令行下的版本升级，官方比较推荐的方式是使用<code>do-release-upgrade</code>，也即按顺序执行以下命令即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt-get update
+
+<pre><code class="language-shell">apt-get update
 apt-get upgrade
 apt-get install update-manager-core
-<span style="color:#66d9ef">do</span>-release-upgrade
-</code></pre></div><p>如果这种方式遇到如下报错：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Error authenticating some packages
+do-release-upgrade
+</code></pre>
 
-It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below <span style="color:#66d9ef">for</span> a list of unauthenticated packages
-</code></pre></div><p>网上有一种解决办法是创建<code>/etc/update-manager/release-upgrades.d/unauth.cfg</code>文件，内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>Distro<span style="color:#f92672">]</span>
-AllowUnauthenticated<span style="color:#f92672">=</span>yes
-</code></pre></div><p>然后再执行<code>do-release-upgrade</code>。</p>
+<p>如果这种方式遇到如下报错：</p>
+
+<pre><code class="language-shell">Error authenticating some packages
+
+It was not possible to authenticate some packages. This may be a transient network problem. You may want to try again later. See below for a list of unauthenticated packages
+</code></pre>
+
+<p>网上有一种解决办法是创建<code>/etc/update-manager/release-upgrades.d/unauth.cfg</code>文件，内容如下：</p>
+
+<pre><code class="language-shell">[Distro]
+AllowUnauthenticated=yes
+</code></pre>
+
+<p>然后再执行<code>do-release-upgrade</code>。</p>
+
 <p>不过我使用该方法后仍然失败，最后只好采用debian的升级方法来进行升级，步骤如下：</p>
+
 <p>修改<code>/etc/apt/source.list</code>文件，修改其中的版本号，比如<code>14.04</code>修改到<code>15.10</code>即将<code>trusty</code>替换为<code>wily</code>，若使用vim可以批量替换<code>:%s/trusty/wily/g</code>。</p>
+
 <p>然后依次执行以下命令即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt-get update
+
+<pre><code class="language-shell">apt-get update
 apt-get upgrade
 apt-get dist-upgrade
-</code></pre></div><p>查看ubuntu版本命令如下:<code>lsb_release -a</code>。</p>
+</code></pre>
+
+<p>查看ubuntu版本命令如下:<code>lsb_release -a</code>。</p>
 
       </div>
     </article>
@@ -363,7 +382,7 @@ apt-get dist-upgrade
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -389,7 +408,7 @@ apt-get dist-upgrade
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

@@ -32,12 +32,13 @@ MySQL存储时间用int、timestamp还是datetime?" />
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -58,14 +59,16 @@ MySQL 5.4 InnoDB
 MySQL Date Format: What Datatype Should You Use? We Compare Datetime, Timestamp and INT
 参考文档：
 MySQL存储时间用int、timestamp还是datetime?">
+
+
 <meta itemprop="datePublished" content="2017-05-17T15:25:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-05-17T15:25:00&#43;00:00" />
 <meta itemprop="wordCount" content="67">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -102,9 +105,10 @@ MySQL Date Format: What Datatype Should You Use? We Compare Datetime, Timestamp 
 MySQL存储时间用int、timestamp还是datetime?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%85%B3%E4%BA%8Emysql%E5%AD%98%E5%82%A8%E6%97%B6%E9%97%B4%E5%AD%97%E6%AE%B5%E7%9A%84%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%80%BB%E7%BB%93/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2017-05-17T15:25:00+00:00" />
-<meta property="article:modified_time" content="2017-05-17T15:25:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2017-05-17T15:25:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-17T15:25:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -200,29 +204,48 @@ MySQL存储时间用int、timestamp还是datetime?" />
       
 
       <div class="post-content">
-        <p>一般我们用 MySQL 来存储时间时会考虑使用 datetime、timestamp、int 几种类型。</p>
+        
+
+<p>一般我们用 MySQL 来存储时间时会考虑使用 datetime、timestamp、int 几种类型。</p>
+
 <h3 id="int">int</h3>
+
 <p>用 int 类型的字段时，我们一般是存储 10 位数字的时间戳，也可以用 bigint 存储精确到毫秒的时间戳。</p>
+
 <p>优势：无关乎时区；占用存储空间小，查询效率稍高
 劣势：可读性差</p>
+
 <p>在一些数据量很大，对性能要求较高的场景可以考虑使用。</p>
+
 <h3 id="datetime">datetime</h3>
+
 <p>datetime 类型在 MySQL 的不同版本直接有一定差异，</p>
+
 <ul>
-<li>MySQL 5.6.4 支持存储微秒，详见 <a href="http://dev.mysql.com/doc/refman/5.6/en/news-5-6-4.html">MySQL 5.6.4 ChangeLog</a></li>
+<li>MySQL 5.6.4 支持存储微秒，详见 <a href="http://dev.mysql.com/doc/refman/5.6/en/news-5-6-4.html" target="_blank">MySQL 5.6.4 ChangeLog</a></li>
 <li>MySQL 5.6 支持默认值为 <code>CURRENT_TIMESTAMP</code> 和 <code>NOW()</code></li>
 </ul>
+
 <p>优势：不存在 <code>2038 年问题</code>；可读性高；时间精度高；不对时区处理，原样存储
 劣势：性能稍差一些，不过随着 MySQL 性能越来越高，这点劣势也逐渐不重要起来</p>
+
 <h3 id="timestamp">timestamp</h3>
+
 <p>劣势：存在 <code>2038 年问题</code>；时区存储存在转换</p>
+
 <p>不太推荐使用</p>
+
 <h3 id="性能比较">性能比较</h3>
-<p><a href="http://gpshumano.blogs.dri.pt/2009/07/06/mysql-datetime-vs-timestamp-vs-int-performance-and-benchmarking-with-myisam/">MySQL 5.4 MyISAM</a></p>
-<p><a href="http://gpshumano.blogs.dri.pt/2009/07/06/mysql-datetime-vs-timestamp-vs-int-performance-and-benchmarking-with-innodb/">MySQL 5.4 InnoDB</a></p>
-<p><a href="http://www.vertabelo.com/blog/technical-articles/what-datatype-should-you-use-to-represent-time-in-mysql-we-compare-datetime-timestamp-and-int">MySQL Date Format: What Datatype Should You Use? We Compare Datetime, Timestamp and INT</a></p>
+
+<p><a href="http://gpshumano.blogs.dri.pt/2009/07/06/mysql-datetime-vs-timestamp-vs-int-performance-and-benchmarking-with-myisam/" target="_blank">MySQL 5.4 MyISAM</a></p>
+
+<p><a href="http://gpshumano.blogs.dri.pt/2009/07/06/mysql-datetime-vs-timestamp-vs-int-performance-and-benchmarking-with-innodb/" target="_blank">MySQL 5.4 InnoDB</a></p>
+
+<p><a href="http://www.vertabelo.com/blog/technical-articles/what-datatype-should-you-use-to-represent-time-in-mysql-we-compare-datetime-timestamp-and-int" target="_blank">MySQL Date Format: What Datatype Should You Use? We Compare Datetime, Timestamp and INT</a></p>
+
 <p>参考文档：</p>
-<p><a href="http://codecloud.net/17541.html">MySQL存储时间用int、timestamp还是datetime?</a></p>
+
+<p><a href="http://codecloud.net/17541.html" target="_blank">MySQL存储时间用int、timestamp还是datetime?</a></p>
 
       </div>
     </article>
@@ -386,7 +409,7 @@ MySQL存储时间用int、timestamp还是datetime?" />
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -412,7 +435,7 @@ MySQL存储时间用int、timestamp还是datetime?" />
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

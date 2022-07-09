@@ -6,10 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
 <meta name="description" content="最近工作中需要抓取大量新闻，抓取的数据中由于一些原因存在一些重复数据，而整个数据表的记录数接近10万条，大小接近1个G，又在我自己的渣渣本本上，查询速度十分不理想，想要完成一个最基本的查询都很困难。在看了一些相关资料后终于找到解决方法，分享给大家参考。 首先说一下新闻表的大概结构，主要是包含id、title、content等字段，其中title字段使用较为频繁，并且需要用该字段判断重复记录，所以我们先给title字段添加索引。添加索引后我们可以使用以下语句来很快地查询出哪些title是重复的：
-SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1 但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
-CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1); 有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
-CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`); 这样删除重复字段就很容易了：
-DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。" />
+SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1  但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
+CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &amp;gt;1);  有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
+CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`);  这样删除重复字段就很容易了：
+DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;   不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -24,7 +24,7 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -36,43 +36,47 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
 
 
 
+
 <meta itemprop="name" content="MySQL大数据量表中删除重复记录">
 <meta itemprop="description" content="最近工作中需要抓取大量新闻，抓取的数据中由于一些原因存在一些重复数据，而整个数据表的记录数接近10万条，大小接近1个G，又在我自己的渣渣本本上，查询速度十分不理想，想要完成一个最基本的查询都很困难。在看了一些相关资料后终于找到解决方法，分享给大家参考。 首先说一下新闻表的大概结构，主要是包含id、title、content等字段，其中title字段使用较为频繁，并且需要用该字段判断重复记录，所以我们先给title字段添加索引。添加索引后我们可以使用以下语句来很快地查询出哪些title是重复的：
-SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1 但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
-CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1); 有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
-CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`); 这样删除重复字段就很容易了：
-DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。">
+SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1  但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
+CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1);  有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
+CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`);  这样删除重复字段就很容易了：
+DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;   不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。">
+
+
 <meta itemprop="datePublished" content="2013-12-10T21:21:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-10T21:21:00&#43;00:00" />
 <meta itemprop="wordCount" content="66">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="MySQL大数据量表中删除重复记录"/>
 <meta name="twitter:description" content="最近工作中需要抓取大量新闻，抓取的数据中由于一些原因存在一些重复数据，而整个数据表的记录数接近10万条，大小接近1个G，又在我自己的渣渣本本上，查询速度十分不理想，想要完成一个最基本的查询都很困难。在看了一些相关资料后终于找到解决方法，分享给大家参考。 首先说一下新闻表的大概结构，主要是包含id、title、content等字段，其中title字段使用较为频繁，并且需要用该字段判断重复记录，所以我们先给title字段添加索引。添加索引后我们可以使用以下语句来很快地查询出哪些title是重复的：
-SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1 但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
-CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1); 有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
-CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`); 这样删除重复字段就很容易了：
-DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。"/>
+SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1  但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
+CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1);  有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
+CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`);  这样删除重复字段就很容易了：
+DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;   不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。"/>
 
 
 
     <meta property="og:title" content="MySQL大数据量表中删除重复记录" />
 <meta property="og:description" content="最近工作中需要抓取大量新闻，抓取的数据中由于一些原因存在一些重复数据，而整个数据表的记录数接近10万条，大小接近1个G，又在我自己的渣渣本本上，查询速度十分不理想，想要完成一个最基本的查询都很困难。在看了一些相关资料后终于找到解决方法，分享给大家参考。 首先说一下新闻表的大概结构，主要是包含id、title、content等字段，其中title字段使用较为频繁，并且需要用该字段判断重复记录，所以我们先给title字段添加索引。添加索引后我们可以使用以下语句来很快地查询出哪些title是重复的：
-SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1 但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
-CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1); 有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
-CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`); 这样删除重复字段就很容易了：
-DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。" />
+SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1  但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：
+CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1);  有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：
+CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`);  这样删除重复字段就很容易了：
+DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;   不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/mysql%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F%E8%A1%A8%E4%B8%AD%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-12-10T21:21:00+00:00" />
-<meta property="article:modified_time" content="2013-12-10T21:21:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-12-10T21:21:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-12-10T21:21:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -170,15 +174,27 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
       <div class="post-content">
         <p>   最近工作中需要抓取大量新闻，抓取的数据中由于一些原因存在一些重复数据，而整个数据表的记录数接近10万条，大小接近1个G，又在我自己的渣渣本本上，查询速度十分不理想，想要完成一个最基本的查询都很困难。在看了一些相关资料后终于找到解决方法，分享给大家参考。
    首先说一下新闻表的大概结构，主要是包含id、title、content等字段，其中title字段使用较为频繁，并且需要用该字段判断重复记录，所以我们先给title字段添加索引。添加索引后我们可以使用以下语句来很快地查询出哪些title是重复的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>info<span style="color:#f92672">`</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>( <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> ) <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>tmptable<span style="color:#f92672">`</span> <span style="color:#66d9ef">AS</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>info<span style="color:#f92672">`</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">COUNT</span>( <span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> ) <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>);
-</code></pre></div><p>有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>idtable<span style="color:#f92672">`</span> <span style="color:#66d9ef">AS</span> ( <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">min</span>(a.<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>) <span style="color:#66d9ef">AS</span> id, a.<span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>info<span style="color:#f92672">`</span> a, <span style="color:#f92672">`</span>tmptable<span style="color:#f92672">`</span> t <span style="color:#66d9ef">WHERE</span> a.<span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> t.<span style="color:#f92672">`</span>title<span style="color:#f92672">`</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> a.<span style="color:#f92672">`</span>title<span style="color:#f92672">`</span>);
-</code></pre></div><p>这样删除重复字段就很容易了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DELETE</span> a <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">`</span>info<span style="color:#f92672">`</span> a,<span style="color:#f92672">`</span>idtable<span style="color:#f92672">`</span> t <span style="color:#66d9ef">WHERE</span> a.<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> t.<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>;
-</code></pre></div><p> 
-不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。</p>
+
+<pre><code class="language-sql">SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1
+</code></pre>
+
+<p>但如果要一次查出重复字段的id的话就需要用到子查询了，可是子查询的效率很低，明显是不合适的，所以我们可以先建一个临时表：</p>
+
+<pre><code class="language-sql">CREATE TABLE `tmptable` AS (SELECT `title` FROM `info` GROUP BY `title` HAVING COUNT( `title` ) &gt;1);
+</code></pre>
+
+<p>有了重复字段的标题接下来就可以查出重复字段的id了，我这里为了方便又建了一个临时表：</p>
+
+<pre><code class="language-sql">CREATE TABLE `idtable` AS ( SELECT min(a.`id`) AS id, a.`title` FROM `info` a, `tmptable` t WHERE a.`title` = t.`title` GROUP BY a.`title`);
+</code></pre>
+
+<p>这样删除重复字段就很容易了：</p>
+
+<pre><code class="language-sql">DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;
+</code></pre>
+
+<p> 
+ 不过我这篇文章中的方法只适用于记录只重复了一次的情况，不过稍微改改就可以删除重复次数较多的记录，这里就不在赘述。</p>
 
       </div>
     </article>
@@ -342,7 +358,7 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -368,7 +384,7 @@ DELETE a FROM `info` a,`idtable` t WHERE a.`id` = t.`id`;  不过我这篇文�
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

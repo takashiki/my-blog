@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&amp;lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic;	//原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width;	//原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
-function __construct($file){$this-&amp;gt;orpic = $file;$infos = getimagesize($file);$this-&amp;gt;width = $infos[0];$this-&amp;gt;height = $infos[1];$this-&amp;gt;type = $infos[2];}//根据用户所指定最大宽高来计算缩略图尺寸function cal_size($maxwidth, $maxheight){//缩略图最大宽度与最大高度比$thcrown = $maxwidth/$maxheight; //原图宽高比$crown = $this-&amp;gt;width/$this-&amp;gt;height; if($crown/$thcrown &amp;gt;= 1){$this-&amp;gt;thwidth = $maxwidth;$this-&amp;gt;thheight = $maxwidth/$crown;} else {$this-&amp;gt;thheight = $maxheight;$this-&amp;gt;thwidth = $maxheight*$crown;}}function init(){switch($this-&amp;gt;type){case 1:	//GIF$this-&amp;gt;tempic = imagecreatefromgif($this-&amp;gt;orpic);break;case 2:	//JPG$this-&amp;gt;tempic = imagecreatefromjpeg($this-&amp;gt;orpic);break;case 3:	//PNG$this-&amp;gt;tempic = imagecreatefrompng($this-&amp;gt;orpic);break;default:echo &#39;暂不支持该图片格式&#39;;}}function resize($maxwidth, $maxheight){//初始化图像$this-&amp;gt;init();//计算出缩略图尺寸$this-&amp;gt;cal_size($maxwidth, $maxheight);$this-&amp;gt;thpic = imagecreatetruecolor($this-&amp;gt;thwidth, $this-&amp;gt;thheight);imagecopyresampled($this-&amp;gt;thpic, $this-&amp;gt;tempic, 0, 0, 0 ,0, $this-&amp;gt;thwidth, $this-&amp;gt;thheight, $this-&amp;gt;width, $this-&amp;gt;height);}function save($filename, $type){switch($type){case &#39;jpg&#39;:case &#39;jpeg&#39;:imagejpeg($this-&amp;gt;thpic, $filename);break;case &#39;png&#39;:imagepng($$this-&amp;gt;thpic, $filename);break;case &#39;gif&#39;:imagegif($$this-&amp;gt;thpic, $filename);break;default:echo &#39;暂不支持您所选择的格式&#39;;}} } ?" />
+<meta name="description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&amp;lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic; //原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width; //原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
+function __construct($file){ $this-&amp;gt;orpic = $file; $infos = getimagesize($file); $this-&amp;gt;width = $infos[0]; $this-&amp;gt;height = $infos[1]; $this-&amp;gt;type = $infos[2]; } //根据用户所指定最大宽高来计算缩略图尺寸 function cal_size($maxwidth, $maxheight){ //缩略图最大宽度与最大高度比 $thcrown = $maxwidth/$maxheight; //原图宽高比 $crown = $this-&amp;gt;width/$this-&amp;gt;height; if($crown/$thcrown &amp;gt;= 1){ $this-&amp;gt;thwidth = $maxwidth; $this-&amp;gt;thheight = $maxwidth/$crown; } else { $this-&amp;gt;thheight = $maxheight; $this-&amp;gt;thwidth = $maxheight*$crown; } } function init(){ switch($this-&amp;gt;type){ case 1: //GIF $this-&amp;gt;tempic = imagecreatefromgif($this-&amp;gt;orpic); break; case 2: //JPG $this-&amp;gt;tempic = imagecreatefromjpeg($this-&amp;gt;orpic); break; case 3: //PNG $this-&amp;gt;tempic = imagecreatefrompng($this-&amp;gt;orpic); break; default: echo &#39;暂不支持该图片格式&#39;; } } function resize($maxwidth, $maxheight){ //初始化图像 $this-&amp;gt;init(); //计算出缩略图尺寸 $this-&amp;gt;cal_size($maxwidth, $maxheight); $this-&amp;gt;thpic = imagecreatetruecolor($this-&amp;gt;thwidth, $this-&amp;gt;thheight); imagecopyresampled($this-&amp;gt;thpic, $this-&amp;gt;tempic, 0, 0, 0 ,0, $this-&amp;gt;thwidth, $this-&amp;gt;thheight, $this-&amp;gt;width, $this-&amp;gt;height); } function save($filename, $type){ switch($type){ case &#39;jpg&#39;: case &#39;jpeg&#39;: imagejpeg($this-&amp;gt;thpic, $filename); break; case &#39;png&#39;: imagepng($$this-&amp;gt;thpic, $filename); break; case &#39;gif&#39;: imagegif($$this-&amp;gt;thpic, $filename); break; default: echo &#39;暂不支持您所选择的格式&#39;; } }  } ?" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -21,7 +21,7 @@ function __construct($file){$this-&amp;gt;orpic = $file;$infos = getimagesize(
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,34 +33,38 @@ function __construct($file){$this-&amp;gt;orpic = $file;$infos = getimagesize(
 
 
 
+
 <meta itemprop="name" content="PHP按最大宽高等比例缩放图片类">
-<meta itemprop="description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic;	//原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width;	//原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
-function __construct($file){$this-&gt;orpic = $file;$infos = getimagesize($file);$this-&gt;width = $infos[0];$this-&gt;height = $infos[1];$this-&gt;type = $infos[2];}//根据用户所指定最大宽高来计算缩略图尺寸function cal_size($maxwidth, $maxheight){//缩略图最大宽度与最大高度比$thcrown = $maxwidth/$maxheight; //原图宽高比$crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){$this-&gt;thwidth = $maxwidth;$this-&gt;thheight = $maxwidth/$crown;} else {$this-&gt;thheight = $maxheight;$this-&gt;thwidth = $maxheight*$crown;}}function init(){switch($this-&gt;type){case 1:	//GIF$this-&gt;tempic = imagecreatefromgif($this-&gt;orpic);break;case 2:	//JPG$this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic);break;case 3:	//PNG$this-&gt;tempic = imagecreatefrompng($this-&gt;orpic);break;default:echo &#39;暂不支持该图片格式&#39;;}}function resize($maxwidth, $maxheight){//初始化图像$this-&gt;init();//计算出缩略图尺寸$this-&gt;cal_size($maxwidth, $maxheight);$this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight);imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height);}function save($filename, $type){switch($type){case &#39;jpg&#39;:case &#39;jpeg&#39;:imagejpeg($this-&gt;thpic, $filename);break;case &#39;png&#39;:imagepng($$this-&gt;thpic, $filename);break;case &#39;gif&#39;:imagegif($$this-&gt;thpic, $filename);break;default:echo &#39;暂不支持您所选择的格式&#39;;}} } ?">
+<meta itemprop="description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic; //原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width; //原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
+function __construct($file){ $this-&gt;orpic = $file; $infos = getimagesize($file); $this-&gt;width = $infos[0]; $this-&gt;height = $infos[1]; $this-&gt;type = $infos[2]; } //根据用户所指定最大宽高来计算缩略图尺寸 function cal_size($maxwidth, $maxheight){ //缩略图最大宽度与最大高度比 $thcrown = $maxwidth/$maxheight; //原图宽高比 $crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){ $this-&gt;thwidth = $maxwidth; $this-&gt;thheight = $maxwidth/$crown; } else { $this-&gt;thheight = $maxheight; $this-&gt;thwidth = $maxheight*$crown; } } function init(){ switch($this-&gt;type){ case 1: //GIF $this-&gt;tempic = imagecreatefromgif($this-&gt;orpic); break; case 2: //JPG $this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic); break; case 3: //PNG $this-&gt;tempic = imagecreatefrompng($this-&gt;orpic); break; default: echo &#39;暂不支持该图片格式&#39;; } } function resize($maxwidth, $maxheight){ //初始化图像 $this-&gt;init(); //计算出缩略图尺寸 $this-&gt;cal_size($maxwidth, $maxheight); $this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight); imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height); } function save($filename, $type){ switch($type){ case &#39;jpg&#39;: case &#39;jpeg&#39;: imagejpeg($this-&gt;thpic, $filename); break; case &#39;png&#39;: imagepng($$this-&gt;thpic, $filename); break; case &#39;gif&#39;: imagegif($$this-&gt;thpic, $filename); break; default: echo &#39;暂不支持您所选择的格式&#39;; } }  } ?">
+
+
 <meta itemprop="datePublished" content="2013-05-07T16:54:49&#43;00:00" />
 <meta itemprop="dateModified" content="2013-05-07T16:54:49&#43;00:00" />
 <meta itemprop="wordCount" content="160">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="PHP按最大宽高等比例缩放图片类"/>
-<meta name="twitter:description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic;	//原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width;	//原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
-function __construct($file){$this-&gt;orpic = $file;$infos = getimagesize($file);$this-&gt;width = $infos[0];$this-&gt;height = $infos[1];$this-&gt;type = $infos[2];}//根据用户所指定最大宽高来计算缩略图尺寸function cal_size($maxwidth, $maxheight){//缩略图最大宽度与最大高度比$thcrown = $maxwidth/$maxheight; //原图宽高比$crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){$this-&gt;thwidth = $maxwidth;$this-&gt;thheight = $maxwidth/$crown;} else {$this-&gt;thheight = $maxheight;$this-&gt;thwidth = $maxheight*$crown;}}function init(){switch($this-&gt;type){case 1:	//GIF$this-&gt;tempic = imagecreatefromgif($this-&gt;orpic);break;case 2:	//JPG$this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic);break;case 3:	//PNG$this-&gt;tempic = imagecreatefrompng($this-&gt;orpic);break;default:echo &#39;暂不支持该图片格式&#39;;}}function resize($maxwidth, $maxheight){//初始化图像$this-&gt;init();//计算出缩略图尺寸$this-&gt;cal_size($maxwidth, $maxheight);$this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight);imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height);}function save($filename, $type){switch($type){case &#39;jpg&#39;:case &#39;jpeg&#39;:imagejpeg($this-&gt;thpic, $filename);break;case &#39;png&#39;:imagepng($$this-&gt;thpic, $filename);break;case &#39;gif&#39;:imagegif($$this-&gt;thpic, $filename);break;default:echo &#39;暂不支持您所选择的格式&#39;;}} } ?"/>
+<meta name="twitter:description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic; //原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width; //原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
+function __construct($file){ $this-&gt;orpic = $file; $infos = getimagesize($file); $this-&gt;width = $infos[0]; $this-&gt;height = $infos[1]; $this-&gt;type = $infos[2]; } //根据用户所指定最大宽高来计算缩略图尺寸 function cal_size($maxwidth, $maxheight){ //缩略图最大宽度与最大高度比 $thcrown = $maxwidth/$maxheight; //原图宽高比 $crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){ $this-&gt;thwidth = $maxwidth; $this-&gt;thheight = $maxwidth/$crown; } else { $this-&gt;thheight = $maxheight; $this-&gt;thwidth = $maxheight*$crown; } } function init(){ switch($this-&gt;type){ case 1: //GIF $this-&gt;tempic = imagecreatefromgif($this-&gt;orpic); break; case 2: //JPG $this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic); break; case 3: //PNG $this-&gt;tempic = imagecreatefrompng($this-&gt;orpic); break; default: echo &#39;暂不支持该图片格式&#39;; } } function resize($maxwidth, $maxheight){ //初始化图像 $this-&gt;init(); //计算出缩略图尺寸 $this-&gt;cal_size($maxwidth, $maxheight); $this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight); imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height); } function save($filename, $type){ switch($type){ case &#39;jpg&#39;: case &#39;jpeg&#39;: imagejpeg($this-&gt;thpic, $filename); break; case &#39;png&#39;: imagepng($$this-&gt;thpic, $filename); break; case &#39;gif&#39;: imagegif($$this-&gt;thpic, $filename); break; default: echo &#39;暂不支持您所选择的格式&#39;; } }  } ?"/>
 
 
 
     <meta property="og:title" content="PHP按最大宽高等比例缩放图片类" />
-<meta property="og:description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic;	//原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width;	//原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
-function __construct($file){$this-&gt;orpic = $file;$infos = getimagesize($file);$this-&gt;width = $infos[0];$this-&gt;height = $infos[1];$this-&gt;type = $infos[2];}//根据用户所指定最大宽高来计算缩略图尺寸function cal_size($maxwidth, $maxheight){//缩略图最大宽度与最大高度比$thcrown = $maxwidth/$maxheight; //原图宽高比$crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){$this-&gt;thwidth = $maxwidth;$this-&gt;thheight = $maxwidth/$crown;} else {$this-&gt;thheight = $maxheight;$this-&gt;thwidth = $maxheight*$crown;}}function init(){switch($this-&gt;type){case 1:	//GIF$this-&gt;tempic = imagecreatefromgif($this-&gt;orpic);break;case 2:	//JPG$this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic);break;case 3:	//PNG$this-&gt;tempic = imagecreatefrompng($this-&gt;orpic);break;default:echo &#39;暂不支持该图片格式&#39;;}}function resize($maxwidth, $maxheight){//初始化图像$this-&gt;init();//计算出缩略图尺寸$this-&gt;cal_size($maxwidth, $maxheight);$this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight);imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height);}function save($filename, $type){switch($type){case &#39;jpg&#39;:case &#39;jpeg&#39;:imagejpeg($this-&gt;thpic, $filename);break;case &#39;png&#39;:imagepng($$this-&gt;thpic, $filename);break;case &#39;gif&#39;:imagegif($$this-&gt;thpic, $filename);break;default:echo &#39;暂不支持您所选择的格式&#39;;}} } ?" />
+<meta property="og:description" content="本来用phpthumb来缩略图片是十分方便的，但是最近在sae上写项目发现phpthumb在sae上保存文件时会出问题，想来实现一个简单的按最大宽高等比例缩放图片类也并不困难，于是便自己写了一个方便修改。 需GD库支持，可支持jpg、jpeg、png、gif格式的图片，代码短小适合新手学习用。 [php]&lt;?php class slpic { //原图片文件，包含路径和文件名 var $orpic; //原图的临时图像 var $tempic; //缩略图 var $thpic; //原宽度 var $width; //原高度 var $height; //图片类型 var $type; //缩略后的宽度 var $thwidth; //缩略后的高度 var $thheight;
+function __construct($file){ $this-&gt;orpic = $file; $infos = getimagesize($file); $this-&gt;width = $infos[0]; $this-&gt;height = $infos[1]; $this-&gt;type = $infos[2]; } //根据用户所指定最大宽高来计算缩略图尺寸 function cal_size($maxwidth, $maxheight){ //缩略图最大宽度与最大高度比 $thcrown = $maxwidth/$maxheight; //原图宽高比 $crown = $this-&gt;width/$this-&gt;height; if($crown/$thcrown &gt;= 1){ $this-&gt;thwidth = $maxwidth; $this-&gt;thheight = $maxwidth/$crown; } else { $this-&gt;thheight = $maxheight; $this-&gt;thwidth = $maxheight*$crown; } } function init(){ switch($this-&gt;type){ case 1: //GIF $this-&gt;tempic = imagecreatefromgif($this-&gt;orpic); break; case 2: //JPG $this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic); break; case 3: //PNG $this-&gt;tempic = imagecreatefrompng($this-&gt;orpic); break; default: echo &#39;暂不支持该图片格式&#39;; } } function resize($maxwidth, $maxheight){ //初始化图像 $this-&gt;init(); //计算出缩略图尺寸 $this-&gt;cal_size($maxwidth, $maxheight); $this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight); imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height); } function save($filename, $type){ switch($type){ case &#39;jpg&#39;: case &#39;jpeg&#39;: imagejpeg($this-&gt;thpic, $filename); break; case &#39;png&#39;: imagepng($$this-&gt;thpic, $filename); break; case &#39;gif&#39;: imagegif($$this-&gt;thpic, $filename); break; default: echo &#39;暂不支持您所选择的格式&#39;; } }  } ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php%E6%8C%89%E6%9C%80%E5%A4%A7%E5%AE%BD%E9%AB%98%E7%AD%89%E6%AF%94%E4%BE%8B%E7%BC%A9%E6%94%BE%E5%9B%BE%E7%89%87%E7%B1%BB/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-05-07T16:54:49+00:00" />
-<meta property="article:modified_time" content="2013-05-07T16:54:49+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-05-07T16:54:49&#43;00:00"/>
+<meta property="article:modified_time" content="2013-05-07T16:54:49&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -161,22 +165,23 @@ function __construct($file){$this-&gt;orpic = $file;$infos = getimagesize($fil
  
 [php]&lt;?php
 class slpic {
-//原图片文件，包含路径和文件名
-var $orpic;	
-//原图的临时图像
-var $tempic;
-//缩略图
-var $thpic;
-//原宽度
-var $width;	
-//原高度
-var $height;
-//图片类型
-var $type;
-//缩略后的宽度
-var $thwidth;
-//缩略后的高度
-var $thheight;</p>
+    //原图片文件，包含路径和文件名
+    var $orpic;
+    //原图的临时图像
+    var $tempic;
+    //缩略图
+    var $thpic;
+    //原宽度
+    var $width;
+    //原高度
+    var $height;
+    //图片类型
+    var $type;
+    //缩略后的宽度
+    var $thwidth;
+    //缩略后的高度
+    var $thheight;</p>
+
 <pre><code>function __construct($file){
     $this-&gt;orpic = $file;
     $infos = getimagesize($file);
@@ -202,13 +207,13 @@ function cal_size($maxwidth, $maxheight){
 
 function init(){
     switch($this-&gt;type){
-        case 1:		//GIF
+        case 1:     //GIF
             $this-&gt;tempic = imagecreatefromgif($this-&gt;orpic);
             break;
-        case 2:		//JPG
+        case 2:     //JPG
             $this-&gt;tempic = imagecreatefromjpeg($this-&gt;orpic);
             break;
-        case 3:		//PNG
+        case 3:     //PNG
             $this-&gt;tempic = imagecreatefrompng($this-&gt;orpic);
             break;
         default:
@@ -221,7 +226,7 @@ function resize($maxwidth, $maxheight){
     $this-&gt;init();
     //计算出缩略图尺寸
     $this-&gt;cal_size($maxwidth, $maxheight);
-	
+
     $this-&gt;thpic = imagecreatetruecolor($this-&gt;thwidth, $this-&gt;thheight);
     imagecopyresampled($this-&gt;thpic, $this-&gt;tempic, 0, 0, 0 ,0, $this-&gt;thwidth, $this-&gt;thheight, $this-&gt;width, $this-&gt;height);
 }
@@ -243,6 +248,7 @@ function save($filename, $type){
     }
 }
 </code></pre>
+
 <p>}
 ?&gt;[/php]</p>
 
@@ -408,7 +414,7 @@ function save($filename, $type){
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -434,7 +440,7 @@ function save($filename, $type){
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

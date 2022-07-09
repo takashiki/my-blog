@@ -26,12 +26,13 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -46,14 +47,16 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
  docker pull 的时候必须指定镜像版本号（也就是 .，见https://hub.docker.com/r/jetbrains/upsource/tags/），不然找不到 在跑容器之前，记得把映射的那几个目录按照教程上 chown 一下 配置 base url 时可以先按照能检测通过的配，后面可以通过修改 conf/internal/bundle.properties 来修改 如果提示某个目录不为空，无法下一步的话，可以进目录看看有没有隐藏文件，如果有就全删了  不出意外的话应该就能正常跑起来了。
 使用 nginx 配置反代 由于 Upsource 使用了 websocket，所以常规的反代配置可能有问题，直接参考官方文档就 ok 了，见 https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration。
 server { listen 2222; server_name localhost; location / { proxy_set_header X-Forwarded-Host $http_host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_http_version 1.">
+
+
 <meta itemprop="datePublished" content="2017-12-28T16:03:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-12-28T16:03:00&#43;00:00" />
 <meta itemprop="wordCount" content="114">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -78,9 +81,10 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
 server { listen 2222; server_name localhost; location / { proxy_set_header X-Forwarded-Host $http_host; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; proxy_http_version 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8-docker-%E9%83%A8%E7%BD%B2-upsource-/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2017-12-28T16:03:00+00:00" />
-<meta property="article:modified_time" content="2017-12-28T16:03:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2017-12-28T16:03:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-12-28T16:03:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -176,41 +180,57 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
       
 
       <div class="post-content">
-        <p>Upsource 是 Jetbrains 推出的一款用于 Code Review 的基于 Web 的系统，功能十分强大，最重要的是和 IDE 全家桶无缝集成，可以直接在 IDE 里进行 Code Review。</p>
-<p>在选择 Upsource 之前我也调研了 Gerrit 和 Phabricator，觉得不太适合当前的团队。这两个工具更适用于强制 Code Review 并且把其作为 CI 的一环的团队使用，这自然是有好处，不过稍微有些繁琐。这两者的具体区别可以参考 <a href="https://stackoverflow.com/questions/10545480/gerrit-phabricator-review">https://stackoverflow.com/questions/10545480/gerrit-phabricator-review</a>。</p>
+        
+
+<p>Upsource 是 Jetbrains 推出的一款用于 Code Review 的基于 Web 的系统，功能十分强大，最重要的是和 IDE 全家桶无缝集成，可以直接在 IDE 里进行 Code Review。</p>
+
+<p>在选择 Upsource 之前我也调研了 Gerrit 和 Phabricator，觉得不太适合当前的团队。这两个工具更适用于强制 Code Review 并且把其作为 CI 的一环的团队使用，这自然是有好处，不过稍微有些繁琐。这两者的具体区别可以参考 <a href="https://stackoverflow.com/questions/10545480/gerrit-phabricator-review" target="_blank">https://stackoverflow.com/questions/10545480/gerrit-phabricator-review</a>。</p>
+
 <h3 id="使用-docker-部署">使用 Docker 部署</h3>
-<p>使用 Docker 部署 Upsource 可以参考官方的文档 <a href="https://www.jetbrains.com/upsource/download/#section=docker">https://www.jetbrains.com/upsource/download/#section=docker</a>。</p>
+
+<p>使用 Docker 部署 Upsource 可以参考官方的文档 <a href="https://www.jetbrains.com/upsource/download/#section=docker" target="_blank">https://www.jetbrains.com/upsource/download/#section=docker</a>。</p>
+
 <p>有几个注意点：</p>
+
 <ul>
-<li>docker pull 的时候必须指定镜像版本号（也就是 <!-- raw HTML omitted -->.<!-- raw HTML omitted -->，见<a href="https://hub.docker.com/r/jetbrains/upsource/tags/">https://hub.docker.com/r/jetbrains/upsource/tags/</a>），不然找不到</li>
+<li>docker pull 的时候必须指定镜像版本号（也就是 <version>.<build>，见<a href="https://hub.docker.com/r/jetbrains/upsource/tags/" target="_blank">https://hub.docker.com/r/jetbrains/upsource/tags/</a>），不然找不到</li>
 <li>在跑容器之前，记得把映射的那几个目录按照教程上 chown 一下</li>
 <li>配置 base url 时可以先按照能检测通过的配，后面可以通过修改 <code>conf/internal/bundle.properties</code> 来修改</li>
 <li>如果提示某个目录不为空，无法下一步的话，可以进目录看看有没有隐藏文件，如果有就全删了</li>
 </ul>
-<p>不出意外的话应该就能正常跑起来了。</p>
-<h3 id="使用-nginx-配置反代">使用 nginx 配置反代</h3>
-<p>由于 Upsource 使用了 websocket，所以常规的反代配置可能有问题，直接参考官方文档就 ok 了，见 <a href="https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration">https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration</a>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
-         <span style="color:#f92672">listen</span>  <span style="color:#ae81ff">2222</span>;
-         <span style="color:#f92672">server_name</span>  <span style="color:#e6db74">localhost</span>;
-         <span style="color:#f92672">location</span>  <span style="color:#e6db74">/</span> {
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Host</span> $http_host;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
-            <span style="color:#f92672">proxy_http_version</span> <span style="color:#ae81ff">1</span><span style="color:#e6db74">.1</span>;
 
-            <span style="color:#75715e"># to proxy WebSockets in nginx
-</span><span style="color:#75715e"></span>            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Upgrade</span> $http_upgrade;
-            <span style="color:#f92672">proxy_set_header</span> <span style="color:#e6db74">Connection</span> <span style="color:#e6db74">&#34;upgrade&#34;</span>;
+<p>不出意外的话应该就能正常跑起来了。</p>
+
+<h3 id="使用-nginx-配置反代">使用 nginx 配置反代</h3>
+
+<p>由于 Upsource 使用了 websocket，所以常规的反代配置可能有问题，直接参考官方文档就 ok 了，见 <a href="https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration" target="_blank">https://www.jetbrains.com/help/upsource/proxy-configuration.html#NginxConfiguration</a>。</p>
+
+<pre><code class="language-nginx">server {
+         listen  2222;
+         server_name  localhost;
+         location  / {
+            proxy_set_header X-Forwarded-Host $http_host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_http_version 1.1;
+
+            # to proxy WebSockets in nginx
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection &quot;upgrade&quot;;
             
-            <span style="color:#f92672">proxy_pass</span> <span style="color:#e6db74">http://upsourcemachine.domain.local:1111</span>;
-            <span style="color:#f92672">proxy_pass_header</span> <span style="color:#e6db74">Sec-Websocket-Extensions</span>;
+            proxy_pass http://upsourcemachine.domain.local:1111;
+            proxy_pass_header Sec-Websocket-Extensions;
          }
       }
-</code></pre></div><h3 id="与-ide-的整合">与 IDE 的整合</h3>
+</code></pre>
+
+<h3 id="与-ide-的整合">与 IDE 的整合</h3>
+
 <p>安装 Upsource Integration 插件即可，首先 Upsource 上先连接号该项目的 Git，然后本地打开的项目右下角点击 Upsource 图标就可以进行关联。</p>
+
 <p>参考链接</p>
-<p><a href="http://blog.csdn.net/nikobelic8/article/details/54897314">http://blog.csdn.net/nikobelic8/article/details/54897314</a></p>
+
+<p><a href="http://blog.csdn.net/nikobelic8/article/details/54897314" target="_blank">http://blog.csdn.net/nikobelic8/article/details/54897314</a></p>
 
       </div>
     </article>
@@ -374,7 +394,7 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -400,7 +420,7 @@ server { listen 2222; server_name localhost; location / { proxy_set_header X-For
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

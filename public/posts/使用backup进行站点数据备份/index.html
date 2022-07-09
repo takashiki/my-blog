@@ -7,11 +7,11 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="Backup是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展backup2qiniu，我们就可以很方便地将站点数据备份到七牛上。
 首先系统上需要安装ruby，ubuntu上可以
-apt-get install ruby ruby-dev 在centos上则是：
-yum install ruby ruby-devel 然后安装backup和其扩展backup2qiniu：
-gem install backup gem install backup2qiniu 安装完成后创建配置文件：
-backup generate:config backup generate:model --trigger=backup2qiniu 修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
-require &amp;#39;rubygems&amp;#39; gem &amp;#39;backup2qiniu&amp;#39; require &amp;#39;backup2qiniu&amp;#39; Backup::Model.new(:backup2qiniu, &amp;#39;backup vps data to qiniu&amp;#39;) do database MySQL do |db| db.name = &amp;#39;xxx&amp;#39; db.username = &amp;#39;root&amp;#39; db.password = &amp;#39;xxx&amp;#39; db.host = &amp;#39;localhost&amp;#39; db.port = 3306 db.socket = &amp;#39;/tmp/mysql.sock&amp;#39; end archive :web do |archive| archive.use_sudo archive.root &amp;#39;/data&amp;#39; archive." />
+apt-get install ruby ruby-dev  在centos上则是：
+yum install ruby ruby-devel  然后安装backup和其扩展backup2qiniu：
+gem install backup gem install backup2qiniu  安装完成后创建配置文件：
+backup generate:config backup generate:model --trigger=backup2qiniu  修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
+require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -26,7 +26,7 @@ require &amp;#39;rubygems&amp;#39; gem &amp;#39;backup2qiniu&amp;#39; require &a
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -38,49 +38,53 @@ require &amp;#39;rubygems&amp;#39; gem &amp;#39;backup2qiniu&amp;#39; require &a
 
 
 
+
 <meta itemprop="name" content="使用Backup进行站点数据备份">
 <meta itemprop="description" content="Backup是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展backup2qiniu，我们就可以很方便地将站点数据备份到七牛上。
 首先系统上需要安装ruby，ubuntu上可以
-apt-get install ruby ruby-dev 在centos上则是：
-yum install ruby ruby-devel 然后安装backup和其扩展backup2qiniu：
-gem install backup gem install backup2qiniu 安装完成后创建配置文件：
-backup generate:config backup generate:model --trigger=backup2qiniu 修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
-require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive.use_sudo archive.root &#39;/data&#39; archive.">
+apt-get install ruby ruby-dev  在centos上则是：
+yum install ruby ruby-devel  然后安装backup和其扩展backup2qiniu：
+gem install backup gem install backup2qiniu  安装完成后创建配置文件：
+backup generate:config backup generate:model --trigger=backup2qiniu  修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
+require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive.">
+
+
 <meta itemprop="datePublished" content="2016-01-28T20:38:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-28T20:38:00&#43;00:00" />
 <meta itemprop="wordCount" content="103">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="使用Backup进行站点数据备份"/>
 <meta name="twitter:description" content="Backup是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展backup2qiniu，我们就可以很方便地将站点数据备份到七牛上。
 首先系统上需要安装ruby，ubuntu上可以
-apt-get install ruby ruby-dev 在centos上则是：
-yum install ruby ruby-devel 然后安装backup和其扩展backup2qiniu：
-gem install backup gem install backup2qiniu 安装完成后创建配置文件：
-backup generate:config backup generate:model --trigger=backup2qiniu 修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
-require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive.use_sudo archive.root &#39;/data&#39; archive."/>
+apt-get install ruby ruby-dev  在centos上则是：
+yum install ruby ruby-devel  然后安装backup和其扩展backup2qiniu：
+gem install backup gem install backup2qiniu  安装完成后创建配置文件：
+backup generate:config backup generate:model --trigger=backup2qiniu  修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
+require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive."/>
 
 
 
     <meta property="og:title" content="使用Backup进行站点数据备份" />
 <meta property="og:description" content="Backup是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展backup2qiniu，我们就可以很方便地将站点数据备份到七牛上。
 首先系统上需要安装ruby，ubuntu上可以
-apt-get install ruby ruby-dev 在centos上则是：
-yum install ruby ruby-devel 然后安装backup和其扩展backup2qiniu：
-gem install backup gem install backup2qiniu 安装完成后创建配置文件：
-backup generate:config backup generate:model --trigger=backup2qiniu 修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
-require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive.use_sudo archive.root &#39;/data&#39; archive." />
+apt-get install ruby ruby-dev  在centos上则是：
+yum install ruby ruby-devel  然后安装backup和其扩展backup2qiniu：
+gem install backup gem install backup2qiniu  安装完成后创建配置文件：
+backup generate:config backup generate:model --trigger=backup2qiniu  修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：
+require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&#39; Backup::Model.new(:backup2qiniu, &#39;backup vps data to qiniu&#39;) do database MySQL do |db| db.name = &#39;xxx&#39; db.username = &#39;root&#39; db.password = &#39;xxx&#39; db.host = &#39;localhost&#39; db.port = 3306 db.socket = &#39;/tmp/mysql.sock&#39; end archive :web do |archive| archive." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8backup%E8%BF%9B%E8%A1%8C%E7%AB%99%E7%82%B9%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-01-28T20:38:00+00:00" />
-<meta property="article:modified_time" content="2016-01-28T20:38:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-01-28T20:38:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-01-28T20:38:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -176,52 +180,70 @@ require &#39;rubygems&#39; gem &#39;backup2qiniu&#39; require &#39;backup2qiniu&
       
 
       <div class="post-content">
-        <p><a href="https://github.com/backup/backup">Backup</a>是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展<a href="https://github.com/lidaobing/backup2qiniu">backup2qiniu</a>，我们就可以很方便地将站点数据备份到七牛上。</p>
+        <p><a href="https://github.com/backup/backup" target="_blank">Backup</a>是一个使用ruby编写的多功能备份工具，加上一个支持七牛的扩展<a href="https://github.com/lidaobing/backup2qiniu" target="_blank">backup2qiniu</a>，我们就可以很方便地将站点数据备份到七牛上。</p>
+
 <p>首先系统上需要安装ruby，ubuntu上可以</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">apt-get install ruby ruby-dev
-</code></pre></div><p>在centos上则是：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install ruby ruby-devel
-</code></pre></div><p>然后安装backup和其扩展backup2qiniu：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gem install backup
+
+<pre><code class="language-shell">apt-get install ruby ruby-dev
+</code></pre>
+
+<p>在centos上则是：</p>
+
+<pre><code class="language-shell">yum install ruby ruby-devel
+</code></pre>
+
+<p>然后安装backup和其扩展backup2qiniu：</p>
+
+<pre><code class="language-shell">gem install backup
 gem install backup2qiniu
-</code></pre></div><p>安装完成后创建配置文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">backup generate:config
-backup generate:model --trigger<span style="color:#f92672">=</span>backup2qiniu
-</code></pre></div><p>修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rubygems&#39;</span>
-gem <span style="color:#e6db74">&#39;backup2qiniu&#39;</span>
-require <span style="color:#e6db74">&#39;backup2qiniu&#39;</span>
+</code></pre>
 
-<span style="color:#66d9ef">Backup</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Model</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">:backup2qiniu</span>, <span style="color:#e6db74">&#39;backup vps data to qiniu&#39;</span>) <span style="color:#66d9ef">do</span>
-  database <span style="color:#66d9ef">MySQL</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>db<span style="color:#f92672">|</span>
-    db<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-    db<span style="color:#f92672">.</span>username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;root&#39;</span>
-    db<span style="color:#f92672">.</span>password <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-    db<span style="color:#f92672">.</span>host <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;localhost&#39;</span>
-    db<span style="color:#f92672">.</span>port <span style="color:#f92672">=</span> <span style="color:#ae81ff">3306</span>
-    db<span style="color:#f92672">.</span>socket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/tmp/mysql.sock&#39;</span>
-  <span style="color:#66d9ef">end</span>
+<p>安装完成后创建配置文件：</p>
 
-  archive <span style="color:#e6db74">:web</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>archive<span style="color:#f92672">|</span>
-    archive<span style="color:#f92672">.</span>use_sudo
-    archive<span style="color:#f92672">.</span>root <span style="color:#e6db74">&#39;/data&#39;</span>
-    archive<span style="color:#f92672">.</span>add <span style="color:#e6db74">&#39;wwwroot/web&#39;</span>
-    archive<span style="color:#f92672">.</span>exclude <span style="color:#e6db74">&#39;wwwroot/web/vendor&#39;</span>
-  <span style="color:#66d9ef">end</span>
+<pre><code class="language-shell">backup generate:config
+backup generate:model --trigger=backup2qiniu
+</code></pre>
 
-  compress_with <span style="color:#66d9ef">Gzip</span>
+<p>修改 ~/Backup/models/backup2qiniu.rb 内容如下，注意修改其中的配置项：</p>
 
-  store_with <span style="color:#66d9ef">Qiniu</span> <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>q<span style="color:#f92672">|</span>
-    q<span style="color:#f92672">.</span>keep <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>
-    q<span style="color:#f92672">.</span>access_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-    q<span style="color:#f92672">.</span>access_secret <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-    q<span style="color:#f92672">.</span>bucket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-    q<span style="color:#f92672">.</span>path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><p>使用如下命令即可触发备份</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">backup perform -t backup2qiniu
-</code></pre></div>
+<pre><code class="language-ruby">require 'rubygems'
+gem 'backup2qiniu'
+require 'backup2qiniu'
+
+Backup::Model.new(:backup2qiniu, 'backup vps data to qiniu') do
+  database MySQL do |db|
+    db.name = 'xxx'
+    db.username = 'root'
+    db.password = 'xxx'
+    db.host = 'localhost'
+    db.port = 3306
+    db.socket = '/tmp/mysql.sock'
+  end
+
+  archive :web do |archive|
+    archive.use_sudo
+    archive.root '/data'
+    archive.add 'wwwroot/web'
+    archive.exclude 'wwwroot/web/vendor'
+  end
+
+  compress_with Gzip
+
+  store_with Qiniu do |q|
+    q.keep = 7
+    q.access_key = 'xxx'
+    q.access_secret = 'xxx'
+    q.bucket = 'xxx'
+    q.path = 'xxx'
+  end
+end
+</code></pre>
+
+<p>使用如下命令即可触发备份</p>
+
+<pre><code class="language-shell">backup perform -t backup2qiniu
+</code></pre>
+
       </div>
     </article>
 
@@ -384,7 +406,7 @@ require <span style="color:#e6db74">&#39;backup2qiniu&#39;</span>
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -410,7 +432,7 @@ require <span style="color:#e6db74">&#39;backup2qiniu&#39;</span>
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

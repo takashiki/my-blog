@@ -7,7 +7,7 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
-function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&amp;#39;host&amp;#39;], isset($parts[&amp;#39;port&amp;#39;]) ? $parts[&amp;#39;port&amp;#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&amp;#39;path&amp;#39;] . (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;&amp;#39; : &amp;#34;?{$parts[&amp;#39;query&amp;#39;]}&amp;#34;); $location .= ($type == &amp;#39;GET&amp;#39; &amp;amp;&amp;amp; !empty($query)) ? (empty($parts[&amp;#39;query&amp;#39;]) ? &amp;#39;?&amp;#39; : &amp;#39;&amp;amp;&amp;#39;).$query : &amp;#39;&amp;#39;; $out = &amp;#34;{$type} {$location} HTTP/1.1\r\n&amp;#34;; $out .= &amp;#34;Host: {$parts[&amp;#39;host&amp;#39;]}\r\n&amp;#34;; $out .= &amp;#34;Connection: Close\r\n\r\n&amp;#34;; $out ." />
+function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &amp;quot;?{$parts[&#39;query&#39;]}&amp;quot;); $location .= ($type == &#39;GET&#39; &amp;amp;&amp;amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;amp;&#39;).$query : &#39;&#39;; $out = &amp;quot;{$type} {$location} HTTP/1.1\r\n&amp;quot;; $out .= &amp;quot;Host: {$parts[&#39;host&#39;]}\r\n&amp;quot;; $out .= &amp;quot;Connection: Close\r\n\r\n&amp;quot;; $out ." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -22,7 +22,7 @@ function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { 
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -34,37 +34,41 @@ function asyncRequest($url, $params = array(), $type = &amp;#39;GET&amp;#39;) { 
 
 
 
+
 <meta itemprop="name" content="PHP通过fsock实现异步HTTP请求">
 <meta itemprop="description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
-function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &#34;?{$parts[&#39;query&#39;]}&#34;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &#34;{$type} {$location} HTTP/1.1\r\n&#34;; $out .= &#34;Host: {$parts[&#39;host&#39;]}\r\n&#34;; $out .= &#34;Connection: Close\r\n\r\n&#34;; $out .">
+function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &quot;?{$parts[&#39;query&#39;]}&quot;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &quot;{$type} {$location} HTTP/1.1\r\n&quot;; $out .= &quot;Host: {$parts[&#39;host&#39;]}\r\n&quot;; $out .= &quot;Connection: Close\r\n\r\n&quot;; $out .">
+
+
 <meta itemprop="datePublished" content="2016-06-29T11:18:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-29T11:18:00&#43;00:00" />
 <meta itemprop="wordCount" content="114">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="PHP通过fsock实现异步HTTP请求"/>
 <meta name="twitter:description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
-function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &#34;?{$parts[&#39;query&#39;]}&#34;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &#34;{$type} {$location} HTTP/1.1\r\n&#34;; $out .= &#34;Host: {$parts[&#39;host&#39;]}\r\n&#34;; $out .= &#34;Connection: Close\r\n\r\n&#34;; $out ."/>
+function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &quot;?{$parts[&#39;query&#39;]}&quot;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &quot;{$type} {$location} HTTP/1.1\r\n&quot;; $out .= &quot;Host: {$parts[&#39;host&#39;]}\r\n&quot;; $out .= &quot;Connection: Close\r\n\r\n&quot;; $out ."/>
 
 
 
     <meta property="og:title" content="PHP通过fsock实现异步HTTP请求" />
 <meta property="og:description" content="参考文章：
 PHP实现异步调用方法研究 使用fscok实现异步调用PHP how-to-make-async-requests-in-php
-function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &#34;?{$parts[&#39;query&#39;]}&#34;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &#34;{$type} {$location} HTTP/1.1\r\n&#34;; $out .= &#34;Host: {$parts[&#39;host&#39;]}\r\n&#34;; $out .= &#34;Connection: Close\r\n\r\n&#34;; $out ." />
+function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query = http_build_query($params); $parts = parse_url($url); $fp = fsockopen( $parts[&#39;host&#39;], isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80, $errno, $errstr, 30 ); $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &quot;?{$parts[&#39;query&#39;]}&quot;); $location .= ($type == &#39;GET&#39; &amp;&amp; !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;&amp;&#39;).$query : &#39;&#39;; $out = &quot;{$type} {$location} HTTP/1.1\r\n&quot;; $out .= &quot;Host: {$parts[&#39;host&#39;]}\r\n&quot;; $out .= &quot;Connection: Close\r\n\r\n&quot;; $out ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php%E9%80%9A%E8%BF%87fsock%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5http%E8%AF%B7%E6%B1%82/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-06-29T11:18:00+00:00" />
-<meta property="article:modified_time" content="2016-06-29T11:18:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-06-29T11:18:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-06-29T11:18:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -161,37 +165,42 @@ function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query =
 
       <div class="post-content">
         <p>参考文章：</p>
-<p><a href="http://www.laruence.com/2008/04/14/318.html">PHP实现异步调用方法研究</a>
-<a href="http://www.laruence.com/2008/04/16/98.html">使用fscok实现异步调用PHP</a>
-<a href="https://segment.com/blog/how-to-make-async-requests-in-php/">how-to-make-async-requests-in-php</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function asyncRequest($url, $params = array(), $type = &#39;GET&#39;)
+
+<p><a href="http://www.laruence.com/2008/04/14/318.html" target="_blank">PHP实现异步调用方法研究</a>
+<a href="http://www.laruence.com/2008/04/16/98.html" target="_blank">使用fscok实现异步调用PHP</a>
+<a href="https://segment.com/blog/how-to-make-async-requests-in-php/" target="_blank">how-to-make-async-requests-in-php</a></p>
+
+<pre><code class="language-php">function asyncRequest($url, $params = array(), $type = 'GET')
 {
     $query = http_build_query($params);
 
     $parts = parse_url($url);
 
     $fp = fsockopen(
-        $parts[&#39;host&#39;],
-        isset($parts[&#39;port&#39;]) ? $parts[&#39;port&#39;] : 80,
+        $parts['host'],
+        isset($parts['port']) ? $parts['port'] : 80,
         $errno,
         $errstr,
         30
     );
 
-    $location = $parts[&#39;path&#39;] . (empty($parts[&#39;query&#39;]) ? &#39;&#39; : &#34;?{$parts[&#39;query&#39;]}&#34;);
-    $location .= ($type == &#39;GET&#39; <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> !empty($query)) ? (empty($parts[&#39;query&#39;]) ? &#39;?&#39; : &#39;<span style="color:#960050;background-color:#1e0010">&amp;</span>&#39;).$query : &#39;&#39;;
+    $location = $parts['path'] . (empty($parts['query']) ? '' : &quot;?{$parts['query']}&quot;);
+    $location .= ($type == 'GET' &amp;&amp; !empty($query)) ? (empty($parts['query']) ? '?' : '&amp;').$query : '';
 
-    $out = &#34;{$type} {$location} HTTP/1.1\r\n&#34;;
-    $out .= &#34;Host: {$parts[&#39;host&#39;]}\r\n&#34;;
-    $out .= &#34;Connection: Close\r\n\r\n&#34;;
-    $out .= $type == &#39;POST&#39; ? &#34;Content-Type: application/x-www-form-urlencoded\r\n&#34; : &#39;&#39;;
-    $out .= &#39;Content-Length: &#39;.strlen($query).&#34;\r\n&#34;;
-    $out .= ($type == &#39;POST&#39; <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> isset($query)) ? $query : &#39;&#39;;
+    $out = &quot;{$type} {$location} HTTP/1.1\r\n&quot;;
+    $out .= &quot;Host: {$parts['host']}\r\n&quot;;
+    $out .= &quot;Connection: Close\r\n\r\n&quot;;
+    $out .= $type == 'POST' ? &quot;Content-Type: application/x-www-form-urlencoded\r\n&quot; : '';
+    $out .= 'Content-Length: '.strlen($query).&quot;\r\n&quot;;
+    $out .= ($type == 'POST' &amp;&amp; isset($query)) ? $query : '';
 
     fwrite($fp, $out);
     fclose($fp);
 }
-</code></pre></div><p>注意点：</p>
+</code></pre>
+
+<p>注意点：</p>
+
 <p>服务端 PHP 要设置 <code>ignore_user_abort</code> 为 <code>ture</code>，Apache 需要在 <code>Apache.conf</code> 中设置对应的 <code>php_value ignore_user_abort</code>，nginx 需要设置 <code>fastcgi_ignore_client_abort</code> 为 <code>on</code>。</p>
 
       </div>
@@ -356,7 +365,7 @@ function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query =
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -382,7 +391,7 @@ function asyncRequest($url, $params = array(), $type = &#39;GET&#39;) { $query =
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

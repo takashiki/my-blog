@@ -9,13 +9,13 @@
 今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。
 首先申请Let’s Encrypt的证书我是用了https://www.v2ex.com/t/241819这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。
 下载脚本：
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh 修改配置文件：
-ACCOUNT_KEY=&amp;#34;letsencrypt-account.key&amp;#34; DOMAIN_KEY=&amp;#34;example.com.key&amp;#34; DOMAIN_DIR=&amp;#34;/var/www/example.com&amp;#34; DOMAINS=&amp;#34;DNS:example.com,DNS:whatever.example.com&amp;#34; 里面的key脚本都会自动帮我们生成，只要配置正确即可。
-./letsencrypt.sh letsencrypt.conf 执行上述命令即可完成整个证书签发过程，需要注意的有：
-  签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
-  服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh  修改配置文件：
+ACCOUNT_KEY=&amp;quot;letsencrypt-account.key&amp;quot; DOMAIN_KEY=&amp;quot;example.com.key&amp;quot; DOMAIN_DIR=&amp;quot;/var/www/example.com&amp;quot; DOMAINS=&amp;quot;DNS:example.com,DNS:whatever.example.com&amp;quot;  里面的key脚本都会自动帮我们生成，只要配置正确即可。
+./letsencrypt.sh letsencrypt.conf  执行上述命令即可完成整个证书签发过程，需要注意的有：
+ 签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
+ 服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
   获得证书后，如果是使用nginx作为服务器的话，只要在配置文件里加上类似如下的配置：
-server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key;}然后重启nginx服务即可。" />
+server { listen 443; ssl on; ssl_certificate /usr/local/nginx/conf/server.crt; ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key; }  然后重启nginx服务即可。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -30,7 +30,7 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -42,26 +42,29 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 
 
 
+
 <meta itemprop="name" content="免费SSL证书Let’s Encrypt安装使用记录">
 <meta itemprop="description" content="目前我包括博客在内的几个小站都在sae上，由于sae上的限制还是比较多的，所以有迁移到vps上的计划。
 今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。
 首先申请Let’s Encrypt的证书我是用了https://www.v2ex.com/t/241819这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。
 下载脚本：
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh 修改配置文件：
-ACCOUNT_KEY=&#34;letsencrypt-account.key&#34; DOMAIN_KEY=&#34;example.com.key&#34; DOMAIN_DIR=&#34;/var/www/example.com&#34; DOMAINS=&#34;DNS:example.com,DNS:whatever.example.com&#34; 里面的key脚本都会自动帮我们生成，只要配置正确即可。
-./letsencrypt.sh letsencrypt.conf 执行上述命令即可完成整个证书签发过程，需要注意的有：
-  签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
-  服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh  修改配置文件：
+ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;example.com.key&quot; DOMAIN_DIR=&quot;/var/www/example.com&quot; DOMAINS=&quot;DNS:example.com,DNS:whatever.example.com&quot;  里面的key脚本都会自动帮我们生成，只要配置正确即可。
+./letsencrypt.sh letsencrypt.conf  执行上述命令即可完成整个证书签发过程，需要注意的有：
+ 签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
+ 服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
   获得证书后，如果是使用nginx作为服务器的话，只要在配置文件里加上类似如下的配置：
-server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key;}然后重启nginx服务即可。">
+server { listen 443; ssl on; ssl_certificate /usr/local/nginx/conf/server.crt; ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key; }  然后重启nginx服务即可。">
+
+
 <meta itemprop="datePublished" content="2016-01-23T20:19:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-23T20:19:00&#43;00:00" />
 <meta itemprop="wordCount" content="36">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -70,13 +73,13 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。
 首先申请Let’s Encrypt的证书我是用了https://www.v2ex.com/t/241819这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。
 下载脚本：
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh 修改配置文件：
-ACCOUNT_KEY=&#34;letsencrypt-account.key&#34; DOMAIN_KEY=&#34;example.com.key&#34; DOMAIN_DIR=&#34;/var/www/example.com&#34; DOMAINS=&#34;DNS:example.com,DNS:whatever.example.com&#34; 里面的key脚本都会自动帮我们生成，只要配置正确即可。
-./letsencrypt.sh letsencrypt.conf 执行上述命令即可完成整个证书签发过程，需要注意的有：
-  签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
-  服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh  修改配置文件：
+ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;example.com.key&quot; DOMAIN_DIR=&quot;/var/www/example.com&quot; DOMAINS=&quot;DNS:example.com,DNS:whatever.example.com&quot;  里面的key脚本都会自动帮我们生成，只要配置正确即可。
+./letsencrypt.sh letsencrypt.conf  执行上述命令即可完成整个证书签发过程，需要注意的有：
+ 签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
+ 服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
   获得证书后，如果是使用nginx作为服务器的话，只要在配置文件里加上类似如下的配置：
-server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key;}然后重启nginx服务即可。"/>
+server { listen 443; ssl on; ssl_certificate /usr/local/nginx/conf/server.crt; ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key; }  然后重启nginx服务即可。"/>
 
 
 
@@ -85,18 +88,19 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。
 首先申请Let’s Encrypt的证书我是用了https://www.v2ex.com/t/241819这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。
 下载脚本：
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh 修改配置文件：
-ACCOUNT_KEY=&#34;letsencrypt-account.key&#34; DOMAIN_KEY=&#34;example.com.key&#34; DOMAIN_DIR=&#34;/var/www/example.com&#34; DOMAINS=&#34;DNS:example.com,DNS:whatever.example.com&#34; 里面的key脚本都会自动帮我们生成，只要配置正确即可。
-./letsencrypt.sh letsencrypt.conf 执行上述命令即可完成整个证书签发过程，需要注意的有：
-  签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
-  服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh chmod &#43;x letsencrypt.sh  修改配置文件：
+ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;example.com.key&quot; DOMAIN_DIR=&quot;/var/www/example.com&quot; DOMAINS=&quot;DNS:example.com,DNS:whatever.example.com&quot;  里面的key脚本都会自动帮我们生成，只要配置正确即可。
+./letsencrypt.sh letsencrypt.conf  执行上述命令即可完成整个证书签发过程，需要注意的有：
+ 签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。
+ 服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。
   获得证书后，如果是使用nginx作为服务器的话，只要在配置文件里加上类似如下的配置：
-server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key;}然后重启nginx服务即可。" />
+server { listen 443; ssl on; ssl_certificate /usr/local/nginx/conf/server.crt; ssl_certificate_key /usr/local/nginx/conf/server_nopwd.key; }  然后重启nginx服务即可。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6lets-encrypt%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-01-23T20:19:00+00:00" />
-<meta property="article:modified_time" content="2016-01-23T20:19:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-01-23T20:19:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-01-23T20:19:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -193,36 +197,50 @@ server {listen 443;ssl on;ssl_certificate /usr/local/nginx/conf/server.crt;s
 
       <div class="post-content">
         <p>目前我包括博客在内的几个小站都在sae上，由于sae上的限制还是比较多的，所以有迁移到vps上的计划。</p>
+
 <p>今天在vps上折腾了一下配置ssl证书，发现这方面很多前人已经提供了不少经验和工具，可以很方便地给自己的站点用上https。</p>
-<p>首先申请Let’s Encrypt的证书我是用了<a href="https://www.v2ex.com/t/241819">https://www.v2ex.com/t/241819</a>这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。</p>
+
+<p>首先申请Let’s Encrypt的证书我是用了<a href="https://www.v2ex.com/t/241819" target="_blank">https://www.v2ex.com/t/241819</a>这个帖子里给出的一个shell脚本，全程只要修改下配置文件，就会全自动获取证书，也可以自动给证书续期，十分方便。</p>
+
 <p>下载脚本：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+
+<pre><code class="language-shell">wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
 wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
 chmod +x letsencrypt.sh
-</code></pre></div><p>修改配置文件：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ACCOUNT_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;letsencrypt-account.key&#34;</span>
-DOMAIN_KEY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.com.key&#34;</span>
-DOMAIN_DIR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/example.com&#34;</span>
-DOMAINS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DNS:example.com,DNS:whatever.example.com&#34;</span>
-</code></pre></div><p>里面的key脚本都会自动帮我们生成，只要配置正确即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./letsencrypt.sh letsencrypt.conf
-</code></pre></div><p>执行上述命令即可完成整个证书签发过程，需要注意的有：</p>
+</code></pre>
+
+<p>修改配置文件：</p>
+
+<pre><code class="language-shell">ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;
+DOMAIN_KEY=&quot;example.com.key&quot;
+DOMAIN_DIR=&quot;/var/www/example.com&quot;
+DOMAINS=&quot;DNS:example.com,DNS:whatever.example.com&quot;
+</code></pre>
+
+<p>里面的key脚本都会自动帮我们生成，只要配置正确即可。</p>
+
+<pre><code class="language-shell">./letsencrypt.sh letsencrypt.conf
+</code></pre>
+
+<p>执行上述命令即可完成整个证书签发过程，需要注意的有：</p>
+
 <ul>
-<li>
-<p>签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。</p>
-</li>
-<li>
-<p>服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。</p>
-</li>
+<li><p>签发的域名必须已经解析，并且项目路径要填写对，在证书签发过程中，脚本会在项目根目录写一个文件，然后通过http方式来访问该文件，必须保证该文件能被正常下载才能通过验证。</p></li>
+
+<li><p>服务器python版本必须大于等于2.7，2.6及以下会出现各种问题，不确定3.x是否可以。</p></li>
 </ul>
+
 <p>获得证书后，如果是使用nginx作为服务器的话，只要在配置文件里加上类似如下的配置：</p>
+
 <pre><code>server {
     listen 443;
     ssl on;
     ssl_certificate  /usr/local/nginx/conf/server.crt;
     ssl_certificate_key  /usr/local/nginx/conf/server_nopwd.key;
 }
-</code></pre><p>然后重启nginx服务即可。</p>
+</code></pre>
+
+<p>然后重启nginx服务即可。</p>
 
       </div>
     </article>
@@ -386,7 +404,7 @@ DOMAINS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DNS:
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -412,7 +430,7 @@ DOMAINS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DNS:
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

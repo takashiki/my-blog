@@ -8,7 +8,7 @@
 <meta name="description" content="参考链接： 一种动态为apk写入信息的方案
 apk文件本身即为zip文件，在PHP中可以使用 ZipArchive 类中的 setArchiveComment 方法方便地设置 apk 的 comment 内容。
 也可以使用 fseek 和 fwrite 来参照上述文章原理实现：
-$comment = &amp;#39;123测试&amp;#39;; $file = fopen(&amp;#39;R:\1.apk&amp;#39;, &amp;#39;r&#43;&amp;#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&amp;#39;s&amp;#39;, mb_strlen($comment, &amp;#39;8bit&amp;#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&amp;gt;open(&amp;#39;R:\1.apk&amp;#39;); var_dump($zip-&amp;gt;getArchiveComment()); //$zip-&amp;gt;setArchiveComment($comment); //var_dump($zip-&amp;gt;getArchiveComment()); $zip-&amp;gt;close(); " />
+$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&amp;gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&amp;gt;getArchiveComment()); //$zip-&amp;gt;setArchiveComment($comment); //var_dump($zip-&amp;gt;getArchiveComment()); $zip-&amp;gt;close();  " />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -23,7 +23,7 @@ $comment = &amp;#39;123测试&amp;#39;; $file = fopen(&amp;#39;R:\1.apk&amp;#39;
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -35,19 +35,22 @@ $comment = &amp;#39;123测试&amp;#39;; $file = fopen(&amp;#39;R:\1.apk&amp;#39;
 
 
 
+
 <meta itemprop="name" content="PHP修改apk文件的comment实现">
 <meta itemprop="description" content="参考链接： 一种动态为apk写入信息的方案
 apk文件本身即为zip文件，在PHP中可以使用 ZipArchive 类中的 setArchiveComment 方法方便地设置 apk 的 comment 内容。
 也可以使用 fseek 和 fwrite 来参照上述文章原理实现：
-$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close(); ">
+$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close();  ">
+
+
 <meta itemprop="datePublished" content="2016-09-20T21:24:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-09-20T21:24:00&#43;00:00" />
 <meta itemprop="wordCount" content="42">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -55,7 +58,7 @@ $comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#3
 <meta name="twitter:description" content="参考链接： 一种动态为apk写入信息的方案
 apk文件本身即为zip文件，在PHP中可以使用 ZipArchive 类中的 setArchiveComment 方法方便地设置 apk 的 comment 内容。
 也可以使用 fseek 和 fwrite 来参照上述文章原理实现：
-$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close(); "/>
+$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close();  "/>
 
 
 
@@ -63,12 +66,13 @@ $comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#3
 <meta property="og:description" content="参考链接： 一种动态为apk写入信息的方案
 apk文件本身即为zip文件，在PHP中可以使用 ZipArchive 类中的 setArchiveComment 方法方便地设置 apk 的 comment 内容。
 也可以使用 fseek 和 fwrite 来参照上述文章原理实现：
-$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close(); " />
+$comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#39;); fseek($file, -2, SEEK_END); fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;))); fwrite($file, $comment); fclose($file); $zip = new ZipArchive(); $zip-&gt;open(&#39;R:\1.apk&#39;); var_dump($zip-&gt;getArchiveComment()); //$zip-&gt;setArchiveComment($comment); //var_dump($zip-&gt;getArchiveComment()); $zip-&gt;close();  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php%E4%BF%AE%E6%94%B9apk%E6%96%87%E4%BB%B6%E7%9A%84comment%E5%AE%9E%E7%8E%B0/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-09-20T21:24:00+00:00" />
-<meta property="article:modified_time" content="2016-09-20T21:24:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-09-20T21:24:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-09-20T21:24:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -165,25 +169,29 @@ $comment = &#39;123测试&#39;; $file = fopen(&#39;R:\1.apk&#39;, &#39;r&#43;&#3
 
       <div class="post-content">
         <p>参考链接：
-<a href="http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html?utm_source=tuicool&amp;utm_medium=referral">一种动态为apk写入信息的方案</a></p>
-<p>apk文件本身即为zip文件，在PHP中可以使用 <code>ZipArchive</code> 类中的 <code>setArchiveComment</code> 方法方便地设置 apk 的 comment 内容。</p>
-<p>也可以使用 <code>fseek</code> 和 <code>fwrite</code> 来参照上述文章原理实现：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$comment = &#39;123测试&#39;;
+<a href="http://pingguohe.net/2016/03/21/Dynimac-write-infomation-into-apk.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank">一种动态为apk写入信息的方案</a></p>
 
-$file = fopen(&#39;R:\1.apk&#39;, &#39;r+&#39;);
+<p>apk文件本身即为zip文件，在PHP中可以使用 <code>ZipArchive</code> 类中的 <code>setArchiveComment</code> 方法方便地设置 apk 的 comment 内容。</p>
+
+<p>也可以使用 <code>fseek</code> 和 <code>fwrite</code> 来参照上述文章原理实现：</p>
+
+<pre><code class="language-php">$comment = '123测试';
+
+$file = fopen('R:\1.apk', 'r+');
 fseek($file, -2, SEEK_END);
-fwrite($file, pack(&#39;s&#39;, mb_strlen($comment, &#39;8bit&#39;)));
+fwrite($file, pack('s', mb_strlen($comment, '8bit')));
 fwrite($file, $comment);
 fclose($file);
 
 $zip = new ZipArchive();
 
-$zip-&gt;open(&#39;R:\1.apk&#39;);
+$zip-&gt;open('R:\1.apk');
 var_dump($zip-&gt;getArchiveComment());
 //$zip-&gt;setArchiveComment($comment);
 //var_dump($zip-&gt;getArchiveComment());
 $zip-&gt;close();
-</code></pre></div>
+</code></pre>
+
       </div>
     </article>
 
@@ -346,7 +354,7 @@ $zip-&gt;close();
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -372,7 +380,7 @@ $zip-&gt;close();
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

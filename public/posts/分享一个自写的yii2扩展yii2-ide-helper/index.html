@@ -8,10 +8,10 @@
 <meta name="description" content="虽然github上已经有了几个yii2的ide helper，如：https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。
 使用说明：
 安装 用以下命令添加 composer 依赖:
-composer require mis/yii2-ide-helper --dev或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
-&amp;quot;mis/yii2-ide-helper&amp;quot;: &amp;quot;*&amp;quot;使用 把如下配置加入应用的 console 配置文件中：
-&amp;#39;bootstrap&amp;#39; =&amp;gt; [&amp;#39;log&amp;#39;, &amp;#39;ideHelper&amp;#39;], ... &amp;#39;components&amp;#39; =&amp;gt; [ &amp;#39;ideHelper&amp;#39; =&amp;gt; [ &amp;#39;class&amp;#39; =&amp;gt; &amp;#39;Mis\IdeHelper\IdeHelper&amp;#39;, ], ... ], 之后就可以通过如下命令生成 IDE Helper 文件了:
-php yii ide-helper/generate可选配置列表 &amp;#39;ideHelper&amp;#39; =&amp;gt; [ &amp;#39;class&amp;#39; =&amp;gt; &amp;#39;Mis\IdeHelper\IdeHelper&amp;#39;, &amp;#39;filename&amp;#39; =&amp;gt; &amp;#39;_ide_helper&amp;#39;, &amp;#39;format&amp;#39; =&amp;gt; &amp;#39;php&amp;#39;, &amp;#39;rootDir&amp;#39; =&amp;gt; dirname(__DIR__), &amp;#39;configFiles&amp;#39; =&amp;gt; [ &amp;#39;console/config/main.php&amp;#39;, &amp;#39;console/config/main-local.php&amp;#39;, ], ], 默认配置文件路径:" />
+composer require mis/yii2-ide-helper --dev  或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
+&amp;quot;mis/yii2-ide-helper&amp;quot;: &amp;quot;*&amp;quot;  使用 把如下配置加入应用的 console 配置文件中：
+&#39;bootstrap&#39; =&amp;gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&amp;gt; [ &#39;ideHelper&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ],  之后就可以通过如下命令生成 IDE Helper 文件了:
+php yii ide-helper/generate  可选配置列表 &#39;ideHelper&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&amp;gt; &#39;_ide_helper&#39;, &#39;format&#39; =&amp;gt; &#39;php&#39;, &#39;rootDir&#39; =&amp;gt; dirname(__DIR__), &#39;configFiles&#39; =&amp;gt; [ &#39;console/config/main." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -26,7 +26,7 @@ php yii ide-helper/generate可选配置列表 &amp;#39;ideHelper&amp;#39; =&amp
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -38,22 +38,25 @@ php yii ide-helper/generate可选配置列表 &amp;#39;ideHelper&amp;#39; =&amp
 
 
 
+
 <meta itemprop="name" content="分享一个自写的Yii2扩展——Yii2 IDE Helper">
 <meta itemprop="description" content="虽然github上已经有了几个yii2的ide helper，如：https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。
 使用说明：
 安装 用以下命令添加 composer 依赖:
-composer require mis/yii2-ide-helper --dev或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
-&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;使用 把如下配置加入应用的 console 配置文件中：
-&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ], 之后就可以通过如下命令生成 IDE Helper 文件了:
-php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main.php&#39;, &#39;console/config/main-local.php&#39;, ], ], 默认配置文件路径:">
+composer require mis/yii2-ide-helper --dev  或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
+&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;  使用 把如下配置加入应用的 console 配置文件中：
+&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ],  之后就可以通过如下命令生成 IDE Helper 文件了:
+php yii ide-helper/generate  可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main.">
+
+
 <meta itemprop="datePublished" content="2016-11-23T09:21:29&#43;00:00" />
 <meta itemprop="dateModified" content="2016-11-23T09:21:29&#43;00:00" />
 <meta itemprop="wordCount" content="86">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -61,10 +64,10 @@ php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;
 <meta name="twitter:description" content="虽然github上已经有了几个yii2的ide helper，如：https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。
 使用说明：
 安装 用以下命令添加 composer 依赖:
-composer require mis/yii2-ide-helper --dev或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
-&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;使用 把如下配置加入应用的 console 配置文件中：
-&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ], 之后就可以通过如下命令生成 IDE Helper 文件了:
-php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main.php&#39;, &#39;console/config/main-local.php&#39;, ], ], 默认配置文件路径:"/>
+composer require mis/yii2-ide-helper --dev  或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
+&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;  使用 把如下配置加入应用的 console 配置文件中：
+&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ],  之后就可以通过如下命令生成 IDE Helper 文件了:
+php yii ide-helper/generate  可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main."/>
 
 
 
@@ -72,15 +75,16 @@ php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;
 <meta property="og:description" content="虽然github上已经有了几个yii2的ide helper，如：https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。
 使用说明：
 安装 用以下命令添加 composer 依赖:
-composer require mis/yii2-ide-helper --dev或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
-&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;使用 把如下配置加入应用的 console 配置文件中：
-&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ], 之后就可以通过如下命令生成 IDE Helper 文件了:
-php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main.php&#39;, &#39;console/config/main-local.php&#39;, ], ], 默认配置文件路径:" />
+composer require mis/yii2-ide-helper --dev  或者在 composer.json 文件的 require-dev 中添加如下内容后执行 composer update
+&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;  使用 把如下配置加入应用的 console 配置文件中：
+&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;], ... &#39;components&#39; =&gt; [ &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, ], ... ],  之后就可以通过如下命令生成 IDE Helper 文件了:
+php yii ide-helper/generate  可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;, &#39;filename&#39; =&gt; &#39;_ide_helper&#39;, &#39;format&#39; =&gt; &#39;php&#39;, &#39;rootDir&#39; =&gt; dirname(__DIR__), &#39;configFiles&#39; =&gt; [ &#39;console/config/main." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E8%87%AA%E5%86%99%E7%9A%84yii2%E6%89%A9%E5%B1%95yii2-ide-helper/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-11-23T09:21:29+00:00" />
-<meta property="article:modified_time" content="2016-11-23T09:21:29+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-11-23T09:21:29&#43;00:00"/>
+<meta property="article:modified_time" content="2016-11-23T09:21:29&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -176,49 +180,72 @@ php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;
       
 
       <div class="post-content">
-        <p>虽然github上已经有了几个yii2的ide helper，如：https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。</p>
+        
+
+<p>虽然github上已经有了几个yii2的ide helper，如：<a href="https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。" target="_blank">https://github.com/iiifx-production/yii2-autocomplete-helper，不过自己使用下来感觉不是特别好用，于是便自己实现了一个：https://github.com/takashiki/yii2-ide-helper。</a></p>
+
 <p>使用说明：</p>
+
 <h3 id="安装">安装</h3>
+
 <p>用以下命令添加 composer 依赖:</p>
+
 <pre><code>composer require mis/yii2-ide-helper --dev
-</code></pre><p>或者在 composer.json 文件的 <code>require-dev</code> 中添加如下内容后执行 <code>composer update</code></p>
+</code></pre>
+
+<p>或者在 composer.json 文件的 <code>require-dev</code> 中添加如下内容后执行 <code>composer update</code></p>
+
 <pre><code>&quot;mis/yii2-ide-helper&quot;: &quot;*&quot;
-</code></pre><h3 id="使用">使用</h3>
+</code></pre>
+
+<h3 id="使用">使用</h3>
+
 <p>把如下配置加入应用的 console 配置文件中：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&#39;bootstrap&#39; =&gt; [&#39;log&#39;, &#39;ideHelper&#39;],
+
+<pre><code class="language-php">'bootstrap' =&gt; ['log', 'ideHelper'],
 ...
-&#39;components&#39; =&gt; [
-    &#39;ideHelper&#39; =&gt; [
-      	&#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;,
+'components' =&gt; [
+    'ideHelper' =&gt; [
+        'class' =&gt; 'Mis\IdeHelper\IdeHelper',
     ],
   ...
 ],
-</code></pre></div><p>之后就可以通过如下命令生成 IDE Helper 文件了:</p>
+</code></pre>
+
+<p>之后就可以通过如下命令生成 IDE Helper 文件了:</p>
+
 <pre><code>php yii ide-helper/generate
-</code></pre><h3 id="可选配置列表">可选配置列表</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&#39;ideHelper&#39; =&gt; [
-    &#39;class&#39; =&gt; &#39;Mis\IdeHelper\IdeHelper&#39;,
-    &#39;filename&#39; =&gt; &#39;_ide_helper&#39;,
-    &#39;format&#39; =&gt; &#39;php&#39;,
-    &#39;rootDir&#39; =&gt; dirname(__DIR__),
-    &#39;configFiles&#39; =&gt; [
-        &#39;console/config/main.php&#39;,
-        &#39;console/config/main-local.php&#39;,
+</code></pre>
+
+<h3 id="可选配置列表">可选配置列表</h3>
+
+<pre><code class="language-php">'ideHelper' =&gt; [
+    'class' =&gt; 'Mis\IdeHelper\IdeHelper',
+    'filename' =&gt; '_ide_helper',
+    'format' =&gt; 'php',
+    'rootDir' =&gt; dirname(__DIR__),
+    'configFiles' =&gt; [
+        'console/config/main.php',
+        'console/config/main-local.php',
     ],
 ],
-</code></pre></div><p>默认配置文件路径:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">protected $defaultConfigFiles = [
-    &#39;config/web.php&#39;,
-    &#39;config/main.php&#39;,
-    &#39;config/main-local.php&#39;,
-    &#39;common/config/main.php&#39;,
-    &#39;common/config/main-local.php&#39;,
-    &#39;frontend/config/main.php&#39;,
-    &#39;frontend/config/main-local.php&#39;,
-    &#39;backend/config/main.php&#39;,
-    &#39;backend/config/main-local.php&#39;,
+</code></pre>
+
+<p>默认配置文件路径:</p>
+
+<pre><code class="language-php">protected $defaultConfigFiles = [
+    'config/web.php',
+    'config/main.php',
+    'config/main-local.php',
+    'common/config/main.php',
+    'common/config/main-local.php',
+    'frontend/config/main.php',
+    'frontend/config/main-local.php',
+    'backend/config/main.php',
+    'backend/config/main-local.php',
 ];
-</code></pre></div>
+</code></pre>
+
       </div>
     </article>
 
@@ -381,7 +408,7 @@ php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -407,7 +434,7 @@ php yii ide-helper/generate可选配置列表 &#39;ideHelper&#39; =&gt; [ &#39;
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

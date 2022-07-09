@@ -25,12 +25,13 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -44,14 +45,16 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
 可以通过 MappedJdbcTypes 注解设置映射的 Jdbc 数据类型，通过 MappedTypes 注解设置映射到的 Java 数据类型。
 由于 MyBatis 默认的 TypeHandler 在把数据库中的 timestamp 类型映射到 String 的时候会带上毫秒，而我在项目中需要的格式不需要毫秒，所以我自己写了一个 TypeHandler。完整的实例如下：
 package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.commons.lang3.StringUtils; import org.apache.ibatis.type.JdbcType; import org.apache.ibatis.type.MappedJdbcTypes; import org.apache.ibatis.type.MappedTypes; import org.apache.ibatis.type.TypeHandler; import java.sql.CallableStatement; import java.sql.PreparedStatement; import java.sql.ResultSet; import java.sql.SQLException; /** * @author zhangzhoufei */ @MappedJdbcTypes(JdbcType.TIMESTAMP) @MappedTypes(String.class) @Slf4j public class TimeStringTypeHandler implements TypeHandler { @Override public void setParameter(PreparedStatement preparedStatement, int i, Object o, JdbcType jdbcType) throws SQLException { String value = (String) o; preparedStatement.">
+
+
 <meta itemprop="datePublished" content="2019-02-20T17:15:55&#43;00:00" />
 <meta itemprop="dateModified" content="2019-02-20T17:15:55&#43;00:00" />
 <meta itemprop="wordCount" content="197">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -74,9 +77,10 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
 package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.commons.lang3.StringUtils; import org.apache.ibatis.type.JdbcType; import org.apache.ibatis.type.MappedJdbcTypes; import org.apache.ibatis.type.MappedTypes; import org.apache.ibatis.type.TypeHandler; import java.sql.CallableStatement; import java.sql.PreparedStatement; import java.sql.ResultSet; import java.sql.SQLException; /** * @author zhangzhoufei */ @MappedJdbcTypes(JdbcType.TIMESTAMP) @MappedTypes(String.class) @Slf4j public class TimeStringTypeHandler implements TypeHandler { @Override public void setParameter(PreparedStatement preparedStatement, int i, Object o, JdbcType jdbcType) throws SQLException { String value = (String) o; preparedStatement." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/spring-boot-%E4%B8%AD-mybatis-%E8%87%AA%E5%AE%9A%E4%B9%89-typehandler/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2019-02-20T17:15:55+00:00" />
-<meta property="article:modified_time" content="2019-02-20T17:15:55+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2019-02-20T17:15:55&#43;00:00"/>
+<meta property="article:modified_time" content="2019-02-20T17:15:55&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -172,82 +176,98 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
       
 
       <div class="post-content">
-        <p>有了 Spring-Boot 全家桶之后，很多配置都不用写 xml 了，MyBatis 我也比较喜欢通过纯注解方式实现所有功能，感觉方便很多，所以这篇文章里不涉及任何的 xml 配置。</p>
+        
+
+<p>有了 Spring-Boot 全家桶之后，很多配置都不用写 xml 了，MyBatis 我也比较喜欢通过纯注解方式实现所有功能，感觉方便很多，所以这篇文章里不涉及任何的 xml 配置。</p>
+
 <h3 id="应用配置中增加-type-handlers-package-配置项">应用配置中增加 type-handlers-package 配置项</h3>
+
 <p>mybatis.type-handlers-package=com.xxx.handlers</p>
+
 <h3 id="写具体的实现类">写具体的实现类</h3>
+
 <p>自定义的 TypeHandler 类可以继承 <code>BaseTypeHandler</code>，或者实现 <code>TypeHandler</code>。</p>
+
 <p>可以通过 <code>MappedJdbcTypes</code> 注解设置映射的 Jdbc 数据类型，通过 <code>MappedTypes</code> 注解设置映射到的 Java 数据类型。</p>
+
 <p>由于 MyBatis 默认的 TypeHandler 在把数据库中的 timestamp 类型映射到 String 的时候会带上毫秒，而我在项目中需要的格式不需要毫秒，所以我自己写了一个 TypeHandler。完整的实例如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.xxx.type<span style="color:#f92672">;</span>
 
-<span style="color:#f92672">import</span> lombok.extern.slf4j.Slf4j<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.commons.lang3.StringUtils<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.ibatis.type.JdbcType<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.ibatis.type.MappedJdbcTypes<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.ibatis.type.MappedTypes<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> org.apache.ibatis.type.TypeHandler<span style="color:#f92672">;</span>
+<pre><code class="language-java">package com.xxx.type;
 
-<span style="color:#f92672">import</span> java.sql.CallableStatement<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.sql.PreparedStatement<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.sql.ResultSet<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.sql.SQLException<span style="color:#f92672">;</span>
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
+import org.apache.ibatis.type.MappedTypes;
+import org.apache.ibatis.type.TypeHandler;
 
-<span style="color:#75715e">/**
-</span><span style="color:#75715e"> * @author zhangzhoufei
-</span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">@MappedJdbcTypes</span><span style="color:#f92672">(</span>JdbcType<span style="color:#f92672">.</span><span style="color:#a6e22e">TIMESTAMP</span><span style="color:#f92672">)</span>
-<span style="color:#a6e22e">@MappedTypes</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
-<span style="color:#a6e22e">@Slf4j</span>
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimeStringTypeHandler</span> <span style="color:#66d9ef">implements</span> TypeHandler <span style="color:#f92672">{</span>
+import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setParameter</span><span style="color:#f92672">(</span>PreparedStatement preparedStatement<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> Object o<span style="color:#f92672">,</span> JdbcType jdbcType<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
-        String value <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span> o<span style="color:#f92672">;</span>
-        preparedStatement<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
+/**
+ * @author zhangzhoufei
+ */
+@MappedJdbcTypes(JdbcType.TIMESTAMP)
+@MappedTypes(String.class)
+@Slf4j
+public class TimeStringTypeHandler implements TypeHandler {
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getResult</span><span style="color:#f92672">(</span>ResultSet resultSet<span style="color:#f92672">,</span> String s<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">formatTime</span><span style="color:#f92672">(</span>resultSet<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>s<span style="color:#f92672">));</span>
-    <span style="color:#f92672">}</span>
+    @Override
+    public void setParameter(PreparedStatement preparedStatement, int i, Object o, JdbcType jdbcType) throws SQLException {
+        String value = (String) o;
+        preparedStatement.setString(i, value);
+    }
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getResult</span><span style="color:#f92672">(</span>ResultSet resultSet<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">formatTime</span><span style="color:#f92672">(</span>resultSet<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-    <span style="color:#f92672">}</span>
+    @Override
+    public Object getResult(ResultSet resultSet, String s) throws SQLException {
+        return this.formatTime(resultSet.getString(s));
+    }
 
-    <span style="color:#a6e22e">@Override</span>
-    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getResult</span><span style="color:#f92672">(</span>CallableStatement callableStatement<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> SQLException <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">formatTime</span><span style="color:#f92672">(</span>callableStatement<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
-    <span style="color:#f92672">}</span>
+    @Override
+    public Object getResult(ResultSet resultSet, int i) throws SQLException {
+        return this.formatTime(resultSet.getString(i));
+    }
 
-    <span style="color:#66d9ef">private</span> String <span style="color:#a6e22e">formatTime</span><span style="color:#f92672">(</span>String timeStr<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>StringUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">(</span>timeStr<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> timeStr<span style="color:#f92672">;</span>
-        <span style="color:#f92672">}</span>
+    @Override
+    public Object getResult(CallableStatement callableStatement, int i) throws SQLException {
+        return this.formatTime(callableStatement.getString(i));
+    }
 
-        <span style="color:#75715e">// 2019-02-20 10:00:00
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">return</span> timeStr<span style="color:#f92672">.</span><span style="color:#a6e22e">substring</span><span style="color:#f92672">(</span>0<span style="color:#f92672">,</span> 19<span style="color:#f92672">);</span>
-        <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
-        <span style="color:#f92672">}</span>
+    private String formatTime(String timeStr) {
+        if (StringUtils.isEmpty(timeStr)) {
+            return timeStr;
+        }
 
-        <span style="color:#66d9ef">return</span> timeStr<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
+        // 2019-02-20 10:00:00
+        try {
+            return timeStr.substring(0, 19);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-</code></pre></div><p>参考文档中的实例大多是枚举值的映射，在实际项目中也很常用。</p>
+        return timeStr;
+    }
+}
+
+</code></pre>
+
+<p>参考文档中的实例大多是枚举值的映射，在实际项目中也很常用。</p>
+
 <h3 id="配置-mapper-类结果集映射中使用的-typehandler">配置 Mapper 类结果集映射中使用的 TypeHandler</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Results</span><span style="color:#f92672">(</span>id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;entity&#34;</span><span style="color:#f92672">,</span> value <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
-        <span style="color:#a6e22e">@Result</span><span style="color:#f92672">(</span>column <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;created_at&#34;</span><span style="color:#f92672">,</span> property <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;createdAt&#34;</span><span style="color:#f92672">,</span> typeHandler <span style="color:#f92672">=</span> TimeStringTypeHandler<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">),</span>
-<span style="color:#f92672">})</span>
-</code></pre></div><h3 id="参考文档">参考文档</h3>
+
+<pre><code class="language-java">@Results(id = &quot;entity&quot;, value = {
+        @Result(column = &quot;created_at&quot;, property = &quot;createdAt&quot;, typeHandler = TimeStringTypeHandler.class),
+})
+</code></pre>
+
+<h3 id="参考文档">参考文档</h3>
+
 <ul>
-<li><a href="https://www.jianshu.com/p/93de918655eb">mybatis-自定义TypeHandler</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/43165846">Mybatis TypeHandler</a></li>
-<li><a href="https://juejin.im/entry/59225b9f8d6d810058e39536">浅析 mybatis 中 TypeHandler 类型转换器 + 自定义 TypeHandler</a></li>
+<li><a href="https://www.jianshu.com/p/93de918655eb" target="_blank">mybatis-自定义TypeHandler</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/43165846" target="_blank">Mybatis TypeHandler</a></li>
+<li><a href="https://juejin.im/entry/59225b9f8d6d810058e39536" target="_blank">浅析 mybatis 中 TypeHandler 类型转换器 + 自定义 TypeHandler</a></li>
 </ul>
 
       </div>
@@ -412,7 +432,7 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -438,7 +458,7 @@ package com.xxx.type; import lombok.extern.slf4j.Slf4j; import org.apache.common
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

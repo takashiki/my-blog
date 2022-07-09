@@ -24,12 +24,13 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -42,14 +43,16 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-edition，免费版的cwRsync已经能满足需求，下载下来的是压缩包，直接解压就可以使用了。
 服务器端安装可以直接使用包管理器安装，就不多说了。安装好后编辑/etc/rsyncd.conf，内容如下：
 #全局配置 uid = root #用户名，也即为执行rsync操作的用户，若该用户没有足够的权限操作需备份的文件夹则备份时会报错 gid = root #用户组名 use chroot = no read only = yes #访问权限控制 #hosts allow=172.16.0.0/255.255.0.0 192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0 #hosts deny=* max connections = 5 pid file = /var/run/rsyncd.pid secrets file = /etc/rsyncd/rsyncd.secrets #lock file = /var/run/rsync.lock #motd file = /etc/rsyncd/rsyncd.motd #log file = /var/log/rsync.log #This will log every file transferred - up to 85,000&#43; per user, per sync transfer logging = yes log format = %t %a %m %f %b syslog facility = local3 timeout = 300 #模块配置 [webapp] path = /data/wwwroot/ #服务器上需要同步的路径，如不存在的话同步时会报错 list=yes ignore errors auth users = rsync #配置在rsyncd.">
+
+
 <meta itemprop="datePublished" content="2016-03-15T16:12:43&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-15T16:12:43&#43;00:00" />
 <meta itemprop="wordCount" content="116">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -70,9 +73,10 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 #全局配置 uid = root #用户名，也即为执行rsync操作的用户，若该用户没有足够的权限操作需备份的文件夹则备份时会报错 gid = root #用户组名 use chroot = no read only = yes #访问权限控制 #hosts allow=172.16.0.0/255.255.0.0 192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0 #hosts deny=* max connections = 5 pid file = /var/run/rsyncd.pid secrets file = /etc/rsyncd/rsyncd.secrets #lock file = /var/run/rsync.lock #motd file = /etc/rsyncd/rsyncd.motd #log file = /var/log/rsync.log #This will log every file transferred - up to 85,000&#43; per user, per sync transfer logging = yes log format = %t %a %m %f %b syslog facility = local3 timeout = 300 #模块配置 [webapp] path = /data/wwwroot/ #服务器上需要同步的路径，如不存在的话同步时会报错 list=yes ignore errors auth users = rsync #配置在rsyncd." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%9C%A8windows%E4%B8%8A%E4%BD%BF%E7%94%A8cwrsync%E5%90%8C%E6%AD%A5linux%E6%96%87%E4%BB%B6/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-03-15T16:12:43+00:00" />
-<meta property="article:modified_time" content="2016-03-15T16:12:43+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-03-15T16:12:43&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-15T16:12:43&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -169,48 +173,63 @@ cwRsync免费版下载地址：https://www.itefix.net/content/cwrsync-free-editi
 
       <div class="post-content">
         <p>现在我平时日常使用的电脑操作系统为Windows，但Windows用于开发会有很多的坑，于是便搞了一个vps在上面进行开发，然而phpStorm的Deployment只能支持自动同步本地文件至远程服务器，而服务器上文件有改动时却无法自动同步至本地，这在经常需要在服务器上进行composer和npm操作的情况下十分不便。</p>
+
 <p>我最初想要解决这个问题的方法是找phpStorm有没有这方面的插件，然而并没有找到。后来又想将vps上的目录通过Samba或者类似NetDrive这种软件挂载成一个驱动器，这样就能直接用phpStorm打开远程的项目了，然而卡到飞起，已然不是能够使用的状态了，遂打消了这方面的念头，决定使用rsync来实现。</p>
-<p>cwRsync免费版下载地址：<a href="https://www.itefix.net/content/cwrsync-free-edition">https://www.itefix.net/content/cwrsync-free-edition</a>，免费版的cwRsync已经能满足需求，下载下来的是压缩包，直接解压就可以使用了。</p>
+
+<p>cwRsync免费版下载地址：<a href="https://www.itefix.net/content/cwrsync-free-edition" target="_blank">https://www.itefix.net/content/cwrsync-free-edition</a>，免费版的cwRsync已经能满足需求，下载下来的是压缩包，直接解压就可以使用了。</p>
+
 <p>服务器端安装可以直接使用包管理器安装，就不多说了。安装好后编辑<code>/etc/rsyncd.conf</code>，内容如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#全局配置</span>
-uid <span style="color:#f92672">=</span> root <span style="color:#75715e">#用户名，也即为执行rsync操作的用户，若该用户没有足够的权限操作需备份的文件夹则备份时会报错</span>
-gid <span style="color:#f92672">=</span> root <span style="color:#75715e">#用户组名</span>
-use chroot <span style="color:#f92672">=</span> no
-read only <span style="color:#f92672">=</span> yes
 
-<span style="color:#75715e">#访问权限控制</span>
-<span style="color:#75715e">#hosts allow=172.16.0.0/255.255.0.0 192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0</span>
-<span style="color:#75715e">#hosts deny=*</span>                                
+<pre><code class="language-shell">#全局配置
+uid = root #用户名，也即为执行rsync操作的用户，若该用户没有足够的权限操作需备份的文件夹则备份时会报错
+gid = root #用户组名
+use chroot = no
+read only = yes
 
-max connections <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-pid file <span style="color:#f92672">=</span> /var/run/rsyncd.pid
-secrets file <span style="color:#f92672">=</span> /etc/rsyncd/rsyncd.secrets
-<span style="color:#75715e">#lock file = /var/run/rsync.lock</span>           
-<span style="color:#75715e">#motd file = /etc/rsyncd/rsyncd.motd</span>        
+#访问权限控制
+#hosts allow=172.16.0.0/255.255.0.0 192.168.1.0/255.255.255.0 10.0.1.0/255.255.255.0
+#hosts deny=*                                
 
-<span style="color:#75715e">#log file = /var/log/rsync.log</span>               
-<span style="color:#75715e">#This will log every file transferred - up to 85,000+ per user, per sync</span>
-transfer logging <span style="color:#f92672">=</span> yes
-log format <span style="color:#f92672">=</span> %t %a %m %f %b
-syslog facility <span style="color:#f92672">=</span> local3
+max connections = 5
+pid file = /var/run/rsyncd.pid
+secrets file = /etc/rsyncd/rsyncd.secrets
+#lock file = /var/run/rsync.lock           
+#motd file = /etc/rsyncd/rsyncd.motd        
 
-timeout <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+#log file = /var/log/rsync.log               
+#This will log every file transferred - up to 85,000+ per user, per sync
+transfer logging = yes
+log format = %t %a %m %f %b
+syslog facility = local3
 
-<span style="color:#75715e">#模块配置</span>
-<span style="color:#f92672">[</span>webapp<span style="color:#f92672">]</span>
-path <span style="color:#f92672">=</span> /data/wwwroot/ <span style="color:#75715e">#服务器上需要同步的路径，如不存在的话同步时会报错</span>
-list<span style="color:#f92672">=</span>yes
+timeout = 300
+
+#模块配置
+[webapp]
+path = /data/wwwroot/ #服务器上需要同步的路径，如不存在的话同步时会报错
+list=yes
 ignore errors
-auth users <span style="color:#f92672">=</span> rsync <span style="color:#75715e">#配置在rsyncd.secrets中的用户名</span>
-</code></pre></div><p>然后新建<code>/etc/rsyncd/rsyncd.secrets</code>文件，内容即为<code>用户名：密码</code>对，一行一个：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync:rsync
-</code></pre></div><p>文件都配置好后使用如下命令启动rsync服务端：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync --daemon --config /etc/rsyncd.conf
-</code></pre></div><p>rsync默认使用端口为873，需要在防火墙里开放873端口的tcp链接。</p>
+auth users = rsync #配置在rsyncd.secrets中的用户名
+</code></pre>
+
+<p>然后新建<code>/etc/rsyncd/rsyncd.secrets</code>文件，内容即为<code>用户名：密码</code>对，一行一个：</p>
+
+<pre><code class="language-shell">rsync:rsync
+</code></pre>
+
+<p>文件都配置好后使用如下命令启动rsync服务端：</p>
+
+<pre><code class="language-shell">rsync --daemon --config /etc/rsyncd.conf
+</code></pre>
+
+<p>rsync默认使用端口为873，需要在防火墙里开放873端口的tcp链接。</p>
+
 <p>这样服务器端就配置好了，在Windows客户端中进入cwRsync的bin目录，创建<code>rsyncd.secrets</code>文件，内容即为刚才服务端<code>/etc/rsyncd/rsyncd.secrets</code>文件中的密码部分（不需要用户名），然后执行以下命令即可开始同步：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync -vzrtopg --progress --delete -
--password-file<span style="color:#f92672">=</span>rsyncd.secrets rsync@118.193.255.211::webapp local_sync_dir
-</code></pre></div>
+
+<pre><code class="language-shell">rsync -vzrtopg --progress --delete -
+-password-file=rsyncd.secrets rsync@118.193.255.211::webapp local_sync_dir
+</code></pre>
+
       </div>
     </article>
 
@@ -373,7 +392,7 @@ auth users <span style="color:#f92672">=</span> rsync <span style="color:#75715e
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -399,7 +418,7 @@ auth users <span style="color:#f92672">=</span> rsync <span style="color:#75715e
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

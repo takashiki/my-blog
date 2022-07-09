@@ -7,9 +7,8 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。
 首先是创建task：
-&amp;lt;?php $url = &amp;#39;xxx&amp;#39;; $referer = &amp;#39;xxx&amp;#39;; $cookie = &amp;#39;xxx&amp;#39;; $userAgent = &amp;#39;xxx&amp;#39;; $data = [ &amp;#39;priority&amp;#39; =&amp;gt; 1, &amp;#39;content&amp;#39; =&amp;gt; &amp;#39;xxx&amp;#39;, &amp;#39;owner_id&amp;#39; =&amp;gt; xxx, &amp;#39;deadline&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, &amp;#39;description&amp;#39; =&amp;gt; &amp;#39;&amp;#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
-然后是自动push代码的：
-&amp;lt;?php require &amp;#39;Curl." />
+&amp;lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&amp;gt; 1, &#39;content&#39; =&amp;gt; &#39;xxx&#39;, &#39;owner_id&#39; =&amp;gt; xxx, &#39;deadline&#39; =&amp;gt; &#39;&#39;, &#39;description&#39; =&amp;gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch);  ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
+然后是自动push代码的：" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -24,7 +23,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -36,43 +35,44 @@
 
 
 
+
 <meta itemprop="name" content="通过curl每天自动在coding上创建task和push代码">
 <meta itemprop="description" content="Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。
 首先是创建task：
-&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
-然后是自动push代码的：
-&lt;?php require &#39;Curl.">
+&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch);  ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
+然后是自动push代码的：">
+
+
 <meta itemprop="datePublished" content="2015-10-03T21:10:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-03T21:10:00&#43;00:00" />
 <meta itemprop="wordCount" content="199">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="通过curl每天自动在coding上创建task和push代码"/>
 <meta name="twitter:description" content="Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。
 首先是创建task：
-&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
-然后是自动push代码的：
-&lt;?php require &#39;Curl."/>
+&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch);  ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
+然后是自动push代码的："/>
 
 
 
     <meta property="og:title" content="通过curl每天自动在coding上创建task和push代码" />
 <meta property="og:description" content="Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。
 首先是创建task：
-&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch); ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
-然后是自动push代码的：
-&lt;?php require &#39;Curl." />
+&lt;?php $url = &#39;xxx&#39;; $referer = &#39;xxx&#39;; $cookie = &#39;xxx&#39;; $userAgent = &#39;xxx&#39;; $data = [ &#39;priority&#39; =&gt; 1, &#39;content&#39; =&gt; &#39;xxx&#39;, &#39;owner_id&#39; =&gt; xxx, &#39;deadline&#39; =&gt; &#39;&#39;, &#39;description&#39; =&gt; &#39;&#39;, ]; $ch = curl_init($url); curl_setopt($ch, CURLOPT_TIMEOUT, 50); curl_setopt($ch, CURLOPT_REFERER, $referer); curl_setopt($ch, CURLOPT_USERAGENT, $userAgent); curl_setopt($ch, CURLOPT_COOKIE, $cookie); curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); curl_setopt($ch, CURLOPT_POST, 1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data)); var_dump(curl_exec($ch)); var_dump(curl_error($ch)); curl_close($ch);  ，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。
+然后是自动push代码的：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E9%80%9A%E8%BF%87curl%E6%AF%8F%E5%A4%A9%E8%87%AA%E5%8A%A8%E5%9C%A8coding%E4%B8%8A%E5%88%9B%E5%BB%BAtask%E5%92%8Cpush%E4%BB%A3%E7%A0%81/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2015-10-03T21:10:00+00:00" />
-<meta property="article:modified_time" content="2015-10-03T21:10:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2015-10-03T21:10:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-10-03T21:10:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -169,92 +169,101 @@
 
       <div class="post-content">
         <p>Coding.net每天可以通过push代码和创建task赚取码币，码币可以用来换实物或coding的开发版服务。码币现在虽然汇率一直没有变过，但是获取码币是越来越难了，趁着还能每天获取保底0.03码币可多屯一点。</p>
+
 <p>首先是创建task：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-$url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$referer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$cookie <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$userAgent <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$data <span style="color:#f92672">=</span> [
-    <span style="color:#e6db74">&#39;priority&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
-    <span style="color:#e6db74">&#39;content&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;xxx&#39;</span>,
-    <span style="color:#e6db74">&#39;owner_id&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">xxx</span>,
-    <span style="color:#e6db74">&#39;deadline&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-    <span style="color:#e6db74">&#39;description&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
+
+<pre><code class="language-php">&lt;?php
+$url = 'xxx';
+$referer = 'xxx';
+$cookie = 'xxx';
+$userAgent = 'xxx';
+$data = [
+    'priority' =&gt; 1,
+    'content' =&gt; 'xxx',
+    'owner_id' =&gt; xxx,
+    'deadline' =&gt; '',
+    'description' =&gt; '',
 ]; 
 
-$ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>($url);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_TIMEOUT</span>, <span style="color:#ae81ff">50</span>);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_REFERER</span>, $referer);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_USERAGENT</span>, $userAgent);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_COOKIE</span>, $cookie);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span>, <span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_POST</span>, <span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_SSL_VERIFYPEER</span>, <span style="color:#66d9ef">false</span>);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_SSL_VERIFYHOST</span>, <span style="color:#66d9ef">false</span>);
-<span style="color:#a6e22e">curl_setopt</span>($ch, <span style="color:#a6e22e">CURLOPT_POSTFIELDS</span>, <span style="color:#a6e22e">http_build_query</span>($data));
-<span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">curl_exec</span>($ch));
-<span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">curl_error</span>($ch));
-<span style="color:#a6e22e">curl_close</span>($ch);
-</code></pre></div><p>，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。</p>
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_TIMEOUT, 50);
+curl_setopt($ch, CURLOPT_REFERER, $referer);
+curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+curl_setopt($ch, CURLOPT_COOKIE, $cookie);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+var_dump(curl_exec($ch));
+var_dump(curl_error($ch));
+curl_close($ch);
+</code></pre>
+
+<p>，代码内的xxx都换为各自的数据就行了，在手动创建task时在chrome的开发者工具的network下可以看到，或者用其他抓包工具也可获取。</p>
+
 <p>然后是自动push代码的：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#66d9ef">require</span> <span style="color:#e6db74">&#39;Curl.php&#39;</span>;
 
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Curl\Curl</span>;
+<pre><code class="language-php">&lt;?php
+require 'Curl.php';
 
-$url <span style="color:#f92672">=</span> [
-    <span style="color:#e6db74">&#39;create&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;https://ide.coding.net/backend/ws/create&#39;</span>,
-    <span style="color:#e6db74">&#39;write&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;https://ide.coding.net/backend/ws/xxx/write&#39;</span>,
-    <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;https://ide.coding.net/backend/git/xxx/status?__t=&#39;</span>,
-    <span style="color:#e6db74">&#39;commit&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;https://ide.coding.net/backend/git/xxx/commit&#39;</span>,
-    <span style="color:#e6db74">&#39;push&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;https://ide.coding.net/backend/git/xxx/push&#39;</span>,
+use Curl\Curl;
+
+$url = [
+    'create' =&gt; 'https://ide.coding.net/backend/ws/create',
+    'write' =&gt; 'https://ide.coding.net/backend/ws/xxx/write',
+    'status' =&gt; 'https://ide.coding.net/backend/git/xxx/status?__t=',
+    'commit' =&gt; 'https://ide.coding.net/backend/git/xxx/commit',
+    'push' =&gt; 'https://ide.coding.net/backend/git/xxx/push',
 ];
-$referrer <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://ide.coding.net/ws/xxx&#39;</span>;
-$cookie <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$userAgent <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxx&#39;</span>;
-$data <span style="color:#f92672">=</span> [
-    <span style="color:#e6db74">&#39;create&#39;</span> <span style="color:#f92672">=&gt;</span> [
-        <span style="color:#e6db74">&#39;ownerName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-        <span style="color:#e6db74">&#39;projectName&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-        <span style="color:#e6db74">&#39;host&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;&#39;</span>,
-        <span style="color:#e6db74">&#39;spaceKey&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;xxx&#39;</span>,
+$referrer = 'https://ide.coding.net/ws/xxx';
+$cookie = 'xxx';
+$userAgent = 'xxx';
+$data = [
+    'create' =&gt; [
+        'ownerName' =&gt; '',
+        'projectName' =&gt; '',
+        'host' =&gt; '',
+        'spaceKey' =&gt; 'xxx',
     ],
-    <span style="color:#e6db74">&#39;write&#39;</span> <span style="color:#f92672">=&gt;</span> [
-        <span style="color:#e6db74">&#39;path&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;/README.md&#39;</span>,
-        <span style="color:#e6db74">&#39;content&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;xxx&#39;</span>,
+    'write' =&gt; [
+        'path' =&gt; '/README.md',
+        'content' =&gt; 'xxx',
     ],
-    <span style="color:#e6db74">&#39;commit&#39;</span> <span style="color:#f92672">=&gt;</span> [
-        <span style="color:#e6db74">&#39;files[]&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;README.md&#39;</span>,
-        <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;xxx&#39;</span>,
+    'commit' =&gt; [
+        'files[]' =&gt; 'README.md',
+        'message' =&gt; 'xxx',
     ],
-    <span style="color:#e6db74">&#39;push&#39;</span> <span style="color:#f92672">=&gt;</span> [],
+    'push' =&gt; [],
 ]; 
 
-$get <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</span>($userAgent, $referrer);
-$post <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</span>($userAgent, $referrer);
-$put <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</span>($userAgent, $referrer);
+$get = getCurl($userAgent, $referrer);
+$post = getCurl($userAgent, $referrer);
+$put = getCurl($userAgent, $referrer);
 
-<span style="color:#a6e22e">var_dump</span>($post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">post</span>($url[<span style="color:#e6db74">&#39;create&#39;</span>], $data[<span style="color:#e6db74">&#39;create&#39;</span>]));
-<span style="color:#a6e22e">var_dump</span>($put<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">put</span>($url[<span style="color:#e6db74">&#39;write&#39;</span>], $data[<span style="color:#e6db74">&#39;write&#39;</span>]));
-<span style="color:#a6e22e">var_dump</span>($get<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($url[<span style="color:#e6db74">&#39;status&#39;</span>] <span style="color:#f92672">.</span> <span style="color:#a6e22e">substr</span>(<span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#39;.&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>, <span style="color:#a6e22e">microtime</span>(<span style="color:#66d9ef">true</span>)), <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">13</span>)));
-<span style="color:#a6e22e">var_dump</span>($post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">post</span>($url[<span style="color:#e6db74">&#39;commit&#39;</span>], $data[<span style="color:#e6db74">&#39;commit&#39;</span>]));
-<span style="color:#a6e22e">var_dump</span>($post<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">post</span>($url[<span style="color:#e6db74">&#39;push&#39;</span>], $data[<span style="color:#e6db74">&#39;push&#39;</span>]));
+var_dump($post-&gt;post($url['create'], $data['create']));
+var_dump($put-&gt;put($url['write'], $data['write']));
+var_dump($get-&gt;get($url['status'] . substr(str_replace('.', '', microtime(true)), 0, 13)));
+var_dump($post-&gt;post($url['commit'], $data['commit']));
+var_dump($post-&gt;post($url['push'], $data['push']));
 
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCurl</span>($userAgent, $referrer)
+function getCurl($userAgent, $referrer)
 {
-    $curl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Curl</span>();
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setUserAgent</span>($userAgent);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setReferrer</span>($referrer);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCookie</span>(<span style="color:#e6db74">&#39;sid&#39;</span>, <span style="color:#e6db74">&#39;xxx&#39;</span>);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCookie</span>(<span style="color:#e6db74">&#39;_gat&#39;</span>, <span style="color:#ae81ff">1</span>);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCookie</span>(<span style="color:#e6db74">&#39;_ga&#39;</span>, <span style="color:#e6db74">&#39;xxx&#39;</span>);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setCookie</span>(<span style="color:#e6db74">&#39;JSESSIONID&#39;</span>, <span style="color:#e6db74">&#39;xxx&#39;</span>);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#39;X-Requested-With&#39;</span>, <span style="color:#e6db74">&#39;XMLHttpRequest&#39;</span>);
-    $curl<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setOpt</span>(<span style="color:#a6e22e">CURLOPT_SSL_VERIFYPEER</span>, <span style="color:#66d9ef">false</span>);
-    <span style="color:#66d9ef">return</span> $curl;
+    $curl = new Curl();
+    $curl-&gt;setUserAgent($userAgent);
+    $curl-&gt;setReferrer($referrer);
+    $curl-&gt;setCookie('sid', 'xxx');
+    $curl-&gt;setCookie('_gat', 1);
+    $curl-&gt;setCookie('_ga', 'xxx');
+    $curl-&gt;setCookie('JSESSIONID', 'xxx');
+    $curl-&gt;setHeader('X-Requested-With', 'XMLHttpRequest');
+    $curl-&gt;setOpt(CURLOPT_SSL_VERIFYPEER, false);
+    return $curl;
 }
-</code></pre></div><p>这段代码中用到了一个开源项目：<a href="https://github.com/php-curl-class/php-curl-class/blob/master/src/Curl/Curl.php">php-curl-class</a>，原因是我自己构造的curl请求不知道为什么会获得401的返回。同样的代码内的所有xxx都要替换为各自对应的数据，其中create、write、commit、push四个步骤是必须的，status是为了观察执行情况。</p>
+</code></pre>
+
+<p>这段代码中用到了一个开源项目：<a href="https://github.com/php-curl-class/php-curl-class/blob/master/src/Curl/Curl.php" target="_blank">php-curl-class</a>，原因是我自己构造的curl请求不知道为什么会获得401的返回。同样的代码内的所有xxx都要替换为各自对应的数据，其中create、write、commit、push四个步骤是必须的，status是为了观察执行情况。</p>
+
 <p>至于如何实现定时执行计划任务，有条件的自然是在服务器上使用crontab，如果没有自己的服务器的，我比较推荐使用第三方的cron服务，比如sae和ace就有提供cron服务，sae目前有一定免费配额，虽然很少，不过用作执行计划任务绰绰有余，个人十分推荐。</p>
 
       </div>
@@ -419,7 +428,7 @@ $put <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</s
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -445,7 +454,7 @@ $put <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCurl</s
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

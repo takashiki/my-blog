@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
 <meta name="description" content="目前常用的抓包软件一般是 Fiddler 和 Charles，个人感觉 Charles 的用户体验比 Fiddler 好不少，不过 Charles 是收费的。
-这两个软件抓 https 的教程网上有很多，可以参考如下几篇：
- fiddler抓包HTTPS请求 Charles 4.2.1 HTTPS抓包 Mac下用Charles實現Android http和https抓包  简而言之，一般这个过程主要就是两步：
+这两个软件抓 https 的教程网上有很多，可以参考如下几篇： - fiddler抓包HTTPS请求 - Charles 4.2.1 HTTPS抓包 - Mac下用Charles實現Android http和https抓包
+简而言之，一般这个过程主要就是两步：
  开启 https 抓包配置，fiddler 是一个勾选框，charles 则是自己配需要抓的域名，可以通配 在需要抓包的客户端安装证书并添加信任  其中不同客户端的操作又分别如下：
  PC 上需要把证书安装到 “受信任的根证书颁发机构”，默认一般是安装在个人或者其他几个选项卡里的，需要自己手工导出然后导入 iOS 上安装完证书后要在设置里添加信任，可以参考上面的教程 Android 低版本只要安装好证书就行  一般来说是这样的，但是安卓就特别坑，坑就坑在安卓太碎片化了，每家对于安装证书的处理都不太一样，据我所知 oppo 安装证书就比较麻烦，具体的可以自己搜索教程。 另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/ 中 Android 部分。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -24,7 +24,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -36,27 +36,30 @@
 
 
 
+
 <meta itemprop="name" content="手机 https 抓包折腾记">
 <meta itemprop="description" content="目前常用的抓包软件一般是 Fiddler 和 Charles，个人感觉 Charles 的用户体验比 Fiddler 好不少，不过 Charles 是收费的。
-这两个软件抓 https 的教程网上有很多，可以参考如下几篇：
- fiddler抓包HTTPS请求 Charles 4.2.1 HTTPS抓包 Mac下用Charles實現Android http和https抓包  简而言之，一般这个过程主要就是两步：
+这两个软件抓 https 的教程网上有很多，可以参考如下几篇： - fiddler抓包HTTPS请求 - Charles 4.2.1 HTTPS抓包 - Mac下用Charles實現Android http和https抓包
+简而言之，一般这个过程主要就是两步：
  开启 https 抓包配置，fiddler 是一个勾选框，charles 则是自己配需要抓的域名，可以通配 在需要抓包的客户端安装证书并添加信任  其中不同客户端的操作又分别如下：
  PC 上需要把证书安装到 “受信任的根证书颁发机构”，默认一般是安装在个人或者其他几个选项卡里的，需要自己手工导出然后导入 iOS 上安装完证书后要在设置里添加信任，可以参考上面的教程 Android 低版本只要安装好证书就行  一般来说是这样的，但是安卓就特别坑，坑就坑在安卓太碎片化了，每家对于安装证书的处理都不太一样，据我所知 oppo 安装证书就比较麻烦，具体的可以自己搜索教程。 另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/ 中 Android 部分。">
+
+
 <meta itemprop="datePublished" content="2018-08-02T17:27:31&#43;00:00" />
 <meta itemprop="dateModified" content="2018-08-02T17:27:31&#43;00:00" />
-<meta itemprop="wordCount" content="46">
-<meta itemprop="image" content="https://qxzzf.com"/>
+<meta itemprop="wordCount" content="49">
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="手机 https 抓包折腾记"/>
 <meta name="twitter:description" content="目前常用的抓包软件一般是 Fiddler 和 Charles，个人感觉 Charles 的用户体验比 Fiddler 好不少，不过 Charles 是收费的。
-这两个软件抓 https 的教程网上有很多，可以参考如下几篇：
- fiddler抓包HTTPS请求 Charles 4.2.1 HTTPS抓包 Mac下用Charles實現Android http和https抓包  简而言之，一般这个过程主要就是两步：
+这两个软件抓 https 的教程网上有很多，可以参考如下几篇： - fiddler抓包HTTPS请求 - Charles 4.2.1 HTTPS抓包 - Mac下用Charles實現Android http和https抓包
+简而言之，一般这个过程主要就是两步：
  开启 https 抓包配置，fiddler 是一个勾选框，charles 则是自己配需要抓的域名，可以通配 在需要抓包的客户端安装证书并添加信任  其中不同客户端的操作又分别如下：
  PC 上需要把证书安装到 “受信任的根证书颁发机构”，默认一般是安装在个人或者其他几个选项卡里的，需要自己手工导出然后导入 iOS 上安装完证书后要在设置里添加信任，可以参考上面的教程 Android 低版本只要安装好证书就行  一般来说是这样的，但是安卓就特别坑，坑就坑在安卓太碎片化了，每家对于安装证书的处理都不太一样，据我所知 oppo 安装证书就比较麻烦，具体的可以自己搜索教程。 另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/ 中 Android 部分。"/>
 
@@ -64,15 +67,16 @@
 
     <meta property="og:title" content="手机 https 抓包折腾记" />
 <meta property="og:description" content="目前常用的抓包软件一般是 Fiddler 和 Charles，个人感觉 Charles 的用户体验比 Fiddler 好不少，不过 Charles 是收费的。
-这两个软件抓 https 的教程网上有很多，可以参考如下几篇：
- fiddler抓包HTTPS请求 Charles 4.2.1 HTTPS抓包 Mac下用Charles實現Android http和https抓包  简而言之，一般这个过程主要就是两步：
+这两个软件抓 https 的教程网上有很多，可以参考如下几篇： - fiddler抓包HTTPS请求 - Charles 4.2.1 HTTPS抓包 - Mac下用Charles實現Android http和https抓包
+简而言之，一般这个过程主要就是两步：
  开启 https 抓包配置，fiddler 是一个勾选框，charles 则是自己配需要抓的域名，可以通配 在需要抓包的客户端安装证书并添加信任  其中不同客户端的操作又分别如下：
  PC 上需要把证书安装到 “受信任的根证书颁发机构”，默认一般是安装在个人或者其他几个选项卡里的，需要自己手工导出然后导入 iOS 上安装完证书后要在设置里添加信任，可以参考上面的教程 Android 低版本只要安装好证书就行  一般来说是这样的，但是安卓就特别坑，坑就坑在安卓太碎片化了，每家对于安装证书的处理都不太一样，据我所知 oppo 安装证书就比较麻烦，具体的可以自己搜索教程。 另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/ 中 Android 部分。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E6%89%8B%E6%9C%BA-https-%E6%8A%93%E5%8C%85%E6%8A%98%E8%85%BE%E8%AE%B0/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2018-08-02T17:27:31+00:00" />
-<meta property="article:modified_time" content="2018-08-02T17:27:31+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2018-08-02T17:27:31&#43;00:00"/>
+<meta property="article:modified_time" content="2018-08-02T17:27:31&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -169,25 +173,29 @@
 
       <div class="post-content">
         <p>目前常用的抓包软件一般是 Fiddler 和 Charles，个人感觉 Charles 的用户体验比 Fiddler 好不少，不过 Charles 是收费的。</p>
-<p>这两个软件抓 https 的教程网上有很多，可以参考如下几篇：</p>
-<ul>
-<li><a href="https://www.jianshu.com/p/0244146090c7">fiddler抓包HTTPS请求</a></li>
-<li><a href="https://juejin.im/post/5a30a52a6fb9a0451d4175ed">Charles 4.2.1 HTTPS抓包</a></li>
-<li><a href="https://com-it.tech/archives/6960">Mac下用Charles實現Android http和https抓包</a></li>
-</ul>
+
+<p>这两个软件抓 https 的教程网上有很多，可以参考如下几篇：
+- <a href="https://www.jianshu.com/p/0244146090c7" target="_blank">fiddler抓包HTTPS请求</a>
+- <a href="https://juejin.im/post/5a30a52a6fb9a0451d4175ed" target="_blank">Charles 4.2.1 HTTPS抓包</a>
+- <a href="https://com-it.tech/archives/6960" target="_blank">Mac下用Charles實現Android http和https抓包</a></p>
+
 <p>简而言之，一般这个过程主要就是两步：</p>
+
 <ul>
 <li>开启 https 抓包配置，fiddler 是一个勾选框，charles 则是自己配需要抓的域名，可以通配</li>
 <li>在需要抓包的客户端安装证书并添加信任</li>
 </ul>
+
 <p>其中不同客户端的操作又分别如下：</p>
+
 <ul>
 <li>PC 上需要把证书安装到 “受信任的根证书颁发机构”，默认一般是安装在个人或者其他几个选项卡里的，需要自己手工导出然后导入</li>
 <li>iOS 上安装完证书后要在设置里添加信任，可以参考上面的教程</li>
 <li>Android 低版本只要安装好证书就行</li>
 </ul>
+
 <p>一般来说是这样的，但是安卓就特别坑，坑就坑在安卓太碎片化了，每家对于安装证书的处理都不太一样，据我所知 oppo 安装证书就比较麻烦，具体的可以自己搜索教程。
-另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：<a href="https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/">https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/</a> 中 Android 部分。</p>
+另外 Android N 开始用户安装的证书是没犯法被应用信任的，除非应用自身配置了安全策略，详见 charles 官网文档：<a href="https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/" target="_blank">https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/</a> 中 Android 部分。</p>
 
       </div>
     </article>
@@ -204,7 +212,7 @@
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        46 Words
+        49 Words
       </p>
 
       <p>
@@ -351,7 +359,7 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -377,7 +385,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

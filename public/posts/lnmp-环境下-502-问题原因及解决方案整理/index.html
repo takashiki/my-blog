@@ -11,7 +11,7 @@ php-fpm 未启动或不在运行 首先如果服务器上有多个版本的 php 
 然后 service php-fpm status 查看运行状态，注意对应版本的 fpm 的 service 名是不是 php-fpm 。
 nginx 无法与 php-fpm 交互 这个一般是由于 nginx 配置文件中 fastcgi_pass 配置有问题造成的，查看 php-fpm 配置中 listen 项具体的值是否与 nginx 配置文件中的 fastcgi_pass 对应。
 nginx 超时 nginx 超时一般与下面三个配置项有关：
-fastcgi_connect_timeout 300;fastcgi_send_timeout 300;fastcgi_read_timeout 300;在对应配置文件中修改这几个值即可。
+fastcgi_connect_timeout 300; fastcgi_send_timeout 300; fastcgi_read_timeout 300;  在对应配置文件中修改这几个值即可。
 php-fpm 超时 这个可以修改 php." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
@@ -27,12 +27,13 @@ php-fpm 超时 这个可以修改 php." />
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -46,16 +47,18 @@ php-fpm 未启动或不在运行 首先如果服务器上有多个版本的 php 
 然后 service php-fpm status 查看运行状态，注意对应版本的 fpm 的 service 名是不是 php-fpm 。
 nginx 无法与 php-fpm 交互 这个一般是由于 nginx 配置文件中 fastcgi_pass 配置有问题造成的，查看 php-fpm 配置中 listen 项具体的值是否与 nginx 配置文件中的 fastcgi_pass 对应。
 nginx 超时 nginx 超时一般与下面三个配置项有关：
-fastcgi_connect_timeout 300;fastcgi_send_timeout 300;fastcgi_read_timeout 300;在对应配置文件中修改这几个值即可。
+fastcgi_connect_timeout 300; fastcgi_send_timeout 300; fastcgi_read_timeout 300;  在对应配置文件中修改这几个值即可。
 php-fpm 超时 这个可以修改 php.">
+
+
 <meta itemprop="datePublished" content="2017-05-23T15:54:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-05-23T15:54:00&#43;00:00" />
 <meta itemprop="wordCount" content="91">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -66,7 +69,7 @@ php-fpm 未启动或不在运行 首先如果服务器上有多个版本的 php 
 然后 service php-fpm status 查看运行状态，注意对应版本的 fpm 的 service 名是不是 php-fpm 。
 nginx 无法与 php-fpm 交互 这个一般是由于 nginx 配置文件中 fastcgi_pass 配置有问题造成的，查看 php-fpm 配置中 listen 项具体的值是否与 nginx 配置文件中的 fastcgi_pass 对应。
 nginx 超时 nginx 超时一般与下面三个配置项有关：
-fastcgi_connect_timeout 300;fastcgi_send_timeout 300;fastcgi_read_timeout 300;在对应配置文件中修改这几个值即可。
+fastcgi_connect_timeout 300; fastcgi_send_timeout 300; fastcgi_read_timeout 300;  在对应配置文件中修改这几个值即可。
 php-fpm 超时 这个可以修改 php."/>
 
 
@@ -78,13 +81,14 @@ php-fpm 未启动或不在运行 首先如果服务器上有多个版本的 php 
 然后 service php-fpm status 查看运行状态，注意对应版本的 fpm 的 service 名是不是 php-fpm 。
 nginx 无法与 php-fpm 交互 这个一般是由于 nginx 配置文件中 fastcgi_pass 配置有问题造成的，查看 php-fpm 配置中 listen 项具体的值是否与 nginx 配置文件中的 fastcgi_pass 对应。
 nginx 超时 nginx 超时一般与下面三个配置项有关：
-fastcgi_connect_timeout 300;fastcgi_send_timeout 300;fastcgi_read_timeout 300;在对应配置文件中修改这几个值即可。
+fastcgi_connect_timeout 300; fastcgi_send_timeout 300; fastcgi_read_timeout 300;  在对应配置文件中修改这几个值即可。
 php-fpm 超时 这个可以修改 php." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/lnmp-%E7%8E%AF%E5%A2%83%E4%B8%8B-502-%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%95%B4%E7%90%86/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2017-05-23T15:54:00+00:00" />
-<meta property="article:modified_time" content="2017-05-23T15:54:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2017-05-23T15:54:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-23T15:54:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -180,27 +184,46 @@ php-fpm 超时 这个可以修改 php." />
       
 
       <div class="post-content">
-        <p>参考资料：</p>
+        
+
+<p>参考资料：</p>
+
 <ul>
-<li><a href="http://www.nginx.cn/102.html">nginx+php-fpm出现502 bad gateway错误解决方法</a></li>
-<li><a href="https://www.datadoghq.com/blog/nginx-502-bad-gateway-errors-php-fpm/">NGINX 502 Bad Gateway: PHP-FPM</a></li>
+<li><a href="http://www.nginx.cn/102.html" target="_blank">nginx+php-fpm出现502 bad gateway错误解决方法</a></li>
+<li><a href="https://www.datadoghq.com/blog/nginx-502-bad-gateway-errors-php-fpm/" target="_blank">NGINX 502 Bad Gateway: PHP-FPM</a></li>
 </ul>
+
 <p>一般来说 502 可能的原因及解决方案如下：</p>
+
 <h4 id="php-fpm-未启动或不在运行">php-fpm 未启动或不在运行</h4>
+
 <p>首先如果服务器上有多个版本的 php 的话，首先需要确认自己使用的是哪个版本。一般来说通过查看 nginx 配置文件中 fastcgi_pass 可以查看到监听对应 socket 或 端口的 fpm 是那个版本的。</p>
+
 <p>然后 service php-fpm status 查看运行状态，注意对应版本的 fpm 的 service 名是不是 php-fpm 。</p>
+
 <h4 id="nginx-无法与-php-fpm-交互">nginx 无法与 php-fpm 交互</h4>
+
 <p>这个一般是由于 nginx 配置文件中 fastcgi_pass 配置有问题造成的，查看 php-fpm 配置中 listen 项具体的值是否与 nginx 配置文件中的 fastcgi_pass 对应。</p>
+
 <h4 id="nginx-超时">nginx 超时</h4>
+
 <p>nginx 超时一般与下面三个配置项有关：</p>
+
 <pre><code>fastcgi_connect_timeout 300;
 fastcgi_send_timeout 300;
 fastcgi_read_timeout 300;
-</code></pre><p>在对应配置文件中修改这几个值即可。</p>
+</code></pre>
+
+<p>在对应配置文件中修改这几个值即可。</p>
+
 <h4 id="php-fpm-超时">php-fpm 超时</h4>
+
 <p>这个可以修改 php.ini 中的最大执行时间 max_execution_time 参数，或者在代码中使用 set_time_limit() 函数来改变时间限制。</p>
+
 <p>还有就是 php-fpm.conf 中的 request_terminate_timeout 参数如果配置了的话也需要修改。</p>
+
 <h4 id="php-部分扩展存在问题">php 部分扩展存在问题</h4>
+
 <p>比如在 ubuntu 服务器上，imagick 经常会因为一些软件的更新引发 core dump，重启服务器后才会恢复正常，此时如果 <code>phpinfo()</code> 都会抛出 502 的话，很可能就是该原因导致的。</p>
 
       </div>
@@ -365,7 +388,7 @@ fastcgi_read_timeout 300;
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -391,7 +414,7 @@ fastcgi_read_timeout 300;
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

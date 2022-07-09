@@ -25,12 +25,13 @@ BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
 <link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
 
 
 
@@ -44,14 +45,16 @@ Cannot modify header information - headers already sent by&hellip;&hellip;
 BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来标示该文件属于utf-8编码。这三个字节便是session_start()前的输出。将文件格式改成无BOM头的utf-8后，问题果然解决了，SAE上也运行成功。
 至于为什么在本地环境setcookie可以成功我则一直想不通，略奇怪啊。
  ">
+
+
 <meta itemprop="datePublished" content="2013-04-09T22:28:32&#43;00:00" />
 <meta itemprop="dateModified" content="2013-04-09T22:28:32&#43;00:00" />
 <meta itemprop="wordCount" content="13">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -74,9 +77,10 @@ BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来
  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E6%96%B0%E6%89%8B%E5%AD%A6web%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0%E4%BA%8Cutf8%E7%BC%96%E7%A0%81bom%E5%A4%B4/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-04-09T22:28:32+00:00" />
-<meta property="article:modified_time" content="2013-04-09T22:28:32+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-04-09T22:28:32&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-09T22:28:32&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -173,10 +177,15 @@ BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来
 
       <div class="post-content">
         <p>在刚刚开始学PHP时，遇到过这样一个问题，在本地运行得好好的一段代码在SAE上则获取cookie失败，这让我百思不得其解。搞了很长时间之后也找不到到底是哪出了问题，于是我将cookie换成了session试了一下，结果本地运行也出了问题，报了这个错误：</p>
+
 <p>Cannot modify header information - headers already sent by&hellip;&hellip;</p>
+
 <p>这是十分常见的错误，原因是session_start（）前已经有了输出，但我仔细检查代码后也没发现有什么输出。在网上查了一些资料后，终于发现一个可能的原因，那就是BOM头的问题。</p>
+
 <p>BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来标示该文件属于utf-8编码。这三个字节便是session_start()前的输出。将文件格式改成无BOM头的utf-8后，问题果然解决了，SAE上也运行成功。</p>
+
 <p>至于为什么在本地环境setcookie可以成功我则一直想不通，略奇怪啊。</p>
+
 <p> </p>
 
       </div>
@@ -341,7 +350,7 @@ BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -367,7 +376,7 @@ BOM头是在utf-8编码文件中BOM在文件头部，占用三个字节，用来
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
 <meta name="description" content="扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。 我想将mawalker用php来改写出来，无奈在收发数据包方面就卡住了。后来在群友的帮助以及网上查找到的资料的帮助下终于完成了，于是便将最基本的登录代码公布出来以供大家参考。
-require(&amp;#34;snoopy.php&amp;#34;); $key = &amp;#34;uH9JF2cHf6OppaC10000000000000000&amp;#34;; $url = &amp;#34;http://web.million-arthurs.com/connect/app/login?cyt=1&amp;#34;; $vars[&amp;#39;login_id&amp;#39;] = Security::encrypt(&amp;#39;yourid&amp;#39; , $key ); $vars[&amp;#39;password&amp;#39;] = Security::encrypt(&amp;#39;password&amp;#39; , $key ); $snoopy = new Snoopy(); $snoopy-&amp;gt;agent = &amp;#34;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&amp;#34;; $snoopy-&amp;gt;rawheaders[&amp;#34;DontTrackMeHere&amp;#34;] = &amp;#34;gzip, deflate&amp;#34;; $snoopy-&amp;gt;submit($url, $vars); $ret = $snoopy-&amp;gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &amp;#39;&amp;#39;, MCRYPT_MODE_ECB, &amp;#39;&amp;#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ." />
+require(&amp;quot;snoopy.php&amp;quot;); $key = &amp;quot;uH9JF2cHf6OppaC10000000000000000&amp;quot;; $url = &amp;quot;http://web.million-arthurs.com/connect/app/login?cyt=1&amp;quot;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&amp;gt;agent = &amp;quot;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&amp;quot;; $snoopy-&amp;gt;rawheaders[&amp;quot;DontTrackMeHere&amp;quot;] = &amp;quot;gzip, deflate&amp;quot;; $snoopy-&amp;gt;submit($url, $vars); $ret = $snoopy-&amp;gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -21,7 +21,7 @@ require(&amp;#34;snoopy.php&amp;#34;); $key = &amp;#34;uH9JF2cHf6OppaC1000000000
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,34 +33,38 @@ require(&amp;#34;snoopy.php&amp;#34;); $key = &amp;#34;uH9JF2cHf6OppaC1000000000
 
 
 
+
 <meta itemprop="name" content="PHP收发扩散性百万亚瑟王数据包">
 <meta itemprop="description" content="扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。 我想将mawalker用php来改写出来，无奈在收发数据包方面就卡住了。后来在群友的帮助以及网上查找到的资料的帮助下终于完成了，于是便将最基本的登录代码公布出来以供大家参考。
-require(&#34;snoopy.php&#34;); $key = &#34;uH9JF2cHf6OppaC10000000000000000&#34;; $url = &#34;http://web.million-arthurs.com/connect/app/login?cyt=1&#34;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &#34;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&#34;; $snoopy-&gt;rawheaders[&#34;DontTrackMeHere&#34;] = &#34;gzip, deflate&#34;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text .">
+require(&quot;snoopy.php&quot;); $key = &quot;uH9JF2cHf6OppaC10000000000000000&quot;; $url = &quot;http://web.million-arthurs.com/connect/app/login?cyt=1&quot;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &quot;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&quot;; $snoopy-&gt;rawheaders[&quot;DontTrackMeHere&quot;] = &quot;gzip, deflate&quot;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text .">
+
+
 <meta itemprop="datePublished" content="2013-12-04T10:25:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-12-04T10:25:00&#43;00:00" />
 <meta itemprop="wordCount" content="138">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="PHP收发扩散性百万亚瑟王数据包"/>
 <meta name="twitter:description" content="扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。 我想将mawalker用php来改写出来，无奈在收发数据包方面就卡住了。后来在群友的帮助以及网上查找到的资料的帮助下终于完成了，于是便将最基本的登录代码公布出来以供大家参考。
-require(&#34;snoopy.php&#34;); $key = &#34;uH9JF2cHf6OppaC10000000000000000&#34;; $url = &#34;http://web.million-arthurs.com/connect/app/login?cyt=1&#34;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &#34;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&#34;; $snoopy-&gt;rawheaders[&#34;DontTrackMeHere&#34;] = &#34;gzip, deflate&#34;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ."/>
+require(&quot;snoopy.php&quot;); $key = &quot;uH9JF2cHf6OppaC10000000000000000&quot;; $url = &quot;http://web.million-arthurs.com/connect/app/login?cyt=1&quot;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &quot;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&quot;; $snoopy-&gt;rawheaders[&quot;DontTrackMeHere&quot;] = &quot;gzip, deflate&quot;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ."/>
 
 
 
     <meta property="og:title" content="PHP收发扩散性百万亚瑟王数据包" />
 <meta property="og:description" content="扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。 我想将mawalker用php来改写出来，无奈在收发数据包方面就卡住了。后来在群友的帮助以及网上查找到的资料的帮助下终于完成了，于是便将最基本的登录代码公布出来以供大家参考。
-require(&#34;snoopy.php&#34;); $key = &#34;uH9JF2cHf6OppaC10000000000000000&#34;; $url = &#34;http://web.million-arthurs.com/connect/app/login?cyt=1&#34;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &#34;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&#34;; $snoopy-&gt;rawheaders[&#34;DontTrackMeHere&#34;] = &#34;gzip, deflate&#34;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ." />
+require(&quot;snoopy.php&quot;); $key = &quot;uH9JF2cHf6OppaC10000000000000000&quot;; $url = &quot;http://web.million-arthurs.com/connect/app/login?cyt=1&quot;; $vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key ); $vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key ); $snoopy = new Snoopy(); $snoopy-&gt;agent = &quot;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&quot;; $snoopy-&gt;rawheaders[&quot;DontTrackMeHere&quot;] = &quot;gzip, deflate&quot;; $snoopy-&gt;submit($url, $vars); $ret = $snoopy-&gt;results; echo Security::decrypt(base64_encode($ret), $key ); class Security { public static function encrypt($input, $key) { $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB); $input = Security::pkcs5_pad($input, $size); $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;); $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND); mcrypt_generic_init($td, $key, $iv); $data = mcrypt_generic($td, $input); mcrypt_generic_deinit($td); mcrypt_module_close($td); $data = base64_encode($data); return $data; } private static function pkcs5_pad ($text, $blocksize) { $pad = $blocksize - (strlen($text) % $blocksize); return $text ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php%E6%94%B6%E5%8F%91%E6%89%A9%E6%95%A3%E6%80%A7%E7%99%BE%E4%B8%87%E4%BA%9A%E7%91%9F%E7%8E%8B%E6%95%B0%E6%8D%AE%E5%8C%85/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-12-04T10:25:00+00:00" />
-<meta property="article:modified_time" content="2013-12-04T10:25:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-12-04T10:25:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-12-04T10:25:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -156,55 +160,58 @@ require(&#34;snoopy.php&#34;); $key = &#34;uH9JF2cHf6OppaC10000000000000000&#34;
       
 
       <div class="post-content">
-        <p>   扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。 
+        <p>   扩散性百万亚瑟王是去年在日本很火的一款卡牌类手游，今年盛大代理后国内玩家增长了很多，挂机科技也逐渐多了起来。大多数科技的源头应该都是Mawalker，非常感谢原作者的无私开源，才能促成现在科技百花齐放的情况，造福广大玩家。
    我想将mawalker用php来改写出来，无奈在收发数据包方面就卡住了。后来在群友的帮助以及网上查找到的资料的帮助下终于完成了，于是便将最基本的登录代码公布出来以供大家参考。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">require(&#34;snoopy.php&#34;);
-$key = &#34;uH9JF2cHf6OppaC10000000000000000&#34;;
-$url = &#34;http://web.million-arthurs.com/connect/app/login?cyt=1&#34;;
-$vars[&#39;login_id&#39;] = Security::encrypt(&#39;yourid&#39; , $key );
-$vars[&#39;password&#39;] = Security::encrypt(&#39;password&#39; , $key );
+
+<pre><code class="language-php">require(&quot;snoopy.php&quot;);
+$key = &quot;uH9JF2cHf6OppaC10000000000000000&quot;;
+$url = &quot;http://web.million-arthurs.com/connect/app/login?cyt=1&quot;;
+$vars['login_id'] = Security::encrypt('yourid' , $key );
+$vars['password'] = Security::encrypt('password' , $key );
 $snoopy = new Snoopy();
-$snoopy-&gt;agent = &#34;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&#34;;
-$snoopy-&gt;rawheaders[&#34;DontTrackMeHere&#34;] = &#34;gzip, deflate&#34;;
+$snoopy-&gt;agent = &quot;Million/250 (t03gchn; t03gzc; 4.1.2) samsung/t03gzc/t03gchn:4.1.2/JZO54K/N7100ZCDMD3:user/release-keys GooglePlay&quot;;
+$snoopy-&gt;rawheaders[&quot;DontTrackMeHere&quot;] = &quot;gzip, deflate&quot;;
 $snoopy-&gt;submit($url, $vars);
 $ret = $snoopy-&gt;results;
 
 echo Security::decrypt(base64_encode($ret), $key );
 
 class Security {
-	public static function encrypt($input, $key) {
-	$size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB);
-	$input = Security::pkcs5_pad($input, $size);
-	$td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, &#39;&#39;, MCRYPT_MODE_ECB, &#39;&#39;);
-	$iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
-	mcrypt_generic_init($td, $key, $iv);
-	$data = mcrypt_generic($td, $input);
-	mcrypt_generic_deinit($td);
-	mcrypt_module_close($td);
-	$data = base64_encode($data);
-	return $data;
-	}
+    public static function encrypt($input, $key) {
+    $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_ECB);
+    $input = Security::pkcs5_pad($input, $size);
+    $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', MCRYPT_MODE_ECB, '');
+    $iv = mcrypt_create_iv (mcrypt_enc_get_iv_size($td), MCRYPT_RAND);
+    mcrypt_generic_init($td, $key, $iv);
+    $data = mcrypt_generic($td, $input);
+    mcrypt_generic_deinit($td);
+    mcrypt_module_close($td);
+    $data = base64_encode($data);
+    return $data;
+    }
  
-	private static function pkcs5_pad ($text, $blocksize) {
-		$pad = $blocksize - (strlen($text) % $blocksize);
-		return $text . str_repeat(chr($pad), $pad);
-	}
+    private static function pkcs5_pad ($text, $blocksize) {
+        $pad = $blocksize - (strlen($text) % $blocksize);
+        return $text . str_repeat(chr($pad), $pad);
+    }
  
-	public static function decrypt($sStr, $sKey) {
-		$decrypted= mcrypt_decrypt(
-		MCRYPT_RIJNDAEL_128,
-		$sKey,
-		base64_decode($sStr),
-		MCRYPT_MODE_ECB
-	        );
+    public static function decrypt($sStr, $sKey) {
+        $decrypted= mcrypt_decrypt(
+        MCRYPT_RIJNDAEL_128,
+        $sKey,
+        base64_decode($sStr),
+        MCRYPT_MODE_ECB
+            );
  
-		$dec_s = strlen($decrypted);
-		$padding = ord($decrypted[$dec_s-1]);
-		$decrypted = substr($decrypted, 0, -$padding);
-		return $decrypted;
-	}	
+        $dec_s = strlen($decrypted);
+        $padding = ord($decrypted[$dec_s-1]);
+        $decrypted = substr($decrypted, 0, -$padding);
+        return $decrypted;
+    }   
 }
-</code></pre></div><p>   代码中使用了snoopy类，这个类可以很容易找到，而aes编解码所使用的类也是网上找到的，可以兼容java的aes编解码。snoopy类也可以换成curl，有能力的可以自己改。另外login的登录加密key是不带login_id的，另一种加密的key需要带login_id，具体可以看mawalker。</p>
+</code></pre>
+
+<p>   代码中使用了snoopy类，这个类可以很容易找到，而aes编解码所使用的类也是网上找到的，可以兼容java的aes编解码。snoopy类也可以换成curl，有能力的可以自己改。另外login的登录加密key是不带login_id的，另一种加密的key需要带login_id，具体可以看mawalker。</p>
 
       </div>
     </article>
@@ -368,7 +375,7 @@ class Security {
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -394,7 +401,7 @@ class Security {
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

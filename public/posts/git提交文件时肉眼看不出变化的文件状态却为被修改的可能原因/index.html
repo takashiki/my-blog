@@ -7,7 +7,7 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="文件的换行符改变 在Windows上最容易出现这种问题，由于*nix系统的换行符为LF(\n)，而Windows的换行符为CRLF(\r\n)，所以在Windows上的默认配置的Git会在git pull时将LF换行符换为CRLF，而git push时会再将换行符换回去。然而，当文件中含有中文时Git的这个功能会出现问题，pull时能正常转换，push时却无法正常执行，这时就会出现文件比对时整个文件内容都改变了，但肉眼却无法看出。
 解决方法很简单，直接执行以下命令进行全局配置就可以了：
-git config --global core.autocrlf false 更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
+git config --global core.autocrlf false  更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
 文件模式的改变 有的时候我们可能会对项目文件进行chmod操作或者在转移项目文件的过程中无意地改变了文件的模式，这时候文件状态也会变成被修改，但diff也没什么不同的地方。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
@@ -23,7 +23,7 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -35,26 +35,29 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
 
 
 
+
 <meta itemprop="name" content="Git提交文件时肉眼看不出变化的文件状态却为被修改的可能原因">
 <meta itemprop="description" content="文件的换行符改变 在Windows上最容易出现这种问题，由于*nix系统的换行符为LF(\n)，而Windows的换行符为CRLF(\r\n)，所以在Windows上的默认配置的Git会在git pull时将LF换行符换为CRLF，而git push时会再将换行符换回去。然而，当文件中含有中文时Git的这个功能会出现问题，pull时能正常转换，push时却无法正常执行，这时就会出现文件比对时整个文件内容都改变了，但肉眼却无法看出。
 解决方法很简单，直接执行以下命令进行全局配置就可以了：
-git config --global core.autocrlf false 更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
+git config --global core.autocrlf false  更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
 文件模式的改变 有的时候我们可能会对项目文件进行chmod操作或者在转移项目文件的过程中无意地改变了文件的模式，这时候文件状态也会变成被修改，但diff也没什么不同的地方。">
+
+
 <meta itemprop="datePublished" content="2016-03-15T09:44:47&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-15T09:44:47&#43;00:00" />
 <meta itemprop="wordCount" content="13">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="Git提交文件时肉眼看不出变化的文件状态却为被修改的可能原因"/>
 <meta name="twitter:description" content="文件的换行符改变 在Windows上最容易出现这种问题，由于*nix系统的换行符为LF(\n)，而Windows的换行符为CRLF(\r\n)，所以在Windows上的默认配置的Git会在git pull时将LF换行符换为CRLF，而git push时会再将换行符换回去。然而，当文件中含有中文时Git的这个功能会出现问题，pull时能正常转换，push时却无法正常执行，这时就会出现文件比对时整个文件内容都改变了，但肉眼却无法看出。
 解决方法很简单，直接执行以下命令进行全局配置就可以了：
-git config --global core.autocrlf false 更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
+git config --global core.autocrlf false  更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
 文件模式的改变 有的时候我们可能会对项目文件进行chmod操作或者在转移项目文件的过程中无意地改变了文件的模式，这时候文件状态也会变成被修改，但diff也没什么不同的地方。"/>
 
 
@@ -62,13 +65,14 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
     <meta property="og:title" content="Git提交文件时肉眼看不出变化的文件状态却为被修改的可能原因" />
 <meta property="og:description" content="文件的换行符改变 在Windows上最容易出现这种问题，由于*nix系统的换行符为LF(\n)，而Windows的换行符为CRLF(\r\n)，所以在Windows上的默认配置的Git会在git pull时将LF换行符换为CRLF，而git push时会再将换行符换回去。然而，当文件中含有中文时Git的这个功能会出现问题，pull时能正常转换，push时却无法正常执行，这时就会出现文件比对时整个文件内容都改变了，但肉眼却无法看出。
 解决方法很简单，直接执行以下命令进行全局配置就可以了：
-git config --global core.autocrlf false 更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
+git config --global core.autocrlf false  更详细的内容可以看这篇博客：http://blog.jobbole.com/46200/。
 文件模式的改变 有的时候我们可能会对项目文件进行chmod操作或者在转移项目文件的过程中无意地改变了文件的模式，这时候文件状态也会变成被修改，但diff也没什么不同的地方。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/git%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E6%97%B6%E8%82%89%E7%9C%BC%E7%9C%8B%E4%B8%8D%E5%87%BA%E5%8F%98%E5%8C%96%E7%9A%84%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E5%8D%B4%E4%B8%BA%E8%A2%AB%E4%BF%AE%E6%94%B9%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-03-15T09:44:47+00:00" />
-<meta property="article:modified_time" content="2016-03-15T09:44:47+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-03-15T09:44:47&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-15T09:44:47&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -164,12 +168,21 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
       
 
       <div class="post-content">
-        <h3 id="文件的换行符改变">文件的换行符改变</h3>
+        
+
+<h3 id="文件的换行符改变">文件的换行符改变</h3>
+
 <p>在Windows上最容易出现这种问题，由于*nix系统的换行符为<code>LF(\n)</code>，而Windows的换行符为<code>CRLF(\r\n)</code>，所以在Windows上的默认配置的Git会在<code>git pull</code>时将<code>LF</code>换行符换为<code>CRLF</code>，而<code>git push</code>时会再将换行符换回去。然而，当文件中含有中文时Git的这个功能会出现问题，pull时能正常转换，push时却无法正常执行，这时就会出现文件比对时整个文件内容都改变了，但肉眼却无法看出。</p>
+
 <p>解决方法很简单，直接执行以下命令进行全局配置就可以了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global core.autocrlf false
-</code></pre></div><p>更详细的内容可以看这篇博客：<a href="http://blog.jobbole.com/46200/">http://blog.jobbole.com/46200/</a>。</p>
+
+<pre><code class="language-shell">git config --global core.autocrlf false
+</code></pre>
+
+<p>更详细的内容可以看这篇博客：<a href="http://blog.jobbole.com/46200/" target="_blank">http://blog.jobbole.com/46200/</a>。</p>
+
 <h3 id="文件模式的改变">文件模式的改变</h3>
+
 <p>有的时候我们可能会对项目文件进行chmod操作或者在转移项目文件的过程中无意地改变了文件的模式，这时候文件状态也会变成被修改，但diff也没什么不同的地方。</p>
 
       </div>
@@ -334,7 +347,7 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -360,7 +373,7 @@ git config --global core.autocrlf false 更详细的内容可以看这篇博客�
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

@@ -9,7 +9,7 @@
 Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，http://www.zhihu.com/question/29270034，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。
 该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。
 sae上的rewrite规则如下
-- rewrite: if ( in_header[&amp;quot;host&amp;quot;] == &amp;quot;yoursiteurl&amp;quot; &amp;amp;&amp;amp; path ~ &amp;quot;^(?!public/)(.*)&amp;quot; ) goto &amp;quot;public/$1&amp;quot;- rewrite: if ( ! is_dir() &amp;amp;&amp;amp; ! is_file() ) goto &amp;quot;public/index.php?%{QUERY_STRING}&amp;quot;在线演示地址：http://skyx.in/。
+- rewrite: if ( in_header[&amp;quot;host&amp;quot;] == &amp;quot;yoursiteurl&amp;quot; &amp;amp;&amp;amp; path ~ &amp;quot;^(?!public/)(.*)&amp;quot; ) goto &amp;quot;public/$1&amp;quot; - rewrite: if ( ! is_dir() &amp;amp;&amp;amp; ! is_file() ) goto &amp;quot;public/index.php?%{QUERY_STRING}&amp;quot;  在线演示地址：http://skyx.in/。
 github地址：https://github.com/takashiki/Ourls。
 osc地址：http://git.oschina.net/takashiki/Ourls。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
@@ -26,7 +26,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -38,22 +38,25 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
 
 
 
+
 <meta itemprop="name" content="开源一个简单的短网址程序Ourls">
 <meta itemprop="description" content="一直想要自己搭一个短网址服务，奈何github上找过几圈，都没有找到十分符合心意的，于是就趁周末自己写了一个。
 Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，http://www.zhihu.com/question/29270034，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。
 该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。
 sae上的rewrite规则如下
-- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot;- rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;在线演示地址：http://skyx.in/。
+- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot; - rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;  在线演示地址：http://skyx.in/。
 github地址：https://github.com/takashiki/Ourls。
 osc地址：http://git.oschina.net/takashiki/Ourls。">
+
+
 <meta itemprop="datePublished" content="2015-09-20T17:07:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-20T17:07:00&#43;00:00" />
 <meta itemprop="wordCount" content="33">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -62,7 +65,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。">
 Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，http://www.zhihu.com/question/29270034，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。
 该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。
 sae上的rewrite规则如下
-- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot;- rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;在线演示地址：http://skyx.in/。
+- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot; - rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;  在线演示地址：http://skyx.in/。
 github地址：https://github.com/takashiki/Ourls。
 osc地址：http://git.oschina.net/takashiki/Ourls。"/>
 
@@ -73,14 +76,15 @@ osc地址：http://git.oschina.net/takashiki/Ourls。"/>
 Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，http://www.zhihu.com/question/29270034，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。
 该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。
 sae上的rewrite规则如下
-- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot;- rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;在线演示地址：http://skyx.in/。
+- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot; - rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;  在线演示地址：http://skyx.in/。
 github地址：https://github.com/takashiki/Ourls。
 osc地址：http://git.oschina.net/takashiki/Ourls。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E5%BC%80%E6%BA%90%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%9F%AD%E7%BD%91%E5%9D%80%E7%A8%8B%E5%BA%8Fourls/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2015-09-20T17:07:00+00:00" />
-<meta property="article:modified_time" content="2015-09-20T17:07:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2015-09-20T17:07:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-09-20T17:07:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -177,14 +181,22 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
 
       <div class="post-content">
         <p>一直想要自己搭一个短网址服务，奈何github上找过几圈，都没有找到十分符合心意的，于是就趁周末自己写了一个。</p>
-<p>Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，<a href="http://www.zhihu.com/question/29270034">http://www.zhihu.com/question/29270034</a>，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。</p>
+
+<p>Ourls的灵感来源于知乎上关于短址生成算法的一个问题下的讨论，<a href="http://www.zhihu.com/question/29270034" target="_blank">http://www.zhihu.com/question/29270034</a>，详细的关于短址生成的各种设计原理的利弊可见该问题下的几个回答。综合考虑后，我决定采用如下方案：使用sha1来判断url在数据库中是否已存在，若不存在则给该url发一个号（即数据库中的自增id），然后使用hashids对该id进行hash，最终得出该连接的短址。</p>
+
 <p>该项目需要PHP版本5.4以上，在5.5.24下测试通过。项目所使用后端框架为flight，前端使用了amazeui。</p>
+
 <p>sae上的rewrite规则如下</p>
+
 <pre><code>- rewrite: if ( in_header[&quot;host&quot;] == &quot;yoursiteurl&quot; &amp;&amp; path ~ &quot;^(?!public/)(.*)&quot; ) goto &quot;public/$1&quot;
 - rewrite: if ( ! is_dir() &amp;&amp; ! is_file() ) goto &quot;public/index.php?%{QUERY_STRING}&quot;
-</code></pre><p>在线演示地址：<a href="http://skyx.in/">http://skyx.in/</a>。</p>
-<p>github地址：<a href="https://github.com/takashiki/Ourls">https://github.com/takashiki/Ourls</a>。</p>
-<p>osc地址：<a href="http://git.oschina.net/takashiki/Ourls">http://git.oschina.net/takashiki/Ourls</a>。</p>
+</code></pre>
+
+<p>在线演示地址：<a href="http://skyx.in/" target="_blank">http://skyx.in/</a>。</p>
+
+<p>github地址：<a href="https://github.com/takashiki/Ourls" target="_blank">https://github.com/takashiki/Ourls</a>。</p>
+
+<p>osc地址：<a href="http://git.oschina.net/takashiki/Ourls" target="_blank">http://git.oschina.net/takashiki/Ourls</a>。</p>
 
       </div>
     </article>
@@ -348,7 +360,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -374,7 +386,7 @@ osc地址：http://git.oschina.net/takashiki/Ourls。" />
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

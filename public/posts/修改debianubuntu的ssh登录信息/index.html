@@ -7,7 +7,7 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html
 修改/etc/update-motd.d/内的文件，详见上述教程，修改后记得需要将该文件夹内的所有文件赋可执行权限，然后执行即可看到效果：
-chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。" />
+chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/  还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -22,7 +22,7 @@ chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -34,37 +34,41 @@ chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个�
 
 
 
+
 <meta itemprop="name" content="修改debian/ubuntu的ssh登录信息">
 <meta itemprop="description" content="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html
 修改/etc/update-motd.d/内的文件，详见上述教程，修改后记得需要将该文件夹内的所有文件赋可执行权限，然后执行即可看到效果：
-chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。">
+chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/  还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。">
+
+
 <meta itemprop="datePublished" content="2016-03-23T10:10:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-03-23T10:10:00&#43;00:00" />
 <meta itemprop="wordCount" content="12">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="修改debian/ubuntu的ssh登录信息"/>
 <meta name="twitter:description" content="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html
 修改/etc/update-motd.d/内的文件，详见上述教程，修改后记得需要将该文件夹内的所有文件赋可执行权限，然后执行即可看到效果：
-chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。"/>
+chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/  还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。"/>
 
 
 
     <meta property="og:title" content="修改debian/ubuntu的ssh登录信息" />
 <meta property="og:description" content="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html
 修改/etc/update-motd.d/内的文件，详见上述教程，修改后记得需要将该文件夹内的所有文件赋可执行权限，然后执行即可看到效果：
-chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。" />
+chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/  还有一个注意点就是，要将 /etc/motd 文件软链接到 /var/run/motd，要不然每次登陆时都不会有登录信息。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E4%BF%AE%E6%94%B9debianubuntu%E7%9A%84ssh%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-03-23T10:10:00+00:00" />
-<meta property="article:modified_time" content="2016-03-23T10:10:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-03-23T10:10:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-03-23T10:10:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -160,11 +164,15 @@ chmod &#43;x /etc/update-motd.d/ -R run-parts /etc/update-motd.d/ 还有一个�
       
 
       <div class="post-content">
-        <p><a href="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html">https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html</a></p>
+        <p><a href="https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html" target="_blank">https://nickcharlton.net/posts/debian-ubuntu-dynamic-motd.html</a></p>
+
 <p>修改<code>/etc/update-motd.d/</code>内的文件，详见上述教程，修改后记得需要将该文件夹内的所有文件赋可执行权限，然后执行即可看到效果：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod +x /etc/update-motd.d/ -R
+
+<pre><code class="language-shell">chmod +x /etc/update-motd.d/ -R
 run-parts /etc/update-motd.d/
-</code></pre></div><p>还有一个注意点就是，要将 <code>/etc/motd</code> 文件软链接到 <code>/var/run/motd</code>，要不然每次登陆时都不会有登录信息。</p>
+</code></pre>
+
+<p>还有一个注意点就是，要将 <code>/etc/motd</code> 文件软链接到 <code>/var/run/motd</code>，要不然每次登陆时都不会有登录信息。</p>
 
       </div>
     </article>
@@ -328,7 +336,7 @@ run-parts /etc/update-motd.d/
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -354,7 +362,7 @@ run-parts /etc/update-motd.d/
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

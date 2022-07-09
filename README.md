@@ -3,9 +3,3 @@
 `WordPress -> Typecho -> 自己开发的 Blote -> Hugo`
 
 现在博客的更新维护频率比较低了，所以折腾到最后，还是选择了静态博客。
-
-## CloudBase 部署
-
-```shell
-cloudbase hosting:deploy ./public / -e qxmugen-1e259a
-```

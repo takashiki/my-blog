@@ -7,8 +7,8 @@
 <meta name="author" content="天心流水 ">
 <meta name="description" content="我们经常会使用cdn来达到加快网站访问速度和隐藏服务器真实ip的目的，但是站点使用了cdn后程序获取到的用户ip以及nginx日志中记录的ip均会变成cdn的中转ip。不过cdn一般会实用自定义ip头来保存用户的真实ip，或者是将其放在X_FORWARDED_FOR头里，通过nginx的realip模块和这些ip头里的信息就可以获取到用户的真实ip了。
 首先需要确认安装nginx的时候加上了realip模块：
- ./configure --with-http_realip_modulenginx配置示例：
- server {listen 80;server_name www.test.com;index index.php index.html index.html;root /data/site/www.test.com;access_log /data/wwwlogs/test.access.log main;set_real_ip_from 192.168.50.0/24;set_real_ip_from 61.22.22.22;set_real_ip_from 121.207.33.33;set_real_ip_from 127.0.0.1;real_ip_header X-Forwarded-For;real_ip_recursive on;fastcgi_pass unix:/var/run/phpfpm.sock;fastcgi_index index.php;include fastcgi.conf;}我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。" />
+ ./configure --with-http_realip_module  nginx配置示例：
+ server { listen 80; server_name www.test.com; index index.php index.html index.html; root /data/site/www.test.com; access_log /data/wwwlogs/test.access.log main; set_real_ip_from 192.168.50.0/24; set_real_ip_from 61.22.22.22; set_real_ip_from 121.207.33.33; set_real_ip_from 127.0.0.1; real_ip_header X-Forwarded-For; real_ip_recursive on; fastcgi_pass unix:/var/run/phpfpm.sock; fastcgi_index index.php; include fastcgi.conf; }  我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -23,7 +23,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -35,40 +35,44 @@
 
 
 
+
 <meta itemprop="name" content="nginx使用realip模块获取用户的真实ip">
 <meta itemprop="description" content="我们经常会使用cdn来达到加快网站访问速度和隐藏服务器真实ip的目的，但是站点使用了cdn后程序获取到的用户ip以及nginx日志中记录的ip均会变成cdn的中转ip。不过cdn一般会实用自定义ip头来保存用户的真实ip，或者是将其放在X_FORWARDED_FOR头里，通过nginx的realip模块和这些ip头里的信息就可以获取到用户的真实ip了。
 首先需要确认安装nginx的时候加上了realip模块：
- ./configure --with-http_realip_modulenginx配置示例：
- server {listen 80;server_name www.test.com;index index.php index.html index.html;root /data/site/www.test.com;access_log /data/wwwlogs/test.access.log main;set_real_ip_from 192.168.50.0/24;set_real_ip_from 61.22.22.22;set_real_ip_from 121.207.33.33;set_real_ip_from 127.0.0.1;real_ip_header X-Forwarded-For;real_ip_recursive on;fastcgi_pass unix:/var/run/phpfpm.sock;fastcgi_index index.php;include fastcgi.conf;}我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。">
+ ./configure --with-http_realip_module  nginx配置示例：
+ server { listen 80; server_name www.test.com; index index.php index.html index.html; root /data/site/www.test.com; access_log /data/wwwlogs/test.access.log main; set_real_ip_from 192.168.50.0/24; set_real_ip_from 61.22.22.22; set_real_ip_from 121.207.33.33; set_real_ip_from 127.0.0.1; real_ip_header X-Forwarded-For; real_ip_recursive on; fastcgi_pass unix:/var/run/phpfpm.sock; fastcgi_index index.php; include fastcgi.conf; }  我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。">
+
+
 <meta itemprop="datePublished" content="2016-06-11T20:13:56&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-11T20:13:56&#43;00:00" />
 <meta itemprop="wordCount" content="40">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="nginx使用realip模块获取用户的真实ip"/>
 <meta name="twitter:description" content="我们经常会使用cdn来达到加快网站访问速度和隐藏服务器真实ip的目的，但是站点使用了cdn后程序获取到的用户ip以及nginx日志中记录的ip均会变成cdn的中转ip。不过cdn一般会实用自定义ip头来保存用户的真实ip，或者是将其放在X_FORWARDED_FOR头里，通过nginx的realip模块和这些ip头里的信息就可以获取到用户的真实ip了。
 首先需要确认安装nginx的时候加上了realip模块：
- ./configure --with-http_realip_modulenginx配置示例：
- server {listen 80;server_name www.test.com;index index.php index.html index.html;root /data/site/www.test.com;access_log /data/wwwlogs/test.access.log main;set_real_ip_from 192.168.50.0/24;set_real_ip_from 61.22.22.22;set_real_ip_from 121.207.33.33;set_real_ip_from 127.0.0.1;real_ip_header X-Forwarded-For;real_ip_recursive on;fastcgi_pass unix:/var/run/phpfpm.sock;fastcgi_index index.php;include fastcgi.conf;}我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。"/>
+ ./configure --with-http_realip_module  nginx配置示例：
+ server { listen 80; server_name www.test.com; index index.php index.html index.html; root /data/site/www.test.com; access_log /data/wwwlogs/test.access.log main; set_real_ip_from 192.168.50.0/24; set_real_ip_from 61.22.22.22; set_real_ip_from 121.207.33.33; set_real_ip_from 127.0.0.1; real_ip_header X-Forwarded-For; real_ip_recursive on; fastcgi_pass unix:/var/run/phpfpm.sock; fastcgi_index index.php; include fastcgi.conf; }  我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。"/>
 
 
 
     <meta property="og:title" content="nginx使用realip模块获取用户的真实ip" />
 <meta property="og:description" content="我们经常会使用cdn来达到加快网站访问速度和隐藏服务器真实ip的目的，但是站点使用了cdn后程序获取到的用户ip以及nginx日志中记录的ip均会变成cdn的中转ip。不过cdn一般会实用自定义ip头来保存用户的真实ip，或者是将其放在X_FORWARDED_FOR头里，通过nginx的realip模块和这些ip头里的信息就可以获取到用户的真实ip了。
 首先需要确认安装nginx的时候加上了realip模块：
- ./configure --with-http_realip_modulenginx配置示例：
- server {listen 80;server_name www.test.com;index index.php index.html index.html;root /data/site/www.test.com;access_log /data/wwwlogs/test.access.log main;set_real_ip_from 192.168.50.0/24;set_real_ip_from 61.22.22.22;set_real_ip_from 121.207.33.33;set_real_ip_from 127.0.0.1;real_ip_header X-Forwarded-For;real_ip_recursive on;fastcgi_pass unix:/var/run/phpfpm.sock;fastcgi_index index.php;include fastcgi.conf;}我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。" />
+ ./configure --with-http_realip_module  nginx配置示例：
+ server { listen 80; server_name www.test.com; index index.php index.html index.html; root /data/site/www.test.com; access_log /data/wwwlogs/test.access.log main; set_real_ip_from 192.168.50.0/24; set_real_ip_from 61.22.22.22; set_real_ip_from 121.207.33.33; set_real_ip_from 127.0.0.1; real_ip_header X-Forwarded-For; real_ip_recursive on; fastcgi_pass unix:/var/run/phpfpm.sock; fastcgi_index index.php; include fastcgi.conf; }  我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：https://github.com/takashiki/cdn-real-ip-list。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/nginx%E4%BD%BF%E7%94%A8realip%E6%A8%A1%E5%9D%97%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9A%84%E7%9C%9F%E5%AE%9Eip/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2016-06-11T20:13:56+00:00" />
-<meta property="article:modified_time" content="2016-06-11T20:13:56+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2016-06-11T20:13:56&#43;00:00"/>
+<meta property="article:modified_time" content="2016-06-11T20:13:56&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -165,9 +169,14 @@
 
       <div class="post-content">
         <p>我们经常会使用cdn来达到加快网站访问速度和隐藏服务器真实ip的目的，但是站点使用了cdn后程序获取到的用户ip以及nginx日志中记录的ip均会变成cdn的中转ip。不过cdn一般会实用自定义ip头来保存用户的真实ip，或者是将其放在X_FORWARDED_FOR头里，通过nginx的realip模块和这些ip头里的信息就可以获取到用户的真实ip了。</p>
+
 <p>首先需要确认安装nginx的时候加上了realip模块：</p>
+
 <pre><code>    ./configure --with-http_realip_module
-</code></pre><p>nginx配置示例：</p>
+</code></pre>
+
+<p>nginx配置示例：</p>
+
 <pre><code>    server {
     listen       80;
     server_name  www.test.com;
@@ -185,7 +194,9 @@
     fastcgi_index index.php;
     include fastcgi.conf;
 }
-</code></pre><p>我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：<a href="https://github.com/takashiki/cdn-real-ip-list">https://github.com/takashiki/cdn-real-ip-list</a>。</p>
+</code></pre>
+
+<p>我的一个小站使用了百度云加速，于是开了一个项目用来保存这种cdn的realip配置，参见：<a href="https://github.com/takashiki/cdn-real-ip-list" target="_blank">https://github.com/takashiki/cdn-real-ip-list</a>。</p>
 
       </div>
     </article>
@@ -349,7 +360,7 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -375,7 +386,7 @@
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

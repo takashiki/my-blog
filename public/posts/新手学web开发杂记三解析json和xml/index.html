@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&amp;gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&amp;gt;arr[0]-&amp;gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如&amp;lt;tagname text=&amp;quot;text&amp;rdquo;/&amp;gt;的XML数据选用XMLReader更方便。" />
+<meta name="description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&amp;gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&amp;gt;arr[0]-&amp;gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如的XML数据选用XMLReader更方便。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -20,7 +20,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -32,31 +32,35 @@
 
 
 
+
 <meta itemprop="name" content="新手学WEB开发杂记（三）——解析json和xml">
-<meta itemprop="description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如&lt;tagname text=&quot;text&rdquo;/&gt;的XML数据选用XMLReader更方便。">
+<meta itemprop="description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如的XML数据选用XMLReader更方便。">
+
+
 <meta itemprop="datePublished" content="2013-04-10T19:19:33&#43;00:00" />
 <meta itemprop="dateModified" content="2013-04-10T19:19:33&#43;00:00" />
-<meta itemprop="wordCount" content="20">
-<meta itemprop="image" content="https://qxzzf.com"/>
+<meta itemprop="wordCount" content="19">
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="新手学WEB开发杂记（三）——解析json和xml"/>
-<meta name="twitter:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如&lt;tagname text=&quot;text&rdquo;/&gt;的XML数据选用XMLReader更方便。"/>
+<meta name="twitter:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如的XML数据选用XMLReader更方便。"/>
 
 
 
     <meta property="og:title" content="新手学WEB开发杂记（三）——解析json和xml" />
-<meta property="og:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如&lt;tagname text=&quot;text&rdquo;/&gt;的XML数据选用XMLReader更方便。" />
+<meta property="og:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。XML (Extensible Markup Language, XML) 是用于标记电子文件使其具有结构性的标记语言，可以用来标记数据、定义数据类型，是一种允许用户对自己的标记语言进行定义的源语言。 目前JSON和XML被广泛地用在各种API的返回数据的格式化上。现在是一个API爆发的时代，各种网站都开始提供自己的API给开发者使用，所以对json和xml格式的数据解析有一定的了解是相当必要的。 PHP解析json格式数据的函数是json_decode()。 它的第一个参数为待处理的json格式字符串，第二个参数assoc默认为false即返回值为object型，若设为true则返回数组类型数据。 JSON建构有数组和对象两种结构，若为纯数组结构的json数据，则经过json_decode后返回的数据可按照数组的访问方式，即形如$arr[0]的方式访问数据。若为纯对象结构，则可通过形如$obj-&gt;attr的方式进行访问。对于比较复杂的数组和对象混合的json格式数据在访问时，需按照其结构选择访问方式，如$json-&gt;arr[0]-&gt;attr。 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。 XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如的XML数据选用XMLReader更方便。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E6%96%B0%E6%89%8B%E5%AD%A6web%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0%E4%B8%89%E8%A7%A3%E6%9E%90json%E5%92%8Cxml/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-04-10T19:19:33+00:00" />
-<meta property="article:modified_time" content="2013-04-10T19:19:33+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-04-10T19:19:33&#43;00:00"/>
+<meta property="article:modified_time" content="2013-04-10T19:19:33&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -160,7 +164,7 @@ JSON建构有数组和对象两种结构，若为纯数组结构的json数据，
 PHP对XML格式的支持也相当不错，常见的几种处理XML格式的技术有:XML Expat Parser、SimpleXML、XMLReader、DOMDocument等。
 其中SimpleXML是PHP5后提供的一套简单易用的xml工具集，可以把xml转换成方便处理的对象，也可以组织生成xml数据。不过它不适用于包含namespace的xml，而且要保证xml格式完整(well-formed)。
 DOMDocument是PHP5后推出的DOM扩展的一部分，可用来建立或解析html/xml，目前只支持utf-8编码。它与javascript十分地相像。
-XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如&lt;tagname text=&quot;text&rdquo;/&gt;的XML数据选用XMLReader更方便。</p>
+XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一样在文档流中移动，并在每个节点处停下来。它与simpleXML及DOMDocument的很大的不同在于，它更注重于获取XML元素的属性而非元素的值。即解析形如<tagname text="text"/>的XML数据选用XMLReader更方便。</p>
 
       </div>
     </article>
@@ -177,7 +181,7 @@ XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一�
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        20 Words
+        19 Words
       </p>
 
       <p>
@@ -324,7 +328,7 @@ XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一�
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -350,7 +354,7 @@ XMLReader也是PHP5之后的扩展（5.1后默认安装）。它就像游标一�
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

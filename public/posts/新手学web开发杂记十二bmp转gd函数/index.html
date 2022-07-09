@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
 <meta name="description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
-/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &amp;#34;rb&amp;#34; ) ) return FALSE; $FILE = unpack( &amp;#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&amp;#34;, fread( $f1, 14 ) ); if ( $FILE[&amp;#39;file_type&amp;#39;] != 19778 ) return FALSE; $BMP = unpack( &amp;#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&amp;#39; ." />
+/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &amp;quot;rb&amp;quot; ) ) return FALSE; $FILE = unpack( &amp;quot;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&amp;quot;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; ." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -21,7 +21,7 @@
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,34 +33,38 @@
 
 
 
+
 <meta itemprop="name" content="新手学web开发杂记（十二）——bmp转GD函数">
 <meta itemprop="description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
-/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &#34;rb&#34; ) ) return FALSE; $FILE = unpack( &#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&#34;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; .">
+/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &quot;rb&quot; ) ) return FALSE; $FILE = unpack( &quot;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&quot;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; .">
+
+
 <meta itemprop="datePublished" content="2013-09-27T13:46:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-09-27T13:46:00&#43;00:00" />
 <meta itemprop="wordCount" content="570">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="新手学web开发杂记（十二）——bmp转GD函数"/>
 <meta name="twitter:description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
-/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &#34;rb&#34; ) ) return FALSE; $FILE = unpack( &#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&#34;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; ."/>
+/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &quot;rb&quot; ) ) return FALSE; $FILE = unpack( &quot;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&quot;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; ."/>
 
 
 
     <meta property="og:title" content="新手学web开发杂记（十二）——bmp转GD函数" />
 <meta property="og:description" content="最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。 最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：
-/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &#34;rb&#34; ) ) return FALSE; $FILE = unpack( &#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&#34;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; ." />
+/** * BMP 创建函数 * @author simon * @modified by 天心流水 * @param string $filename path of bmp file * @example who use,who knows * @return resource of GD */ function imagecreatefrombmp( $filename ) { if ( !$f1 = fopen( $filename, &quot;rb&quot; ) ) return FALSE; $FILE = unpack( &quot;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&quot;, fread( $f1, 14 ) ); if ( $FILE[&#39;file_type&#39;] != 19778 ) return FALSE; $BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E6%96%B0%E6%89%8B%E5%AD%A6web%E5%BC%80%E5%8F%91%E6%9D%82%E8%AE%B0%E5%8D%81%E4%BA%8Cbmp%E8%BD%ACgd%E5%87%BD%E6%95%B0/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-09-27T13:46:00+00:00" />
-<meta property="article:modified_time" content="2013-09-27T13:46:00+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-09-27T13:46:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-09-27T13:46:00&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -158,7 +162,8 @@
       <div class="post-content">
         <p>   最近在工作中需要把bmp图片转成jpg图片，但无奈的是网上能找到的bmp转gd的类或函数或多或少都有些问题。其中绝大多数在处理16位bmp图片时要么全黑全粉，要么干脆转换不出，其余有些根本不支持32位的bmp图片。
    最后我终于在php的官网上找到了解决方法。原来网上流传最广的一个仿GD的imagecreatefrombmp函数是一个有问题的版本，无法正确处理16位bmp图片，但好在官网上有人给出了修正方法，修正好的代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/**
+
+<pre><code class="language-php">/**
  * BMP 创建函数
  * @author simon
  * @modified by 天心流水
@@ -167,101 +172,102 @@
  * @return resource of GD
  */ 
 function imagecreatefrombmp( $filename ) {
-	if ( !$f1 = fopen( $filename, &#34;rb&#34; ) )
-		return FALSE;
-	
-	$FILE = unpack( &#34;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&#34;, fread( $f1, 14 ) );
-	if ( $FILE[&#39;file_type&#39;] != 19778 )
-		return FALSE;
-	
-	$BMP = unpack( &#39;Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel&#39; . &#39;/Vcompression/Vsize_bitmap/Vhoriz_resolution&#39; . &#39;/Vvert_resolution/Vcolors_used/Vcolors_important&#39;, fread( $f1, 40 ) );
-	$BMP[&#39;colors&#39;] = pow( 2, $BMP[&#39;bits_per_pixel&#39;] );
-	if ( $BMP[&#39;size_bitmap&#39;] == 0 )
-		$BMP[&#39;size_bitmap&#39;] = $FILE[&#39;file_size&#39;] - $FILE[&#39;bitmap_offset&#39;];
-	$BMP[&#39;bytes_per_pixel&#39;] = $BMP[&#39;bits_per_pixel&#39;] / 8;
-	$BMP[&#39;bytes_per_pixel2&#39;] = ceil( $BMP[&#39;bytes_per_pixel&#39;] );
-	$BMP[&#39;decal&#39;] = ($BMP[&#39;width&#39;] * $BMP[&#39;bytes_per_pixel&#39;] / 4);
-	$BMP[&#39;decal&#39;] -= floor( $BMP[&#39;width&#39;] * $BMP[&#39;bytes_per_pixel&#39;] / 4 );
-	$BMP[&#39;decal&#39;] = 4 - (4 * $BMP[&#39;decal&#39;]);
-	if ( $BMP[&#39;decal&#39;] == 4 )
-		$BMP[&#39;decal&#39;] = 0;
-	
-	$PALETTE = array();
-  if ($BMP[&#39;colors&#39;] &lt; <span style="color:#f92672">16777216</span> <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">BMP</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">colors</span><span style="color:#960050;background-color:#1e0010">&#39;]</span> <span style="color:#960050;background-color:#1e0010">!=</span> <span style="color:#a6e22e">65536</span><span style="color:#960050;background-color:#1e0010">)</span>
-  <span style="color:#960050;background-color:#1e0010">{</span>
-    <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">PALETTE </span><span style="color:#f92672">=</span> <span style="color:#e6db74">unpack(&#39;V&#39;.$BMP[&#39;colors&#39;],</span> <span style="color:#a6e22e">fread</span><span style="color:#960050;background-color:#1e0010">($</span><span style="color:#a6e22e">f1</span><span style="color:#960050;background-color:#1e0010">,$</span><span style="color:#a6e22e">BMP</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">colors</span><span style="color:#960050;background-color:#1e0010">&#39;]*</span><span style="color:#a6e22e">4</span><span style="color:#960050;background-color:#1e0010">));</span>
-  <span style="color:#960050;background-color:#1e0010">}</span>
-	
-	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">IMG </span><span style="color:#f92672">=</span> <span style="color:#e6db74">fread(</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">f1</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">BMP</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">size_bitmap</span><span style="color:#960050;background-color:#1e0010">&#39;]</span> <span style="color:#960050;background-color:#1e0010">);</span>
-	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">VIDE </span><span style="color:#f92672">=</span> <span style="color:#e6db74">chr(</span> <span style="color:#a6e22e">0</span> <span style="color:#960050;background-color:#1e0010">);</span>
-	
-	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">res </span><span style="color:#f92672">=</span> <span style="color:#e6db74">imagecreatetruecolor(</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">BMP</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">width</span><span style="color:#960050;background-color:#1e0010">&#39;],</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">BMP</span><span style="color:#960050;background-color:#1e0010">[&#39;</span><span style="color:#a6e22e">height</span><span style="color:#960050;background-color:#1e0010">&#39;]</span> <span style="color:#960050;background-color:#1e0010">);</span>
-	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">P </span><span style="color:#f92672">=</span> <span style="color:#e6db74">0;</span>
-	<span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">Y </span><span style="color:#f92672">=</span> <span style="color:#e6db74">$BMP[&#39;height&#39;]</span> <span style="color:#a6e22e">-</span> <span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">;</span>
-	<span style="color:#a6e22e">while</span><span style="color:#960050;background-color:#1e0010">(</span> <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">Y</span> &gt;= 0 ){
-		$X = 0;
-		while( $X <span style="color:#960050;background-color:#1e0010">&lt;</span> $BMP[&#39;width&#39;] ){
-			if ( $BMP[&#39;bits_per_pixel&#39;] == 32 ){
-				$COLOR = unpack( &#34;V&#34;, substr( $IMG, $P, 3 ) );
-				$B = ord(substr($IMG, $P,1));
-				$G = ord(substr($IMG, $P+1,1));
-				$R = ord(substr($IMG, $P+2,1));
-				$color = imagecolorexact( $res, $R, $G, $B );
-				if ( $color == -1 )
-					$color = imagecolorallocate( $res, $R, $G, $B );
-				$COLOR[0] = $R*256*256+$G*256+$B;
-				$COLOR[1] = $color;
-			} elseif ( $BMP[&#39;bits_per_pixel&#39;] == 24 ) {
-				$COLOR = unpack( &#34;V&#34;, substr( $IMG, $P, 3 ) . $VIDE );
-      } elseif ( $BMP[&#39;bits_per_pixel&#39;] == 16 ){
-        $COLOR = unpack(&#34;v&#34;,substr($IMG,$P,2));
-        $blue  = (($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x001f) <span style="color:#960050;background-color:#1e0010">&lt;</span>&lt; <span style="color:#f92672">3</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#960050;background-color:#1e0010">+</span> <span style="color:#a6e22e">7</span><span style="color:#960050;background-color:#1e0010">;</span>
-        <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#a6e22e">green </span><span style="color:#f92672">=</span> <span style="color:#e6db74">(($COLOR[1]</span> <span style="color:#960050;background-color:#1e0010">&amp;</span> <span style="color:#a6e22e">0x03e0</span><span style="color:#960050;background-color:#1e0010">)</span> &gt;&gt; 2) + 7;
-        $red   = (($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0xfc00) &gt;&gt; 7) + 7;
+    if ( !$f1 = fopen( $filename, &quot;rb&quot; ) )
+        return FALSE;
+    
+    $FILE = unpack( &quot;vfile_type/Vfile_size/Vreserved/Vbitmap_offset&quot;, fread( $f1, 14 ) );
+    if ( $FILE['file_type'] != 19778 )
+        return FALSE;
+    
+    $BMP = unpack( 'Vheader_size/Vwidth/Vheight/vplanes/vbits_per_pixel' . '/Vcompression/Vsize_bitmap/Vhoriz_resolution' . '/Vvert_resolution/Vcolors_used/Vcolors_important', fread( $f1, 40 ) );
+    $BMP['colors'] = pow( 2, $BMP['bits_per_pixel'] );
+    if ( $BMP['size_bitmap'] == 0 )
+        $BMP['size_bitmap'] = $FILE['file_size'] - $FILE['bitmap_offset'];
+    $BMP['bytes_per_pixel'] = $BMP['bits_per_pixel'] / 8;
+    $BMP['bytes_per_pixel2'] = ceil( $BMP['bytes_per_pixel'] );
+    $BMP['decal'] = ($BMP['width'] * $BMP['bytes_per_pixel'] / 4);
+    $BMP['decal'] -= floor( $BMP['width'] * $BMP['bytes_per_pixel'] / 4 );
+    $BMP['decal'] = 4 - (4 * $BMP['decal']);
+    if ( $BMP['decal'] == 4 )
+        $BMP['decal'] = 0;
+    
+    $PALETTE = array();
+  if ($BMP['colors'] &lt; 16777216 &amp;&amp; $BMP['colors'] != 65536)
+  {
+    $PALETTE = unpack('V'.$BMP['colors'], fread($f1,$BMP['colors']*4));
+  }
+    
+    $IMG = fread( $f1, $BMP['size_bitmap'] );
+    $VIDE = chr( 0 );
+    
+    $res = imagecreatetruecolor( $BMP['width'], $BMP['height'] );
+    $P = 0;
+    $Y = $BMP['height'] - 1;
+    while( $Y &gt;= 0 ){
+        $X = 0;
+        while( $X &lt; $BMP['width'] ){
+            if ( $BMP['bits_per_pixel'] == 32 ){
+                $COLOR = unpack( &quot;V&quot;, substr( $IMG, $P, 3 ) );
+                $B = ord(substr($IMG, $P,1));
+                $G = ord(substr($IMG, $P+1,1));
+                $R = ord(substr($IMG, $P+2,1));
+                $color = imagecolorexact( $res, $R, $G, $B );
+                if ( $color == -1 )
+                    $color = imagecolorallocate( $res, $R, $G, $B );
+                $COLOR[0] = $R*256*256+$G*256+$B;
+                $COLOR[1] = $color;
+            } elseif ( $BMP['bits_per_pixel'] == 24 ) {
+                $COLOR = unpack( &quot;V&quot;, substr( $IMG, $P, 3 ) . $VIDE );
+      } elseif ( $BMP['bits_per_pixel'] == 16 ){
+        $COLOR = unpack(&quot;v&quot;,substr($IMG,$P,2));
+        $blue  = (($COLOR[1] &amp; 0x001f) &lt;&lt; 3) + 7;
+        $green = (($COLOR[1] &amp; 0x03e0) &gt;&gt; 2) + 7;
+        $red   = (($COLOR[1] &amp; 0xfc00) &gt;&gt; 7) + 7;
         $COLOR[1] = $red * 65536 + $green * 256 + $blue;
-			} elseif ( $BMP[&#39;bits_per_pixel&#39;] == 8 ){
-				$COLOR = unpack( &#34;n&#34;, $VIDE . substr( $IMG, $P, 1 ) );
-				$COLOR[1] = $PALETTE[$COLOR[1] + 1];
-			} elseif ( $BMP[&#39;bits_per_pixel&#39;] == 4 ){
-				$COLOR = unpack( &#34;n&#34;, $VIDE . substr( $IMG, floor( $P ), 1 ) );
-				if ( ($P * 2) % 2 == 0 )
-					$COLOR[1] = ($COLOR[1] &gt;&gt; 4);
-				else
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x0F);
-				$COLOR[1] = $PALETTE[$COLOR[1] + 1];
-			} elseif ( $BMP[&#39;bits_per_pixel&#39;] == 1 ){
-				$COLOR = unpack( &#34;n&#34;, $VIDE . substr( $IMG, floor( $P ), 1 ) );
-				if ( ($P * 8) % 8 == 0 )
-					$COLOR[1] = $COLOR[1] &gt;&gt; 7;
-				elseif ( ($P * 8) % 8 == 1 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x40) &gt;&gt; 6;
-				elseif ( ($P * 8) % 8 == 2 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x20) &gt;&gt; 5;
-				elseif ( ($P * 8) % 8 == 3 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x10) &gt;&gt; 4;
-				elseif ( ($P * 8) % 8 == 4 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x8) &gt;&gt; 3;
-				elseif ( ($P * 8) % 8 == 5 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x4) &gt;&gt; 2;
-				elseif ( ($P * 8) % 8 == 6 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x2) &gt;&gt; 1;
-				elseif ( ($P * 8) % 8 == 7 )
-					$COLOR[1] = ($COLOR[1] <span style="color:#960050;background-color:#1e0010">&amp;</span> 0x1);
-				$COLOR[1] = $PALETTE[$COLOR[1] + 1];
-			}else
-				return FALSE;
-			imagesetpixel( $res, $X, $Y, $COLOR[1] );
-			$X++;
-			$P += $BMP[&#39;bytes_per_pixel&#39;];
-		}
-		$Y--;
-		$P += $BMP[&#39;decal&#39;];
-	}
-	fclose( $f1 );
-	
-	return $res;
+            } elseif ( $BMP['bits_per_pixel'] == 8 ){
+                $COLOR = unpack( &quot;n&quot;, $VIDE . substr( $IMG, $P, 1 ) );
+                $COLOR[1] = $PALETTE[$COLOR[1] + 1];
+            } elseif ( $BMP['bits_per_pixel'] == 4 ){
+                $COLOR = unpack( &quot;n&quot;, $VIDE . substr( $IMG, floor( $P ), 1 ) );
+                if ( ($P * 2) % 2 == 0 )
+                    $COLOR[1] = ($COLOR[1] &gt;&gt; 4);
+                else
+                    $COLOR[1] = ($COLOR[1] &amp; 0x0F);
+                $COLOR[1] = $PALETTE[$COLOR[1] + 1];
+            } elseif ( $BMP['bits_per_pixel'] == 1 ){
+                $COLOR = unpack( &quot;n&quot;, $VIDE . substr( $IMG, floor( $P ), 1 ) );
+                if ( ($P * 8) % 8 == 0 )
+                    $COLOR[1] = $COLOR[1] &gt;&gt; 7;
+                elseif ( ($P * 8) % 8 == 1 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x40) &gt;&gt; 6;
+                elseif ( ($P * 8) % 8 == 2 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x20) &gt;&gt; 5;
+                elseif ( ($P * 8) % 8 == 3 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x10) &gt;&gt; 4;
+                elseif ( ($P * 8) % 8 == 4 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x8) &gt;&gt; 3;
+                elseif ( ($P * 8) % 8 == 5 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x4) &gt;&gt; 2;
+                elseif ( ($P * 8) % 8 == 6 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x2) &gt;&gt; 1;
+                elseif ( ($P * 8) % 8 == 7 )
+                    $COLOR[1] = ($COLOR[1] &amp; 0x1);
+                $COLOR[1] = $PALETTE[$COLOR[1] + 1];
+            }else
+                return FALSE;
+            imagesetpixel( $res, $X, $Y, $COLOR[1] );
+            $X++;
+            $P += $BMP['bytes_per_pixel'];
+        }
+        $Y--;
+        $P += $BMP['decal'];
+    }
+    fclose( $f1 );
+    
+    return $res;
 }
-</code></pre></div>
+</code></pre>
+
       </div>
     </article>
 
@@ -424,7 +430,7 @@ function imagecreatefrombmp( $filename ) {
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -450,7 +456,7 @@ function imagecreatefrombmp( $filename ) {
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

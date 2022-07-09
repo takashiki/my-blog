@@ -5,8 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="天心流水 ">
-<meta name="description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]//$count为总条目数，$page为当前页码，$page_size为每页显示条目数function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
-$init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页码$page=(empty($page)||$page&amp;lt;0)?1:$page;//获取当前页url$url = $_SERVER[&#39;REQUEST_URI&#39;];//去掉url中原先的page参数以便加入新的page参数$parsedurl=parse_url($url);$url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;;if($url_query != &#39;&#39;){$url_query = preg_replace(&amp;quot;/(^|&amp;amp;)page=$page/&amp;quot;,&#39;&#39;,$url_query);$url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url);if($url_query != &#39;&#39;){$url .= &#39;&amp;amp;&#39;;}} else {$url .= &#39;?&#39;;}//分页功能代码$page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数$pageoffset = ($page_len-1)/2; //页码个数左右偏移量$navs=&#39;&#39;;if($pages != 0){if($page!=1){$navs.=&amp;quot;&amp;lt;a href=\&amp;quot;&amp;quot;.$url.&amp;quot;page=1\&amp;quot;&amp;gt;首页&amp;lt;/a&amp;gt; &amp;quot;;	//第一页$navs.=&amp;quot;&amp;lt;a href=\&amp;quot;&amp;quot;." />
+<meta name="description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]
+//$count为总条目数，$page为当前页码，$page_size为每页显示条目数
+function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
+$init=1; $page_len=7; $max_p=$page_count; $pages=$page_count; //判断当前页码 $page=(empty($page)||$page&amp;lt;0)?1:$page; //获取当前页url $url = $_SERVER[&#39;REQUEST_URI&#39;]; //去掉url中原先的page参数以便加入新的page参数 $parsedurl=parse_url($url); $url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;; if($url_query != &#39;&#39;){ $url_query = preg_replace(&amp;quot;/(^|&amp;amp;)page=$page/&amp;quot;,&#39;&#39;,$url_query); $url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url); if($url_query != &#39;&#39;){ $url .= &#39;&amp;amp;&#39;; } } else { $url .= &#39;?&#39;; } //分页功能代码 $page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数 $pageoffset = ($page_len-1)/2; //页码个数左右偏移量 $navs=&#39;&#39;; if($pages != 0){ if($page!=1){ $navs.=&amp;quot;&amp;lt;a href=\&amp;quot;&amp;quot;.$url.&amp;quot;page=1\&amp;quot;&amp;gt;首页&amp;lt;/a&amp;gt; &amp;quot;; //第一页 $navs." />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -21,7 +23,7 @@ $init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页�
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -33,34 +35,44 @@ $init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页�
 
 
 
+
 <meta itemprop="name" content="PHP分页函数代码分享">
-<meta itemprop="description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]//$count为总条目数，$page为当前页码，$page_size为每页显示条目数function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
-$init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页码$page=(empty($page)||$page&lt;0)?1:$page;//获取当前页url$url = $_SERVER[&#39;REQUEST_URI&#39;];//去掉url中原先的page参数以便加入新的page参数$parsedurl=parse_url($url);$url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;;if($url_query != &#39;&#39;){$url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query);$url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url);if($url_query != &#39;&#39;){$url .= &#39;&amp;&#39;;}} else {$url .= &#39;?&#39;;}//分页功能代码$page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数$pageoffset = ($page_len-1)/2; //页码个数左右偏移量$navs=&#39;&#39;;if($pages != 0){if($page!=1){$navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;;	//第一页$navs.=&quot;&lt;a href=\&quot;&quot;.">
+<meta itemprop="description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]
+//$count为总条目数，$page为当前页码，$page_size为每页显示条目数
+function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
+$init=1; $page_len=7; $max_p=$page_count; $pages=$page_count; //判断当前页码 $page=(empty($page)||$page&lt;0)?1:$page; //获取当前页url $url = $_SERVER[&#39;REQUEST_URI&#39;]; //去掉url中原先的page参数以便加入新的page参数 $parsedurl=parse_url($url); $url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;; if($url_query != &#39;&#39;){ $url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query); $url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url); if($url_query != &#39;&#39;){ $url .= &#39;&amp;&#39;; } } else { $url .= &#39;?&#39;; } //分页功能代码 $page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数 $pageoffset = ($page_len-1)/2; //页码个数左右偏移量 $navs=&#39;&#39;; if($pages != 0){ if($page!=1){ $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;; //第一页 $navs.">
+
+
 <meta itemprop="datePublished" content="2013-05-05T15:50:01&#43;00:00" />
 <meta itemprop="dateModified" content="2013-05-05T15:50:01&#43;00:00" />
-<meta itemprop="wordCount" content="148">
-<meta itemprop="image" content="https://qxzzf.com"/>
+<meta itemprop="wordCount" content="150">
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
 <meta name="twitter:title" content="PHP分页函数代码分享"/>
-<meta name="twitter:description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]//$count为总条目数，$page为当前页码，$page_size为每页显示条目数function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
-$init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页码$page=(empty($page)||$page&lt;0)?1:$page;//获取当前页url$url = $_SERVER[&#39;REQUEST_URI&#39;];//去掉url中原先的page参数以便加入新的page参数$parsedurl=parse_url($url);$url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;;if($url_query != &#39;&#39;){$url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query);$url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url);if($url_query != &#39;&#39;){$url .= &#39;&amp;&#39;;}} else {$url .= &#39;?&#39;;}//分页功能代码$page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数$pageoffset = ($page_len-1)/2; //页码个数左右偏移量$navs=&#39;&#39;;if($pages != 0){if($page!=1){$navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;;	//第一页$navs.=&quot;&lt;a href=\&quot;&quot;."/>
+<meta name="twitter:description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]
+//$count为总条目数，$page为当前页码，$page_size为每页显示条目数
+function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
+$init=1; $page_len=7; $max_p=$page_count; $pages=$page_count; //判断当前页码 $page=(empty($page)||$page&lt;0)?1:$page; //获取当前页url $url = $_SERVER[&#39;REQUEST_URI&#39;]; //去掉url中原先的page参数以便加入新的page参数 $parsedurl=parse_url($url); $url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;; if($url_query != &#39;&#39;){ $url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query); $url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url); if($url_query != &#39;&#39;){ $url .= &#39;&amp;&#39;; } } else { $url .= &#39;?&#39;; } //分页功能代码 $page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数 $pageoffset = ($page_len-1)/2; //页码个数左右偏移量 $navs=&#39;&#39;; if($pages != 0){ if($page!=1){ $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;; //第一页 $navs."/>
 
 
 
     <meta property="og:title" content="PHP分页函数代码分享" />
-<meta property="og:description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]//$count为总条目数，$page为当前页码，$page_size为每页显示条目数function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
-$init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页码$page=(empty($page)||$page&lt;0)?1:$page;//获取当前页url$url = $_SERVER[&#39;REQUEST_URI&#39;];//去掉url中原先的page参数以便加入新的page参数$parsedurl=parse_url($url);$url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;;if($url_query != &#39;&#39;){$url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query);$url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url);if($url_query != &#39;&#39;){$url .= &#39;&amp;&#39;;}} else {$url .= &#39;?&#39;;}//分页功能代码$page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数$pageoffset = ($page_len-1)/2; //页码个数左右偏移量$navs=&#39;&#39;;if($pages != 0){if($page!=1){$navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;;	//第一页$navs.=&quot;&lt;a href=\&quot;&quot;." />
+<meta property="og:description" content="分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。 本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810 [php]
+//$count为总条目数，$page为当前页码，$page_size为每页显示条目数
+function show_page($count,$page,$page_size) { $page_count = ceil($count/$page_size); //计算得出总页数
+$init=1; $page_len=7; $max_p=$page_count; $pages=$page_count; //判断当前页码 $page=(empty($page)||$page&lt;0)?1:$page; //获取当前页url $url = $_SERVER[&#39;REQUEST_URI&#39;]; //去掉url中原先的page参数以便加入新的page参数 $parsedurl=parse_url($url); $url_query = isset($parsedurl[&#39;query&#39;]) ? $parsedurl[&#39;query&#39;]:&#39;&#39;; if($url_query != &#39;&#39;){ $url_query = preg_replace(&quot;/(^|&amp;)page=$page/&quot;,&#39;&#39;,$url_query); $url = str_replace($parsedurl[&#39;query&#39;],$url_query,$url); if($url_query != &#39;&#39;){ $url .= &#39;&amp;&#39;; } } else { $url .= &#39;?&#39;; } //分页功能代码 $page_len = ($page_len%2)?$page_len:$page_len&#43;1; //页码个数 $pageoffset = ($page_len-1)/2; //页码个数左右偏移量 $navs=&#39;&#39;; if($pages != 0){ if($page!=1){ $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;; //第一页 $navs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/php%E5%88%86%E9%A1%B5%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2013-05-05T15:50:01+00:00" />
-<meta property="article:modified_time" content="2013-05-05T15:50:01+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2013-05-05T15:50:01&#43;00:00"/>
+<meta property="article:modified_time" content="2013-05-05T15:50:01&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -157,13 +169,14 @@ $init=1;$page_len=7;$max_p=$page_count;$pages=$page_count;//判断当前页�
 
       <div class="post-content">
         <p>  分页是经常会用到的一个模块，网上的分页函数和分页类的代码都相当多。为了能让分页函数的代码通用性更强，我自改了一个分页函数分享给大家。
-   本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 http://www.oschina.net/code/snippet_4873_3810
+   本代码中不包含样式，如果需要对应的CSS样式的话，可以参考 <a href="http://www.oschina.net/code/snippet_4873_3810" target="_blank">http://www.oschina.net/code/snippet_4873_3810</a>
  
-[php]<!-- raw HTML omitted -->
-//$count为总条目数，$page为当前页码，$page_size为每页显示条目数<!-- raw HTML omitted -->
+[php]<br />
+//$count为总条目数，$page为当前页码，$page_size为每页显示条目数<br />
 function show_page($count,$page,$page_size)
 {
-$page_count  = ceil($count/$page_size);  //计算得出总页数</p>
+    $page_count  = ceil($count/$page_size);  //计算得出总页数</p>
+
 <pre><code>$init=1;
 $page_len=7;
 $max_p=$page_count;
@@ -193,8 +206,8 @@ $pageoffset = ($page_len-1)/2;  //页码个数左右偏移量
 $navs='';
 if($pages != 0){
     if($page!=1){
-        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;;		//第一页
-        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=&quot;.($page-1).&quot;\&quot;&gt;上页&lt;/a&gt;&quot;;	//上一页
+        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=1\&quot;&gt;首页&lt;/a&gt; &quot;;        //第一页
+        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=&quot;.($page-1).&quot;\&quot;&gt;上页&lt;/a&gt;&quot;; //上一页
     } else {
         $navs .= &quot;&lt;span class='disabled'&gt;首页&lt;/span&gt;&quot;;
         $navs .= &quot;&lt;span class='disabled'&gt;上页&lt;/span&gt;&quot;;
@@ -228,13 +241,14 @@ if($pages != 0){
     if($page!=$pages)
     {
         $navs.=&quot; &lt;a href=\&quot;&quot;.$url.&quot;page=&quot;.($page+1).&quot;\&quot;&gt;下页&lt;/a&gt; &quot;;//下一页
-        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=&quot;.$pages.&quot;\&quot;&gt;末页&lt;/a&gt;&quot;;	//最后一页
+        $navs.=&quot;&lt;a href=\&quot;&quot;.$url.&quot;page=&quot;.$pages.&quot;\&quot;&gt;末页&lt;/a&gt;&quot;;    //最后一页
     } else {
         $navs .= &quot;&lt;span class='disabled'&gt;下页&lt;/span&gt;&quot;;
         $navs .= &quot;&lt;span class='disabled'&gt;末页&lt;/span&gt;&quot;;
     }
     echo &quot;$navs&quot;;
 </code></pre>
+
 <p>}
 }   [/php]</p>
 
@@ -253,7 +267,7 @@ if($pages != 0){
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        148 Words
+        150 Words
       </p>
 
       <p>
@@ -400,7 +414,7 @@ if($pages != 0){
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -426,7 +440,7 @@ if($pages != 0){
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 

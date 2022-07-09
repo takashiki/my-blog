@@ -9,8 +9,8 @@
 Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更好的工具来进行数据库管理，最近研究了一下用Navicat的http tunnel来连接sae的数据库，最终捣鼓成功了，在这里分享给大家。
 首先安装Navicat，在安装根目录找到ntunnel_mysql.php文件，将该文件放到自己的项目中，可以自由重命名。
 然后对该文件的以下内容进行修改，大约在193行左右：
-$hs = $_POST[&amp;#34;host&amp;#34;]; if( $_POST[&amp;#34;port&amp;#34;] ) $hs .= &amp;#34;:&amp;#34;.$_POST[&amp;#34;port&amp;#34;]; $conn = mysql_connect($hs, $_POST[&amp;#34;login&amp;#34;], $_POST[&amp;#34;password&amp;#34;]); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0) &amp;amp;&amp;amp; ( $_POST[&amp;#34;db&amp;#34;] != &amp;#34;&amp;#34; )) { $res = mysql_select_db( $_POST[&amp;#34;db&amp;#34;], $conn); $errno_c = mysql_errno(); } 修改为：
-$username = &amp;#39;yourusername&amp;#39;; $password = &amp;#39;yourpassword&amp;#39;; if ($_POST[&amp;#34;login&amp;#34;] == $username &amp;amp;&amp;amp; $_POST[&amp;#34;password&amp;#34;] == $password) { $hs = SAE_MYSQL_HOST_M . &amp;#39;:&amp;#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&amp;#34;Authentication failed&amp;#34;); exit(); } 注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。" />
+$hs = $_POST[&amp;quot;host&amp;quot;]; if( $_POST[&amp;quot;port&amp;quot;] ) $hs .= &amp;quot;:&amp;quot;.$_POST[&amp;quot;port&amp;quot;]; $conn = mysql_connect($hs, $_POST[&amp;quot;login&amp;quot;], $_POST[&amp;quot;password&amp;quot;]); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0) &amp;amp;&amp;amp; ( $_POST[&amp;quot;db&amp;quot;] != &amp;quot;&amp;quot; )) { $res = mysql_select_db( $_POST[&amp;quot;db&amp;quot;], $conn); $errno_c = mysql_errno(); }  修改为：
+$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&amp;quot;login&amp;quot;] == $username &amp;amp;&amp;amp; $_POST[&amp;quot;password&amp;quot;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &amp;lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&amp;quot;Authentication failed&amp;quot;); exit(); }  注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。" />
 <meta name="keywords" content="技术,日常,碎碎念" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -25,7 +25,7 @@ $username = &amp;#39;yourusername&amp;#39;; $password = &amp;#39;yourpassword&am
 
 
 
-<link href="/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
@@ -37,21 +37,24 @@ $username = &amp;#39;yourusername&amp;#39;; $password = &amp;#39;yourpassword&am
 
 
 
+
 <meta itemprop="name" content="使用Navicat管理Sae共享型Mysql数据库">
 <meta itemprop="description" content="Sae在国内PaaS方面可以说一直是处于领军地位的，虽然现在不像之前通过开发者认证就每月都有免费云豆领了，不过如果想用PaaS平台，Sae依旧是不错的选择。
 Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更好的工具来进行数据库管理，最近研究了一下用Navicat的http tunnel来连接sae的数据库，最终捣鼓成功了，在这里分享给大家。
 首先安装Navicat，在安装根目录找到ntunnel_mysql.php文件，将该文件放到自己的项目中，可以自由重命名。
 然后对该文件的以下内容进行修改，大约在193行左右：
-$hs = $_POST[&#34;host&#34;]; if( $_POST[&#34;port&#34;] ) $hs .= &#34;:&#34;.$_POST[&#34;port&#34;]; $conn = mysql_connect($hs, $_POST[&#34;login&#34;], $_POST[&#34;password&#34;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&#34;db&#34;] != &#34;&#34; )) { $res = mysql_select_db( $_POST[&#34;db&#34;], $conn); $errno_c = mysql_errno(); } 修改为：
-$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&#34;login&#34;] == $username &amp;&amp; $_POST[&#34;password&#34;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&#34;Authentication failed&#34;); exit(); } 注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。">
+$hs = $_POST[&quot;host&quot;]; if( $_POST[&quot;port&quot;] ) $hs .= &quot;:&quot;.$_POST[&quot;port&quot;]; $conn = mysql_connect($hs, $_POST[&quot;login&quot;], $_POST[&quot;password&quot;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&quot;db&quot;] != &quot;&quot; )) { $res = mysql_select_db( $_POST[&quot;db&quot;], $conn); $errno_c = mysql_errno(); }  修改为：
+$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&quot;login&quot;] == $username &amp;&amp; $_POST[&quot;password&quot;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&quot;Authentication failed&quot;); exit(); }  注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。">
+
+
 <meta itemprop="datePublished" content="2015-08-23T22:10:18&#43;00:00" />
 <meta itemprop="dateModified" content="2015-08-23T22:10:18&#43;00:00" />
 <meta itemprop="wordCount" content="98">
-<meta itemprop="image" content="https://qxzzf.com"/>
 
 
 
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://qxzzf.com"/>
 
@@ -60,8 +63,8 @@ $username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_PO
 Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更好的工具来进行数据库管理，最近研究了一下用Navicat的http tunnel来连接sae的数据库，最终捣鼓成功了，在这里分享给大家。
 首先安装Navicat，在安装根目录找到ntunnel_mysql.php文件，将该文件放到自己的项目中，可以自由重命名。
 然后对该文件的以下内容进行修改，大约在193行左右：
-$hs = $_POST[&#34;host&#34;]; if( $_POST[&#34;port&#34;] ) $hs .= &#34;:&#34;.$_POST[&#34;port&#34;]; $conn = mysql_connect($hs, $_POST[&#34;login&#34;], $_POST[&#34;password&#34;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&#34;db&#34;] != &#34;&#34; )) { $res = mysql_select_db( $_POST[&#34;db&#34;], $conn); $errno_c = mysql_errno(); } 修改为：
-$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&#34;login&#34;] == $username &amp;&amp; $_POST[&#34;password&#34;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&#34;Authentication failed&#34;); exit(); } 注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。"/>
+$hs = $_POST[&quot;host&quot;]; if( $_POST[&quot;port&quot;] ) $hs .= &quot;:&quot;.$_POST[&quot;port&quot;]; $conn = mysql_connect($hs, $_POST[&quot;login&quot;], $_POST[&quot;password&quot;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&quot;db&quot;] != &quot;&quot; )) { $res = mysql_select_db( $_POST[&quot;db&quot;], $conn); $errno_c = mysql_errno(); }  修改为：
+$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&quot;login&quot;] == $username &amp;&amp; $_POST[&quot;password&quot;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&quot;Authentication failed&quot;); exit(); }  注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。"/>
 
 
 
@@ -70,13 +73,14 @@ $username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_PO
 Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更好的工具来进行数据库管理，最近研究了一下用Navicat的http tunnel来连接sae的数据库，最终捣鼓成功了，在这里分享给大家。
 首先安装Navicat，在安装根目录找到ntunnel_mysql.php文件，将该文件放到自己的项目中，可以自由重命名。
 然后对该文件的以下内容进行修改，大约在193行左右：
-$hs = $_POST[&#34;host&#34;]; if( $_POST[&#34;port&#34;] ) $hs .= &#34;:&#34;.$_POST[&#34;port&#34;]; $conn = mysql_connect($hs, $_POST[&#34;login&#34;], $_POST[&#34;password&#34;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&#34;db&#34;] != &#34;&#34; )) { $res = mysql_select_db( $_POST[&#34;db&#34;], $conn); $errno_c = mysql_errno(); } 修改为：
-$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&#34;login&#34;] == $username &amp;&amp; $_POST[&#34;password&#34;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&#34;Authentication failed&#34;); exit(); } 注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。" />
+$hs = $_POST[&quot;host&quot;]; if( $_POST[&quot;port&quot;] ) $hs .= &quot;:&quot;.$_POST[&quot;port&quot;]; $conn = mysql_connect($hs, $_POST[&quot;login&quot;], $_POST[&quot;password&quot;]); $errno_c = mysql_errno(); if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&quot;db&quot;] != &quot;&quot; )) { $res = mysql_select_db( $_POST[&quot;db&quot;], $conn); $errno_c = mysql_errno(); }  修改为：
+$username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_POST[&quot;login&quot;] == $username &amp;&amp; $_POST[&quot;password&quot;] == $password) { $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT; $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS); $errno_c = mysql_errno(); if(($errno_c &lt;= 0)) { $res = mysql_select_db(SAE_MYSQL_DB, $conn); $errno_c = mysql_errno(); } } else { EchoHeader(401); echo GetBlock(&quot;Authentication failed&quot;); exit(); }  注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://qxzzf.com/posts/%E4%BD%BF%E7%94%A8navicat%E7%AE%A1%E7%90%86sae%E5%85%B1%E4%BA%AB%E5%9E%8Bmysql%E6%95%B0%E6%8D%AE%E5%BA%93/" />
-<meta property="og:image" content="https://qxzzf.com"/>
-<meta property="article:published_time" content="2015-08-23T22:10:18+00:00" />
-<meta property="article:modified_time" content="2015-08-23T22:10:18+00:00" /><meta property="og:site_name" content="天心流水的博客" />
+
+<meta property="og:image" content="https://qxzzf.com" />
+<meta property="article:published_time" content="2015-08-23T22:10:18&#43;00:00"/>
+<meta property="article:modified_time" content="2015-08-23T22:10:18&#43;00:00"/><meta property="og:site_name" content="天心流水的博客" />
 
 
 
@@ -172,42 +176,59 @@ $username = &#39;yourusername&#39;; $password = &#39;yourpassword&#39;; if ($_PO
       
 
       <div class="post-content">
-        <p><a href="http://sae.sina.com.cn/">Sae</a>在国内PaaS方面可以说一直是处于领军地位的，虽然现在不像之前通过开发者认证就每月都有免费云豆领了，不过如果想用PaaS平台，Sae依旧是不错的选择。</p>
+        <p><a href="http://sae.sina.com.cn/" target="_blank">Sae</a>在国内PaaS方面可以说一直是处于领军地位的，虽然现在不像之前通过开发者认证就每月都有免费云豆领了，不过如果想用PaaS平台，Sae依旧是不错的选择。</p>
+
 <p>Sae自带的phpmyadmin版本比较老了，估计很多人都希望能有个更好的工具来进行数据库管理，最近研究了一下用Navicat的http tunnel来连接sae的数据库，最终捣鼓成功了，在这里分享给大家。</p>
+
 <p>首先安装Navicat，在安装根目录找到ntunnel_mysql.php文件，将该文件放到自己的项目中，可以自由重命名。</p>
+
 <p>然后对该文件的以下内容进行修改，大约在193行左右：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$hs = $_POST[&#34;host&#34;];
-if( $_POST[&#34;port&#34;] ) $hs .= &#34;:&#34;.$_POST[&#34;port&#34;];
-$conn = mysql_connect($hs, $_POST[&#34;login&#34;], $_POST[&#34;password&#34;]);
+
+<pre><code class="language-php">$hs = $_POST[&quot;host&quot;];
+if( $_POST[&quot;port&quot;] ) $hs .= &quot;:&quot;.$_POST[&quot;port&quot;];
+$conn = mysql_connect($hs, $_POST[&quot;login&quot;], $_POST[&quot;password&quot;]);
 $errno_c = mysql_errno();
-if(($errno_c <span style="color:#960050;background-color:#1e0010">&lt;</span>= 0) <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> ( $_POST[&#34;db&#34;] != &#34;&#34; )) {
-	$res = mysql_select_db( $_POST[&#34;db&#34;], $conn);
-	$errno_c = mysql_errno();
+if(($errno_c &lt;= 0) &amp;&amp; ( $_POST[&quot;db&quot;] != &quot;&quot; )) {
+    $res = mysql_select_db( $_POST[&quot;db&quot;], $conn);
+    $errno_c = mysql_errno();
 }
-</code></pre></div><p>修改为：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$username = &#39;yourusername&#39;;
-$password = &#39;yourpassword&#39;;
-if ($_POST[&#34;login&#34;] == $username <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> $_POST[&#34;password&#34;] == $password) {
-    $hs = SAE_MYSQL_HOST_M . &#39;:&#39; . SAE_MYSQL_PORT;
+</code></pre>
+
+<p>修改为：</p>
+
+<pre><code class="language-php">$username = 'yourusername';
+$password = 'yourpassword';
+if ($_POST[&quot;login&quot;] == $username &amp;&amp; $_POST[&quot;password&quot;] == $password) {
+    $hs = SAE_MYSQL_HOST_M . ':' . SAE_MYSQL_PORT;
     $conn = mysql_connect($hs, SAE_MYSQL_USER, SAE_MYSQL_PASS);
     $errno_c = mysql_errno();
-    if(($errno_c <span style="color:#960050;background-color:#1e0010">&lt;</span>= 0)) {
+    if(($errno_c &lt;= 0)) {
         $res = mysql_select_db(SAE_MYSQL_DB, $conn);
         $errno_c = mysql_errno();
     }
 } else {
     EchoHeader(401);
-    echo GetBlock(&#34;Authentication failed&#34;);
+    echo GetBlock(&quot;Authentication failed&quot;);
     exit();
 }
-</code></pre></div><p>注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。</p>
+</code></pre>
+
+<p>注意将上面代码中的$username和$password定义成你自己想要设置的用户名和密码，这个只是做校验用，下面Navicat连接时会用到。修改好后就将文件上传至sae，注意该文件要能被访问。</p>
+
 <p>接下来就可以到Navicat里新增链接了，主机名和端口随便填即可，但不能为空，用户名和密码即为上一步的$username和$password，注意修改为自己设置的。</p>
-<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de75b61.jpg" alt="QQ截图20150823222243.jpg" title="QQ截图20150823222243.jpg"></p>
+
+<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de75b61.jpg" alt="QQ截图20150823222243.jpg" title="QQ截图20150823222243.jpg" /></p>
+
 <p>接下来在高级标签里选择使用高级连接，点击添加数据库，数据库名即为下图中红框标出来的部分，可以在sae自带的phpmyadmin的界面中看到。</p>
-<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de969d1.jpg" alt="QQ截图20150823222800.jpg" title="QQ截图20150823222800.jpg"></p>
-<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de9d2c1.jpg" alt="QQ截图20150823222539.jpg" title="QQ截图20150823222539.jpg"></p>
+
+<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de969d1.jpg" alt="QQ截图20150823222800.jpg" title="QQ截图20150823222800.jpg" /></p>
+
+<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8de9d2c1.jpg" alt="QQ截图20150823222539.jpg" title="QQ截图20150823222539.jpg" /></p>
+
 <p>在http标签中选择使用http通道，通道地址即为你项目中该ntunnel_mysql.php文件的路径。</p>
-<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8dede8b9.jpg" alt="QQ截图20150823222849.jpg" title="QQ截图20150823222849.jpg"></p>
+
+<p><img src="https://ooo.0o0.ooo/2015/08/23/55d9d8dede8b9.jpg" alt="QQ截图20150823222849.jpg" title="QQ截图20150823222849.jpg" /></p>
+
 <p>最后点击连接测试，不出意外此时就能使用Navicat来管理sae数据库了。</p>
 
       </div>
@@ -372,7 +393,7 @@ if ($_POST[&#34;login&#34;] == $username <span style="color:#960050;background-c
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
                 <span><a href="https://qxzzf.com">天心流水</a></span>
             
@@ -398,7 +419,7 @@ if ($_POST[&#34;login&#34;] == $username <span style="color:#960050;background-c
 
 
 
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.5c2f64632321fe361557377f6c5eb763531be2d7d69d897575d624ede040820dc17decf1350779061fd11db3ad89467cbddb12a07d171581667761c6f5ce547b.js" integrity="sha512-XC9kYyMh/jYVVzd/bF63Y1Mb4tfWnYl1ddYk7eBAgg3BfezxNQd5Bh/RHbOtiUZ8vdsSoH0XFYFmd2HG9c5Uew=="></script>
 
 
 
