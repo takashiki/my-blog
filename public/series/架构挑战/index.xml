@@ -1,35 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>架构挑战 on 天心流水的博客</title>
-    <link>https://qxzzf.com/series/%E6%9E%B6%E6%9E%84%E6%8C%91%E6%88%98/</link>
-    <description>Recent content in 架构挑战 on 天心流水的博客</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 04 Jul 2020 11:30:43 +0800</lastBuildDate>
-    
-	<atom:link href="https://qxzzf.com/series/%E6%9E%B6%E6%9E%84%E6%8C%91%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>短网址系统设计思路</title>
-      <link>https://qxzzf.com/posts/%E7%9F%AD%E7%BD%91%E5%9D%80%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</link>
-      <pubDate>Sat, 04 Jul 2020 11:30:43 +0800</pubDate>
-      
-      <guid>https://qxzzf.com/posts/%E7%9F%AD%E7%BD%91%E5%9D%80%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</guid>
-      <description>差不多 5 年前逛 github 的时候偶然发现了 hashids 这个东西，当时就觉得 hashids 很适合用在短网址系统上，于是花了一天时间撸了个简单的短网址系统出来。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>架构挑战 on 天心流水的博客</title><link>https://qxzzf.com/series/%E6%9E%B6%E6%9E%84%E6%8C%91%E6%88%98/</link><description>Recent content in 架构挑战 on 天心流水的博客</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><lastBuildDate>Sat, 04 Jul 2020 11:30:43 +0800</lastBuildDate><atom:link href="https://qxzzf.com/series/%E6%9E%B6%E6%9E%84%E6%8C%91%E6%88%98/index.xml" rel="self" type="application/rss+xml"/><item><title>短网址系统设计思路</title><link>https://qxzzf.com/posts/%E7%9F%AD%E7%BD%91%E5%9D%80%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</link><pubDate>Sat, 04 Jul 2020 11:30:43 +0800</pubDate><guid>https://qxzzf.com/posts/%E7%9F%AD%E7%BD%91%E5%9D%80%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF/</guid><description>差不多 5 年前逛 github 的时候偶然发现了 hashids 这个东西，当时就觉得 hashids 很适合用在短网址系统上，于是花了一天时间撸了个简单的短网址系统出来。
 当时是纯粹为了练手，项目写完放 github 上，然后就在 v2ex 上发了个贴，最初稍微维护了一下后来也就没有再管。前几天上 github 发现，这个几年没维护的项目靠自然流量也有 200 star 了，看来短网址这个东西的需求仍然很旺盛。
 现在回过头来看当时的实现方案还是比较粗糙的，个人项目玩玩可以，用在商业生产环境就不太够了。不过目前倒也没有自建短网址的需求，不会再像当时一样自己再撸一套，但短网址系统的设计思路和一些坑倒是可以整理一下。
 背景 什么是短网址系统？ 短网址已经是一个老生常谈的话题了，这块想必不用多说，它的作用主要就是把一个很长的网址转换成一个较短的地址。像微博的 t.cn、百度的 dwz.cn、腾讯的 url.cn 都是常见的短网址系统。
 为什么要用短网址系统？ 现在的很多链接由于需要带上很多参数来提供业务所需的数据，所以往往非常冗长，而相应地转换成短网址后能带来很多益处：
- 在分发和使用的时候更方便、清爽 更好地适应微博、短信等有字数限制的场景 降低生成二维码的复杂度，提升扫码识别率 可以一定程度上隐藏部分参数，比如 aff 等 能够实现链接跳转的跟踪和各维度数据统计 原网址失效后可以不改变短网址，只修改跳转关系 个性短网址更有利于品牌建设和营销  设计思路 短网址系统做到可用是比较简单的，但是想要高性能、可靠且安全的话，涉及到的很多点也能展开得非常细。
+在分发和使用的时候更方便、清爽 更好地适应微博、短信等有字数限制的场景 降低生成二维码的复杂度，提升扫码识别率 可以一定程度上隐藏部分参数，比如 aff 等 能够实现链接跳转的跟踪和各维度数据统计 原网址失效后可以不改变短网址，只修改跳转关系 个性短网址更有利于品牌建设和营销 设计思路 短网址系统做到可用是比较简单的，但是想要高性能、可靠且安全的话，涉及到的很多点也能展开得非常细。
 长短链映射 短网址系统最核心的功能就是长短链之间的转换了，长网址的长度可以认为是没有限制的，所以使用可逆的压缩或者加密算法将其转换成一个长度有限的短网址是不可能做到的，我们必须借助 DB 或者其他存储系统来实现映射的存储。
 发号 那么自然会产生的一种思路就是将长网址存入一张表，然后使用 DB 中的自增主键来作为短网址，此时我们得到的短网址类似这样 xx.xx/1、xx.xx/2。这其实就是发号式短网址的基本思路。
 在此基础上我们可以做一些微小的改良来得到更短的链接，比如把 10 进制的 ID 转换成 16 进制，或者 a-z A-Z 0-9 这些字符组成的 62 进制，此时在数字比较大的时候我们得到的短网址就会类似 xx.xx/Ad3Ef。
 上面一步完成后得到的地址看上去就和目前常见的短网址非常相似了，但这种直接暴露 ID 的方式会产生安全上的问题，别有用心的人发现短网址的规律之后可以很轻易地遍历出整个系统中存储的所有长网址了。这就意味着可能会被人直接拖库。
-文中最初提到的 hashids 则是解决这个问题的一个极佳方案。它提供一种能把任意正整数转换为指定位数字符串的可逆算法，基于 salt 安全性也有保障。并且虽然它名字中含有 hash，但实际生成的字符串不会发生碰撞，当数字过大无法用指定位数字符串表示的时候会自动增加一位。</description>
-    </item>
-    
-  </channel>
-</rss>
+文中最初提到的 hashids 则是解决这个问题的一个极佳方案。它提供一种能把任意正整数转换为指定位数字符串的可逆算法，基于 salt 安全性也有保障。并且虽然它名字中含有 hash，但实际生成的字符串不会发生碰撞，当数字过大无法用指定位数字符串表示的时候会自动增加一位。</description></item></channel></rss>
