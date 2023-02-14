@@ -1,5 +1,5 @@
 baseurl      = "https://qxzzf.com"
-title        = "天心流水的博客"
+title        = "道丁笔记"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
@@ -8,7 +8,7 @@ paginate     = 10
   home = ["HTML", "RSS", "JSON"]
 
 [author]
-  name = "天心流水"
+  name = "道丁"
 
 [blackfriday]
   hrefTargetBlank = true
@@ -24,7 +24,7 @@ paginate     = 10
   disableReadOtherPosts = false
   enableSharingButtons = true
 
-  description = "天心流水的个人博客"
+  description = "道丁笔记"
   keywords = "homepage, blog"
   images = [""]
 
@@ -38,8 +38,8 @@ paginate     = 10
 [languages]
 
   [languages.en]
-    title = "天心流水的博客"
-    subtitle = "每天进步一点点"
+    title = "道丁笔记"
+    subtitle = "个人经验分享"
     keywords = "技术,日常,碎碎念"
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "阅读更多"
