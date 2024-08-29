@@ -29,7 +29,7 @@
       {{ if .Params.Cover }}
         <figure class="post-cover">
           <img src="{{ .Params.Cover | absURL }}" alt="{{ .Title }}" />
-          
+
           {{ if .Params.CoverCaption }}
             <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
           {{ end }}
@@ -88,11 +88,11 @@
           {{ dateFormat "2006-01-02 15:04" .Date.Local }}
         {{ end }}
 
-        {{ if .Lastmod }} 
+        {{ if .Lastmod }}
           {{ if not (eq .Lastmod .Date )}}
             {{ if .Site.Params.dateformNumTime }}
               ({{ i18n "lastModified" }}: {{ dateFormat .Site.Params.dateformNumTime .Lastmod.Local }})
-            {{ else }} 
+            {{ else }}
               ({{ i18n "lastModified" }}: {{ dateFormat "2006-01-02 15:04" .Lastmod.Local }})
             {{ end }}
           {{ end }}
@@ -121,14 +121,6 @@
     {{- end }}
 
     {{ partial "pagination-single.html" . }}
-
-    {{ if .Site.DisqusShortname }}
-      {{ if not (eq .Params.Comments "false") }}
-        <div id="comments">
-          {{ template "_internal/disqus.html" . }}
-        </div>
-      {{ end }}
-    {{ end }}
 
     {{ if .Site.Params.Commento.Url }}
       <script defer src={{ .Site.Params.Commento.Url }}></script>
